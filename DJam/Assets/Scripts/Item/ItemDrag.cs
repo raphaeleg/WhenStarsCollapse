@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Image image;
     private Transform parent;
@@ -36,5 +36,15 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         transform.SetParent(parent);
         transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         image.raycastTarget = true;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.localScale = Vector3.one;
     }
 }

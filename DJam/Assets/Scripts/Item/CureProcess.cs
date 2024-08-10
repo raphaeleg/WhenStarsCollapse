@@ -14,7 +14,7 @@ public class CureProcess : MonoBehaviour
     {
         Color originalColor = gameObject.GetComponent<Image>().color;
         gameObject.GetComponent<Image>().color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.25f);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         gameObject.GetComponent<Image>().color = new Color(originalColor.r, originalColor.g, originalColor.b, 1f);
         gameObject.GetComponent<ItemDrag>().enabled = true;
     }
