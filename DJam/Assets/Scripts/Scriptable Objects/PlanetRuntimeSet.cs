@@ -18,9 +18,4 @@ public class PlanetRuntimeSet : RuntimeSet<GameObject>
     {
         Planets.Clear();
     }
-    public void AddSymptomToRandom()
-    {
-        int random = Random.Range(0, Planets.Count-1);
-        Planets[random].GetComponent<Planet>().AddSymptom();
-    }
 }
