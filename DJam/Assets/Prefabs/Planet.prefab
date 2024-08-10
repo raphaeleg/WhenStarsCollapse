@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5197011427493616896}
   - component: {fileID: 7371283958357075938}
   - component: {fileID: 3587977364041802440}
+  - component: {fileID: 3357225511286625156}
+  - component: {fileID: 7873451436911731053}
   m_Layer: 5
   m_Name: Planet
   m_TagString: Untagged
@@ -92,12 +94,75 @@ MonoBehaviour:
   state: 1
   type: 0
   PlanetList: {fileID: 11400000, guid: e81290b75187b784da10c6c9c42d6869, type: 2}
-  stagesTimeThreshold: 10
+  stagesTimeThreshold: 5
   isCuring: 0
-  localTimer: 20
+  localTimer: 5
   planetImageList:
   - {fileID: 21300000, guid: 55dd2b38257f66e4bb202d31e385b334, type: 3}
   - {fileID: 21300000, guid: d18f65c73592dbc479821ed668f86105, type: 3}
   - {fileID: 21300000, guid: 22ed0bae646213c4f8706cd8a4bbd7a6, type: 3}
   - {fileID: 21300000, guid: f52441de36d2e8f438efeef978210111, type: 3}
+  - {fileID: 1429022932, guid: 5f2af55203430d74d984602abb6a0c95, type: 3}
   - {fileID: 21300000, guid: 390e8bdd52106af4fa0d8c7eb1b75cc9, type: 3}
+--- !u!58 &3357225511286625156
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123824592646378944}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 200
+--- !u!50 &7873451436911731053
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123824592646378944}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

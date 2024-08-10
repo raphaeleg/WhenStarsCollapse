@@ -46,7 +46,6 @@ public class Planet : MonoBehaviour, IDropHandler
                 UpdateFinalState();
                 break;
             case PlanetStates.BLACKHOLE:
-                UpdateFinalState();
                 break;
             default:
                 UpdateState();
@@ -78,6 +77,16 @@ public class Planet : MonoBehaviour, IDropHandler
         Destroy(gameObject);
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (state != PlanetStates.BLACKHOLE) { return; }
+        GameObject collider = other.gameObject;
+        if (collider.GetComponent<Planet>() != null)
+        {
+            PlanetList.Planets.Remove(collider);
+        }
+        Destroy(collider);
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
