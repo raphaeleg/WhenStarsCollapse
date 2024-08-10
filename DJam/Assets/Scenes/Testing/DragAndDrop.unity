@@ -1741,6 +1741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 677286829}
   - component: {fileID: 677286828}
+  - component: {fileID: 677286830}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1765,6 +1766,7 @@ MonoBehaviour:
   parentTarget: {fileID: 614852973}
   canvas: {fileID: 614852973}
   localTimer: 0
+  sceneLoader: {fileID: 7577961643576469764, guid: 68a491e2c8e70ee4390d453ec971390c, type: 3}
 --- !u!4 &677286829
 Transform:
   m_ObjectHideFlags: 0
@@ -1780,6 +1782,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677286830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677286827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010ae0d37b51270459965f5191bd8027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f538e547e9935354695fcec8c95141b6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 677286828}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckLoseCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &706326739
 GameObject:
   m_ObjectHideFlags: 0

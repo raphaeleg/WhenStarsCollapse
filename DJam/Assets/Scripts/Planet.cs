@@ -24,6 +24,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     [SerializeField] private float localTimer = 10f;
 
+    [SerializeField] GameEventSO BlackholeAdded;
 
     private Image planetImage;
     [SerializeField] private List<Sprite> planetImageList;
@@ -112,6 +113,7 @@ public class Planet : MonoBehaviour, IDropHandler
     {
         GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
         RemoveFromList();
+        BlackholeAdded.Raise();
     }
     public void RemoveFromList() { PlanetList.Remove(gameObject); }
  

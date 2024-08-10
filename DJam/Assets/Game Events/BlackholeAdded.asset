@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade0fd9e14b1f484f8841d64e6dd70ad, type: 3}
-  m_Name: Die
+  m_Name: BlackholeAdded
   m_EditorClassIdentifier: 

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private const float padding = 50;
 
     [SerializeField] private float localTimer;
+    [SerializeField] private SceneLoader sceneLoader;
 
     private void Start()
     {
@@ -50,5 +51,14 @@ public class GameManager : MonoBehaviour
         var x = Random.Range(-maxWidth + padding, maxWidth - padding);
         var y = Random.Range(-maxHeight + padding, maxHeight - padding);
         return new Vector2(x, y);
+    }
+
+    public void CheckLoseCondition()
+    {
+        int currentBlackHoles = GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles;
+        if (currentBlackHoles >= 6)
+        {
+            sceneLoader.LoadWinScene();
+        }
     }
 }
