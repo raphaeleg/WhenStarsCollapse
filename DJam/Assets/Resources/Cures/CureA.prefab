@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6482597505943675390}
   - component: {fileID: 1904914505288289122}
   - component: {fileID: 3361347554255556414}
+  - component: {fileID: 5943760968449648749}
   m_Layer: 5
   m_Name: CureA
   m_TagString: Untagged
@@ -84,8 +85,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8168229141760577026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe05e408845235a438baae48a599e8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5943760968449648749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168229141760577026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c267994cb043043b8f028e3e821d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
