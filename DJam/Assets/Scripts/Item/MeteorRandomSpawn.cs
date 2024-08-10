@@ -15,7 +15,7 @@ public class MeteorRandomSpawn : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         while (this.enabled == true)
         {
             GameObject meteor = Instantiate(meteors[Random.Range(0, meteors.Length)]);
@@ -25,9 +25,43 @@ public class MeteorRandomSpawn : MonoBehaviour
             float maxWidth = canvas.rect.width + canvas.rect.x;
             float maxHeight = canvas.rect.height + canvas.rect.y;
 
-            meteor.transform.localPosition = new Vector2(Random.Range(-maxWidth + 50, maxWidth - 50), Random.Range(-maxHeight + 50, maxHeight - 50));
-
-            yield return new WaitForSeconds(3);
+            int isHorizontalPos = Random.Range(0,2);
+            if (isHorizontalPos == 0)
+            {
+                // VerticalPos
+                int isLeft = Random.Range(0, 2);
+                if (isLeft == 0)
+                {
+                    // isRight
+                    meteor.GetComponent<TakeItem>().posStart = 1;
+                    meteor.transform.localPosition = new Vector2(maxWidth + 50, Random.Range(-maxHeight + 50, maxHeight - 50)/2);
+                }
+                else
+                {
+                    // isLeft
+                    meteor.GetComponent<TakeItem>().posStart = 2;
+                    meteor.transform.localPosition = new Vector2(-maxWidth - 50, Random.Range(-maxHeight + 50, maxHeight - 50)/2);
+                }
+            }
+            else
+            {
+                // HorizontalPos
+                int isTop = Random.Range(0, 2);
+                if (isTop == 0)
+                {
+                    // isTop
+                    meteor.GetComponent<TakeItem>().posStart = 3;
+                    meteor.transform.localPosition = new Vector2(Random.Range(-maxWidth + 50, maxWidth - 50)/2, maxHeight + 50);
+                }
+                else
+                {
+                    // isBottom
+                    meteor.GetComponent<TakeItem>().posStart = 4;
+                    meteor.transform.localPosition = new Vector2(Random.Range(-maxWidth + 50, maxWidth - 50)/2, -maxHeight - 50);
+                }
+            }
+                
+            yield return new WaitForSeconds(1);
         }
     }
 }
