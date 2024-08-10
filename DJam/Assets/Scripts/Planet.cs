@@ -53,6 +53,12 @@ public class Planet : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         if (curesNeeded == dropped.name)
         {
+            if (curesNeeded == "CureA")
+                GameObject.Find("A_List").GetComponent<CureStat>().totalCures--;
+            if (curesNeeded == "CureB")
+                GameObject.Find("B_List").GetComponent<CureStat>().totalCures--;
+            if (curesNeeded == "CureC")
+                GameObject.Find("C_List").GetComponent<CureStat>().totalCures--;
             Cure();
         }
     }
