@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using static Planet;
 
 public class Planet : MonoBehaviour, IDropHandler
@@ -21,10 +22,16 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
     [SerializeField] bool isCuring = false;
 
-    [SerializeField] private float localTimer = 20f;
+    [SerializeField] private float localTimer = 10f;
+
+
+    private Image planetImage;
+    [SerializeField] private List<Sprite> planetImageList;
+
 
     private void Start()
     {
+        planetImage = GetComponent<Image>();
         GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
         PlanetList.Add(gameObject);
     }
@@ -56,10 +63,12 @@ public class Planet : MonoBehaviour, IDropHandler
         if (isCuring) {                 // curing gives another chance
             isCuring = false;
             state--;
+            planetImage.sprite = planetImageList[(int)state];
             if (state == PlanetStates.WHITEDWARF) { RemoveFromList(); }
             return;
         }
         state++;
+        planetImage.sprite = planetImageList[(int)state];
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
     }
 
@@ -99,6 +108,7 @@ public class Planet : MonoBehaviour, IDropHandler
  
     public void Cure() { 
         state--;
+        planetImage.sprite = planetImageList[(int)state];
         isCuring = true; 
     }
 }
