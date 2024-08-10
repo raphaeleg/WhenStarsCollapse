@@ -24,7 +24,7 @@ public class MeteorMerge : MonoBehaviour, IDropHandler
             {
                 Debug.Log(combinations[i, 2]);
                 GameObject cure = Instantiate(Resources.Load<GameObject>("Cures/"+combinations[i, 2]));
-                cure.transform.SetParent(gameObject.transform.parent);
+                cure.transform.SetParent(gameObject.transform.parent.parent.Find("CuresList"));
                 cure.name = cure.name.Substring(0, cure.name.Length - 7);
                 Destroy(dropped);
                 Destroy(gameObject);

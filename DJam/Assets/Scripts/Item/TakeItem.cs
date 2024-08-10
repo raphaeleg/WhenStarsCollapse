@@ -15,7 +15,7 @@ public class TakeItem : MonoBehaviour
     public void OnButtonPressed()
     {
         // sfx.Play();
-        transform.SetParent(GameObject.Find("Items").transform);
+        transform.SetParent(GameObject.Find("MeteorsList").transform);
         gameObject.GetComponent<Button>().enabled = false;
         gameObject.GetComponent<ItemDrag>().enabled = true;
         this.enabled = false;

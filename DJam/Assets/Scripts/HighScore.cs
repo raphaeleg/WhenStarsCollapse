@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour
 {
-    public int score = 0; // The score here
+    public int timer = 0;
+    public int stars = 0;
+    public int blackHoles = 0;
 
     void Start()
     {
@@ -16,7 +18,7 @@ public class HighScore : MonoBehaviour
         yield return new WaitForSeconds(1);
         while (this.enabled == true)
         {
-            score++;
+            timer++;
             yield return new WaitForSeconds(1);
         }
     }
