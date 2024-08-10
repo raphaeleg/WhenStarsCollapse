@@ -23,6 +23,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     private void Start()
     {
+        GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
         PlanetList.Add(gameObject);
     }
 
@@ -59,6 +60,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     public void BecomeBlackHole()
     {
+        GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
         state = PlanetStates.BLACKHOLE;
         PlanetList.Remove(gameObject);
     }
