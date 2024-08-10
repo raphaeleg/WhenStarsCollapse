@@ -12,10 +12,10 @@ public class CureProcess : MonoBehaviour
 
     IEnumerator Running()
     {
-        Color originalColor = gameObject.GetComponent<Image>().color;
-        gameObject.GetComponent<Image>().color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.25f);
         yield return new WaitForSeconds(5);
-        gameObject.GetComponent<Image>().color = new Color(originalColor.r, originalColor.g, originalColor.b, 1f);
-        gameObject.GetComponent<ItemDrag>().enabled = true;
+        gameObject.GetComponent<CureStat>().totalCures++;
+        gameObject.GetComponent<CureStat>().totalMeteors = 0;
+        gameObject.GetComponent<CureStat>().enabled = true;
+        this.enabled = false;
     }
 }

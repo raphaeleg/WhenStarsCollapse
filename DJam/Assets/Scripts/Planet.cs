@@ -53,7 +53,6 @@ public class Planet : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         if (curesNeeded == dropped.name)
         {
-            Destroy(dropped);
             Cure();
         }
     }
