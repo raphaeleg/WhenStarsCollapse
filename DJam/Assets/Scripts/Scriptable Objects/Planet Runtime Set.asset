@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39bdaa71b162ee41adce94a5e54c48d, type: 3}
-  m_Name: Light Runtime Set
+  m_Name: Planet Runtime Set
   m_EditorClassIdentifier: 
   AllyLights: []
   AllLights: []
