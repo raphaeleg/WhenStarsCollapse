@@ -15,10 +15,13 @@ public class TakeItem : MonoBehaviour
     public void OnButtonPressed()
     {
         // sfx.Play();
-        transform.SetParent(GameObject.Find("MeteorsList").transform);
-        gameObject.GetComponent<Button>().enabled = false;
-        gameObject.GetComponent<ItemDrag>().enabled = true;
-        this.enabled = false;
+        if (gameObject.name == "MeteorA")
+            GameObject.Find("A_List").GetComponent<CureStat>().totalMeteors++;
+        if (gameObject.name == "MeteorB")
+            GameObject.Find("B_List").GetComponent<CureStat>().totalMeteors++;
+        if (gameObject.name == "MeteorC")
+            GameObject.Find("C_List").GetComponent<CureStat>().totalMeteors++;
+        Destroy(gameObject);
     }
 
     // Move

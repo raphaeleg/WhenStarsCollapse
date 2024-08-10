@@ -35,7 +35,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         // sfx.Play();
         transform.SetParent(parent);
-        transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        transform.SetLocalPositionAndRotation(new Vector3(580, -30, 0), Quaternion.identity);
         image.raycastTarget = true;
     }
 
