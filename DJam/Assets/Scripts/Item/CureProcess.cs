@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class CureProcess : MonoBehaviour
 {
-    void Start()
+    void Update()
     {
         StartCoroutine(Running());
+        this.enabled = false;
     }
 
     IEnumerator Running()
@@ -21,6 +22,5 @@ public class CureProcess : MonoBehaviour
         gameObject.GetComponent<CureStat>().totalMeteors = 0;
         gameObject.GetComponent<CureStat>().enabled = true;
         transform.Find("ProcessBar").localScale = new Vector3(0f, 1f, 1f);
-        this.enabled = false;
     }
 }

@@ -46,6 +46,9 @@ public class TakeItem : MonoBehaviour
             yMove = -yMove;
         else if (posStart == 4 && yMove < 0)
             yMove = -yMove;
+
+        // Direction
+        gameObject.GetComponent<RectTransform>().localRotation = Quaternion.EulerRotation(0, 0, Mathf.Atan2(yMove, xMove));
     }
 
     private void Update()
