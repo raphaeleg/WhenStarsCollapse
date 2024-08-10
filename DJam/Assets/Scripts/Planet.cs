@@ -14,8 +14,17 @@ public class Planet : MonoBehaviour
     public const float MAX_BALANCE = 100f;
     [SerializeField] float balance = 50f;
     [SerializeField] int currentSymptoms = 0;
+
+    [SerializeField] PlanetRuntimeSet PlanetList;
+    [SerializeField] int listIndex = 0;
     public enum PlanetStates {NORMAL, WHITEDWARF, BLACKHOLE};
     [SerializeField] PlanetStates state = PlanetStates.NORMAL;
+
+    private void Start()
+    {
+        listIndex = PlanetList.Planets.Count;
+        PlanetList.Add(gameObject);
+    }
 
     private void Update()
     {
@@ -23,24 +32,29 @@ public class Planet : MonoBehaviour
         {
             case PlanetStates.NORMAL:
                 balance += CalculateNetBalance();
-                if (balance >= MAX_BALANCE) { state = PlanetStates.BLACKHOLE; }
+                if (balance >= MAX_BALANCE) { BecomeBlackHole(); }
                 else if (balance <= 0) { BecomeWhiteDwarf(); }
                 break;
             case PlanetStates.WHITEDWARF:
                 balance--;
-                if (balance < 0) { 
-                    // TODO
-                }
+                if (balance >= 0) { Destroy(gameObject); }
                 break;
             default:
                 break;
         }
     }
 
+    public void BecomeBlackHole()
+    {
+        state = PlanetStates.BLACKHOLE;
+        PlanetList.Remove(gameObject);
+    }
+
     public void BecomeWhiteDwarf()
     {
         state = PlanetStates.WHITEDWARF;
         balance = 20;
+        PlanetList.Remove(gameObject);
     }
 
     private float CalculateNetBalance()

@@ -2,15 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class PlanetRuntimeSet : RuntimeSet<Planet>
+public class PlanetRuntimeSet : RuntimeSet<GameObject>
 {
-    [SerializeField] public List<Planet> Planets = new();
+    public List<GameObject> Planets = new();
 
-    public override void Add(Planet p)
+    public override void Add(GameObject p)
     {
         Planets.Add(p);
     }
-    public override void Remove(Planet p)
+    public override void Remove(GameObject p)
     {
         Planets.Remove(p);
     }
