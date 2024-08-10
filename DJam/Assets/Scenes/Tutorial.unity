@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -1512,7 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -2780,7 +2780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -6979,7 +6979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -7347,7 +7347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -7804,7 +7804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeStart: 0.5
+  delayBeforeStart: 0.1
   timeBtwChars: 0.035
   leadingChar: 
   leadingCharBeforeDelay: 0
@@ -8115,7 +8115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are [insert sun god name], the Sun God.
+  m_text: You are Helios, the Sun God.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
