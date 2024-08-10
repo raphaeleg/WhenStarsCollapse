@@ -9,10 +9,10 @@ public class Planet : MonoBehaviour
     // Symptoms stop adding to planets once their 20 seconds have passed
     // Symptoms are added every 5 seconds -> Planets are in a Runtime list that game manager can add symptoms to a random one
 
-    public const int TIMER_DEFAULT = -1;
-    public const int TIMER_SYMPTOM = 1;
-    public const int MAX_BALANCE = 100;
-    [SerializeField] int balance = 50;
+    public const float TIMER_DEFAULT = -0.1f;
+    public const float TIMER_SYMPTOM = 0.1f;
+    public const float MAX_BALANCE = 100f;
+    [SerializeField] float balance = 50f;
     [SerializeField] int currentSymptoms = 0;
     public enum PlanetStates {NORMAL, WHITEDWARF, BLACKHOLE};
     [SerializeField] PlanetStates state = PlanetStates.NORMAL;
@@ -22,7 +22,7 @@ public class Planet : MonoBehaviour
         switch (state)
         {
             case PlanetStates.NORMAL:
-                balance = CalculateNetBalance();
+                balance += CalculateNetBalance();
                 if (balance >= MAX_BALANCE) { state = PlanetStates.BLACKHOLE; }
                 else if (balance <= 0) { BecomeWhiteDwarf(); }
                 break;
@@ -35,7 +35,6 @@ public class Planet : MonoBehaviour
             default:
                 break;
         }
-        
     }
 
     public void BecomeWhiteDwarf()
@@ -44,17 +43,11 @@ public class Planet : MonoBehaviour
         balance = 20;
     }
 
-    private int CalculateNetBalance()
+    private float CalculateNetBalance()
     {
         return TIMER_DEFAULT + TIMER_SYMPTOM * currentSymptoms;
     }
 
-    public void AddSymptom()
-    {
-        currentSymptoms++;
-    }
-    public void Cure()
-    {
-        currentSymptoms--;
-    }
+    public void AddSymptom() { currentSymptoms++; }
+    public void Cure() { currentSymptoms--; }
 }
