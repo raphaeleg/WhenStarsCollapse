@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private float timer_planetSpawn = 20f;
     private float rate_planetSpawn = 0.1f;
 
+    
+
     // Symptom
     const float TIMER_SYMPTOM = 5f;
     private float timer_symptomSpawn = 5f;
@@ -40,7 +42,9 @@ public class GameManager : MonoBehaviour
 
     private Vector2 GenerateRandomPosition()
     {
-        return new Vector2(0, 0);   // Make sure this returns a position within the screenspace
+        int x = Random.Range(-8, 8);
+        int y = Random.Range(-4, 4);
+        return new Vector2(x, y);   // Make sure this returns a position within the screenspace
     }
 
     private void ApplySymptom()
