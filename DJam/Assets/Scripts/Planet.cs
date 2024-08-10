@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Planet : MonoBehaviour
+public class Planet : MonoBehaviour, IDropHandler
 {
     // States: Normal, Symptom, WhiteStar, BlackHole
     // Base WhiteStar Condition: be alive for 20 seconds AND have no symptoms at the end
@@ -14,15 +15,14 @@ public class Planet : MonoBehaviour
     public const float MAX_BALANCE = 100f;
     [SerializeField] float balance = 50f;
     [SerializeField] int currentSymptoms = 0;
+    public string curesNeeded;
 
     [SerializeField] PlanetRuntimeSet PlanetList;
-    [SerializeField] int listIndex = 0;
     public enum PlanetStates {NORMAL, WHITEDWARF, BLACKHOLE};
     [SerializeField] PlanetStates state = PlanetStates.NORMAL;
 
     private void Start()
     {
-        listIndex = PlanetList.Planets.Count;
         PlanetList.Add(gameObject);
     }
 
@@ -37,10 +37,23 @@ public class Planet : MonoBehaviour
                 break;
             case PlanetStates.WHITEDWARF:
                 balance--;
-                if (balance >= 0) { Destroy(gameObject); }
+                if (balance >= 0) { 
+                    Destroy(gameObject); 
+                }
                 break;
             default:
                 break;
+        }
+    }
+    public void OnDrop(PointerEventData eventData)
+    {
+        if (state != PlanetStates.NORMAL) { return; }
+
+        GameObject dropped = eventData.pointerDrag;
+        if (curesNeeded == dropped.name)
+        {
+            Destroy(dropped);
+            Cure();
         }
     }
 
