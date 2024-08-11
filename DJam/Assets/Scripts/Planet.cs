@@ -18,7 +18,6 @@ public class Planet : MonoBehaviour, IDropHandler
             { PlanetType.GREEN, "CureB" },
             { PlanetType.BLUE, "CureC" }
         };
-    [SerializeField] PlanetRuntimeSet PlanetList;
     [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
     [SerializeField] bool isCuring = false;
 
@@ -29,18 +28,14 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] GameEventSO SuccessfulSpawn;
 
     private const int RATE_OF_ROTATION = 10;
-    private Animator animator;
+    [SerializeField] private Animator animator;
     private const int VISIBILITY_DELAY = 4;
     private bool passInitialSpawnCheck = false;
 
-
-
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        PlanetList.Add(gameObject);
+        gameObject.transform.localScale = new Vector3(2,2,2);
     }
-
     private void Update()
     {
         UpdateTimer();
@@ -99,16 +94,31 @@ public class Planet : MonoBehaviour, IDropHandler
     {
         if (state != PlanetStates.BLACKHOLE) { return; }
         GameObject collider = other.gameObject;
-        collider.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
-        if (collider.GetComponent<Planet>() != null)
-        {
-            PlanetList.Planets.Remove(collider);
-            if (collider.GetComponent<Planet>().state == PlanetStates.INITIAL) { KillSpawnedPlanet.Raise(); }
+
+        Planet p = collider.GetComponent<Planet>();
+        if (p != null) {
+            if (p.state == PlanetStates.BLACKHOLE) { return; }
+            p.ShrinkUntilDestroy(); 
         }
-        if (collider.transform.localScale.x <= 0)
+        else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
+    }
+
+    public void ShrinkUntilDestroy()
+    {
+        StartCoroutine(Shrink());
+
+    }
+
+    IEnumerator Shrink()
+    {
+        Transform t = gameObject.transform;
+        while (t.localScale.x > 0f)
         {
-            Destroy(collider);
+            t.localScale -= new Vector3(0.1f, 0.1f, 0f);
+            yield return new WaitForSeconds(0.1f);
         }
+        if (state == PlanetStates.INITIAL) { KillSpawnedPlanet.Raise(); }
+        Destroy(gameObject);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -145,19 +155,15 @@ public class Planet : MonoBehaviour, IDropHandler
         if (isIncrease) { state++; }
         else { state--; }
         animator.SetInteger("Stage", (int)state);
-        //planetImage.sprite = planetImageList[(int)state];
     }
     private void BecomeWhiteDwarf()
     {
         animator.SetTrigger("Dwarf");
-        RemoveFromList();
     }
     public void BecomeBlackHole()
     {
         GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
         animator.SetTrigger("Explode");
-        RemoveFromList();
         BlackholeAdded.Raise();
     }
-    public void RemoveFromList() { PlanetList.Remove(gameObject); }
 }

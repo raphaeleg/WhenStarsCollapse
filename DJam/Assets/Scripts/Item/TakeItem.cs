@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
+using static Planet;
 
 public class TakeItem : MonoBehaviour
 {
@@ -55,6 +56,24 @@ public class TakeItem : MonoBehaviour
         // Direction
         gameObject.GetComponent<RectTransform>().localRotation = Quaternion.EulerRotation(0, 0, Mathf.Atan2(yMove, xMove));
     }
+
+    public void ShrinkUntilDestroy()
+    {
+        StartCoroutine(Shrink());
+        
+    }
+
+    IEnumerator Shrink()
+    {
+        Transform t = gameObject.transform;
+        while (t.localScale.x > 0f)
+        {
+            t.localScale -= new Vector3(0.1f, 0.1f, 0f);
+            yield return new WaitForSeconds(0.1f);
+        }
+        Destroy(gameObject);
+    }
+
 
     private void Update()
     {
