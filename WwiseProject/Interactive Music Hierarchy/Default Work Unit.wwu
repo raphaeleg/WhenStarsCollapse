@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}" SchemaVersion="119">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Background Music" ID="{65EACD9E-B8E2-4809-9B5C-3E13E90E3BBD}" ShortID="984172030">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="160"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{0C747856-AFD7-46F6-A6BE-E8E6EC083230}" ShortID="85371573">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{8FB1C653-1CA0-4592-8876-19EB94D47E1F}" ShortID="420451505">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="Background_Music" ID="{812C9235-9E8D-42BC-B8A0-8B06D32FFC9E}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{2F48207A-1781-464E-A9BC-7B89478CDDC0}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{50F8D307-E868-4A2B-B95F-5E8379B9067F}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Background_Music" ID="{812C9235-9E8D-42BC-B8A0-8B06D32FFC9E}" ShortID="899214140">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="55125.0113378685"/>
+								<Property Name="Tempo" Type="Real64" Value="160"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{699AC32A-DAC7-463C-8DB0-A15B1E4AE7C7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="DJam_Background_Chaotic_Drums" ID="{81971FA4-404F-44F5-8E8E-8F13DE41261E}" ShortID="218874182">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{0F58667F-3B9F-44A9-B028-76F21A10AB3F}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_Drums" ID="{66131FF4-D2DA-45FF-B1A6-E595DA27E4D0}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_Drums.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="595832297"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{3C21CF57-3982-4E9D-99DD-918767F5C1A8}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_Drums" ID="{0BE3EF8C-FE2B-47DD-8229-91AE6BFAB23D}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="422.421519614254"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_Drums" ID="{66131FF4-D2DA-45FF-B1A6-E595DA27E4D0}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_HarshLead" ID="{E7BA9ABB-CDD4-4634-A591-212DFCD56198}" ShortID="440360814">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{E56B852D-0279-4D80-8028-BCF73381C727}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_HarshLead" ID="{96F254B1-57AE-436E-8E21-CAADAD9F1099}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_HarshLead.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="994183132"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{76EB38D4-B754-4DDF-8099-8E2F8820C308}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_HarshLead" ID="{3E225B63-7F05-4C09-8A98-E5E98892CBED}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="227.457741330749"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_HarshLead" ID="{96F254B1-57AE-436E-8E21-CAADAD9F1099}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_Keys" ID="{3DB08A1D-B086-40BC-AC0F-DB0F2B4FC1CD}" ShortID="684523394">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{7DB2A571-3E72-47CE-A347-38282863B510}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_Keys" ID="{E9B835BE-FC81-4783-8936-E37CB81B05FE}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_Keys.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="589261699"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{79BEF44F-E69E-4E4A-AD05-3B1127323494}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_Keys" ID="{BD616EFB-A2E5-42C8-B5A6-F79875728C14}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="357.433593519752"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_Keys" ID="{E9B835BE-FC81-4783-8936-E37CB81B05FE}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_LeadSequence" ID="{F840DE0A-B441-4BEB-9475-1EE02FEF066E}" ShortID="257435469">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{D389123B-AB3F-4987-91E4-C57DEA9E44BB}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_LeadSequence" ID="{297390F4-4E27-4830-B3EB-CA9951A11888}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_LeadSequence.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="403790523"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{82D95CD5-FC13-481D-A666-33E71A585133}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_LeadSequence" ID="{91454BB6-F735-411B-AC55-284B7DFCAED2}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="487.409445708749"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_LeadSequence" ID="{297390F4-4E27-4830-B3EB-CA9951A11888}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_Noise" ID="{1D2E22A1-4C6A-4EB8-843C-19865916E04A}" ShortID="380554131">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{DF1BA0BC-D8CE-428F-8E81-71AA0E17A2E2}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_Noise" ID="{FDCFC79F-81B4-4A2E-83EC-18E55FC5C071}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_Noise.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="639231324"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{BE07F1E1-9B9F-4C2B-BE83-18036E4BB76A}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_Noise" ID="{2CBD13D9-7A6B-4CA5-8D5E-405A81905462}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="292.445667425243"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_Noise" ID="{FDCFC79F-81B4-4A2E-83EC-18E55FC5C071}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_PianoArp" ID="{0FF8A374-7DB7-4A85-9D13-80D186B331D4}" ShortID="750394697">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{20DC5516-7F9F-40D7-A6F5-18DECC85CE59}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_PianoArp" ID="{3A6F5CC9-64CE-4E90-AF97-E055023D1F0B}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_PianoArp.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1070743898"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{CC93E2A8-0B4C-4904-BF8A-DC52AF00FEA4}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_PianoArp" ID="{2AC8001E-1EF6-4D32-B974-B46072B5E27E}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="552.39737180325"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_PianoArp" ID="{3A6F5CC9-64CE-4E90-AF97-E055023D1F0B}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_RoughSynth" ID="{6FD36B16-4EC0-4680-9AE4-A893EFB5A887}" ShortID="899247223">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{5D7937FE-D4B8-4D31-AF40-E4EA7D82DF22}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_RoughSynth" ID="{B7559232-E485-479E-96D4-02C598CF22A1}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_RoughSynth.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="544728659"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{2425B4D4-48EF-4953-876D-3CB6B5AF6FA0}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_RoughSynth" ID="{AD2FF581-0C0C-4989-9886-6592847806F4}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="259.951704378"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_RoughSynth" ID="{B7559232-E485-479E-96D4-02C598CF22A1}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_SynthBass" ID="{26F6EF8F-2C88-4D75-B6FD-A14F6A6987E9}" ShortID="159135872">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{640F1EBE-024F-4DCC-B01F-D3A29CA135BA}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_SynthBass" ID="{1EBD530C-16A4-4BCB-9402-B5DF12C9B855}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Chaotic_SynthBass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="685727578"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{5D23BCBF-145A-41E3-A938-347554A6931C}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_SynthBass" ID="{2EC9CBC0-6F71-4992-A8C2-E81A0DF54A1D}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="519.903408755999"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_SynthBass" ID="{1EBD530C-16A4-4BCB-9402-B5DF12C9B855}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Peaceful_PianoChords" ID="{0FA3115D-B470-453A-896A-04390B65DC60}" ShortID="773322507">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Peaceful" ID="{0ACBC156-C9F2-448A-AF75-586F2412BBF3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{1BB5B008-EA12-4A75-99D6-8A6C8D9FC90C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Peaceful_PianoChords" ID="{0C33CEE7-9560-472D-A8E9-49B747EBA7F0}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Peaceful_PianoChords.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="70237918"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{3821A55D-3B17-4A4D-9AFC-069A38B2AFDB}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Peaceful_PianoChords" ID="{BA7F23EC-743A-48AB-8A52-ACFDCC47BADC}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="259.951704377992"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Peaceful_PianoChords" ID="{0C33CEE7-9560-472D-A8E9-49B747EBA7F0}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Peaceful_Plucks" ID="{5CB24D16-9B0D-4797-888C-6F133C0F8B10}" ShortID="768146275">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Peaceful" ID="{0ACBC156-C9F2-448A-AF75-586F2412BBF3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{9A978F94-EDCB-42EF-AECE-7C845958F253}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Peaceful_Plucks" ID="{41864191-878F-47D6-8B7B-CA74121E3A36}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Peaceful_Plucks.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="987715602"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{CDBD2829-4BD3-4AC3-8B43-59B73AF44207}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Peaceful_Plucks" ID="{2A89DD89-F2D3-4148-81A6-8CBC4658BF64}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="519.903408755999"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Peaceful_Plucks" ID="{41864191-878F-47D6-8B7B-CA74121E3A36}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Peaceful_PulseBass" ID="{2AB25FC9-C67E-4A84-864F-69E363C9677A}" ShortID="337932594">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Peaceful" ID="{0ACBC156-C9F2-448A-AF75-586F2412BBF3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{9F74EB66-143F-4C69-8A10-1DD5E02844F3}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Peaceful_PulseBass" ID="{060475D7-3A09-4026-8272-CB74198A3971}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Peaceful_PulseBass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="9910497"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{889E6B4F-0F28-4587-ABFF-2A47A48F9066}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Peaceful_PulseBass" ID="{22B2A05E-8D6E-48BF-AB7A-783E11FE42F6}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="422.421519614247"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Peaceful_PulseBass" ID="{060475D7-3A09-4026-8272-CB74198A3971}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Peaceful_SynthWoodwind" ID="{02DB05AA-3AA5-4343-A81B-7F7C839ACD3E}" ShortID="771063535">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Peaceful" ID="{0ACBC156-C9F2-448A-AF75-586F2412BBF3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{A6F295DA-5746-4231-AC65-F06305CA7C25}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Peaceful_SynthWoodwind" ID="{F935BE95-8D78-40F6-9C08-491D51942C5E}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Peaceful_SynthWoodwind.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="352461213"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{06040E62-E460-49F8-8DA1-A8882EDD7078}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Peaceful_SynthWoodwind" ID="{DC655639-7178-4E96-8510-A895249D1571}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="487.409445708749"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Peaceful_SynthWoodwind" ID="{F935BE95-8D78-40F6-9C08-491D51942C5E}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Shared_ElectricPiano" ID="{D15F4E6A-58FF-4450-8BEB-35B3B3B2F44E}" ShortID="689011643">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{14EB9124-F14E-41BB-BF44-B6E78ACDA485}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Shared_ElectricPiano" ID="{50639740-D08A-4E47-838F-BB0A2BB919F2}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Shared_ElectricPiano.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="172608153"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{54F0D627-58A7-47CE-846D-00259EAD061D}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Shared_ElectricPiano" ID="{1AF592C6-6102-42C1-90CC-C0B0641F3C4F}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="454.915482661505"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Shared_ElectricPiano" ID="{50639740-D08A-4E47-838F-BB0A2BB919F2}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Shared_QuietPad" ID="{929DFFD5-F2A2-4A58-BD7A-71E21B156178}" ShortID="1062300489">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{E88DEB4A-69CA-4C62-9A2A-DC5B92E2AC9F}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Shared_QuietPad" ID="{849CA010-A03D-415D-A583-706B4FF189E9}">
+											<Language>SFX</Language>
+											<AudioFile>DJamTracks\DJam_Background_Shared_QuietPad.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="622055057"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{D2A7FE92-0C22-435C-9B0A-7855558CB584}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Shared_QuietPad" ID="{F0FBB445-3C05-4937-BE03-8F200099B1E3}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="55125.0113378685"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="519.903408755992"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Shared_QuietPad" ID="{849CA010-A03D-415D-A583-706B4FF189E9}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="DJam_Background_Chaotic_RhythmeticPad" ID="{24FB7E87-D1E5-4138-A8FC-FA585546CA14}" ShortID="766664674">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Chaotic" ID="{1D15D529-DD5E-467C-8754-B23DA6924765}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{C0A22537-E3E7-489B-9D79-D4CA6709E5ED}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Background_Chaotic_RhythmeticPad" ID="{6AA0FE63-5338-4EF3-8E89-4D8A6D57D52D}">
+											<Language>SFX</Language>
+											<AudioFile>DJam_Background_Chaotic_RhythmeticPad.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1066025924"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{49F25D4C-B40A-4BD5-ADC5-C3D5AA12496B}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Background_Chaotic_RhythmeticPad" ID="{4D2147D4-13B0-4450-B106-F4A767CBA0BC}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="54374.9886621315"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Background_Chaotic_RhythmeticPad" ID="{6AA0FE63-5338-4EF3-8E89-4D8A6D57D52D}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{6F5C8D53-24A9-47E5-9702-EFBECEEC4E99}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{5682B9AF-5065-4E3D-854E-1D9DFE704160}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="54000.0009749875"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

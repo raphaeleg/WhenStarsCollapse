@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{B8EE35FC-522D-529D-AAD3-476136856DDD}">
+			<ShortName>General</ShortName>
+			<Path>General.bnk</Path>
+			<Media>
+				<File Id="9910497" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Peaceful_PulseBass.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_PulseBass_878E18E0.wem</CachePath>
+				</File>
+				<File Id="70237918" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Peaceful_PianoChords.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_PianoChords_878E18E0.wem</CachePath>
+				</File>
+				<File Id="172608153" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Shared_ElectricPiano.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Shared_ElectricPiano_878E18E0.wem</CachePath>
+				</File>
+				<File Id="352461213" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Peaceful_SynthWoodwind.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_SynthWoodwind_878E18E0.wem</CachePath>
+				</File>
+				<File Id="403790523" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_LeadSequence.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_LeadSequence_878E18E0.wem</CachePath>
+				</File>
+				<File Id="544728659" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_RoughSynth.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_RoughSynth_878E18E0.wem</CachePath>
+				</File>
+				<File Id="589261699" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_Keys.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_Keys_878E18E0.wem</CachePath>
+				</File>
+				<File Id="595832297" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_Drums.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_Drums_878E18E0.wem</CachePath>
+				</File>
+				<File Id="622055057" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Shared_QuietPad.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Shared_QuietPad_878E18E0.wem</CachePath>
+				</File>
+				<File Id="639231324" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_Noise.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_Noise_878E18E0.wem</CachePath>
+				</File>
+				<File Id="685727578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_SynthBass.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_SynthBass_878E18E0.wem</CachePath>
+				</File>
+				<File Id="987715602" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Peaceful_Plucks.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_Plucks_878E18E0.wem</CachePath>
+				</File>
+				<File Id="994183132" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_HarshLead.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_HarshLead_878E18E0.wem</CachePath>
+				</File>
+				<File Id="1066025924" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJam_Background_Chaotic_RhythmeticPad.wav</ShortName>
+					<CachePath>SFX/DJam_Background_Chaotic_RhythmeticPad_878E18E0.wem</CachePath>
+				</File>
+				<File Id="1070743898" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DJamTracks\DJam_Background_Chaotic_PianoArp.wav</ShortName>
+					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_PianoArp_878E18E0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="733168346" Name="Game_Start" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="9910497"/>
+						<MediaRef Id="70237918"/>
+						<MediaRef Id="172608153"/>
+						<MediaRef Id="352461213"/>
+						<MediaRef Id="403790523"/>
+						<MediaRef Id="544728659"/>
+						<MediaRef Id="589261699"/>
+						<MediaRef Id="595832297"/>
+						<MediaRef Id="622055057"/>
+						<MediaRef Id="639231324"/>
+						<MediaRef Id="685727578"/>
+						<MediaRef Id="987715602"/>
+						<MediaRef Id="994183132"/>
+						<MediaRef Id="1066025924"/>
+						<MediaRef Id="1070743898"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FFA68D18-0152-0939-5C75-B3CF987057DE}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="79554116" Name="Music Master"/>
+				<Bus Id="2454022988" Name="Chaotic"/>
+				<Bus Id="3056837822" Name="Peaceful"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="2415836739" Name="Volume"/>
+				<GameParameter Id="2470328564" Name="Intensity"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{EABF5641-A41B-8B81-0539-2A96A505C49E}</FileHash>
+</SoundBanksInfo>
