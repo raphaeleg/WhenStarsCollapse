@@ -69,7 +69,7 @@ public class MeteorRandomSpawn : MonoBehaviour
                 }
             }
                 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.85f);
         }
     }
 }
