@@ -10,6 +10,7 @@ public class MeteorRandomSpawn : MonoBehaviour
     public RectTransform canvas;
     private float maxWidth = 0;
     private float maxHeight = 0;
+    private double intensity = 1.0;
     private const float padding = 50;
 
     private void Start()
@@ -21,14 +22,17 @@ public class MeteorRandomSpawn : MonoBehaviour
 
     IEnumerator Spawner()
     {
+
         yield return new WaitForSeconds(1);
         while (this.enabled == true)
         {
-            GameObject meteor = Instantiate(meteors[Random.Range(0, meteors.Length)]);
+            for (int i = 0; i <= (int)intensity; i++)
+            {
+                GameObject meteor = Instantiate(meteors[Random.Range(0, meteors.Length)]);
             meteor.transform.SetParent(parentTarget);
             meteor.name = meteor.name.Substring(0, meteor.name.Length - 7); // Remove "(Clone)"
 
-            int isHorizontalPos = Random.Range(0,2);
+            int isHorizontalPos = Random.Range(0, 2);
             if (isHorizontalPos == 0)
             {
                 var x = maxWidth + padding;
@@ -68,7 +72,8 @@ public class MeteorRandomSpawn : MonoBehaviour
                     meteor.transform.localPosition = new Vector2(x, -y);
                 }
             }
-                
+        }
+            if (intensity <= 3) { intensity = intensity + 0.1; }
             yield return new WaitForSeconds(0.85f);
         }
     }
