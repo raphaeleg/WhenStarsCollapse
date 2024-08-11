@@ -9870,6 +9870,7 @@ MonoBehaviour:
   KillSpawnedPlanet: {fileID: 11400000, guid: f57fe277a02d3d443bc1d54cc39be8f4, type: 2}
   SuccessfulSpawn: {fileID: 11400000, guid: 7f685f15b3e61c541b29c1cfbc84c5a9, type: 2}
   animator: {fileID: 5746115303415177220}
+  highScore: {fileID: 11400000, guid: 473d3fadd988c614d9a29797337dbb2d, type: 2}
 --- !u!58 &3357225511286625156
 CircleCollider2D:
   m_ObjectHideFlags: 0

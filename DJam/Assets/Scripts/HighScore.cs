@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class HighScore : MonoBehaviour
+[CreateAssetMenu]
+public class HighScore : ScriptableObject
 {
     public int timer = 0;
     public int stars = 0;
+    public int whiteDwarfs = 0;
     public int blackHoles = 0;
 
-    void Start()
-    {
-        StartCoroutine(PerSecond());
-    }
+    public void Start() { Restart(); }
 
-    IEnumerator PerSecond()
+    public void Restart()
     {
-        yield return new WaitForSeconds(1);
-        while (this.enabled == true)
-        {
-            timer++;
-            yield return new WaitForSeconds(1);
-        }
+        timer = 0;
+        stars = 0;
+        whiteDwarfs = 0;
+        blackHoles = 0;
     }
 }

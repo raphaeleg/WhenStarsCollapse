@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private bool lostGame = false;
 
+    [SerializeField] HighScore highScore;
+
     private void Start()
     {
         lostGame = false;
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         maxWidth = canvas.rect.width + canvas.rect.x;
         maxHeight = canvas.rect.height + canvas.rect.y;
         GenerateNewPlanet();
+        StartCoroutine(PerSecond());
     }
 
     private void Update()
@@ -42,7 +45,7 @@ public class GameManager : MonoBehaviour
         GenerateNewPlanet(); 
         localTimer = TIMER_PLANET;
     }
-    private void UpdateTimer() { if (localTimer > 0) { localTimer -= Time.deltaTime; } }
+    private void UpdateTimer() { if (localTimer > 0) { localTimer -= Time.deltaTime; }  }
 
     public void GenerateNewPlanet()
     {
@@ -80,7 +83,6 @@ public class GameManager : MonoBehaviour
             }
         }
         StartCoroutine(GenNewPlanetCooldown());
-        //Debug.Log("Detected Failed Planet. Spawn Attempts: " + spawnAttempts + " when previously: " + previousSpawnAttempt +" and confirmed successes: "+confirmSuccessfulSpawn);
     }
 
     IEnumerator GenNewPlanetCooldown()
@@ -90,4 +92,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartSpawnAttempts() { spawnAttempts = 0; }
+
+    IEnumerator PerSecond()
+    {
+        yield return new WaitForSeconds(1);
+        while (this.enabled == true)
+        {
+            highScore.timer++;
+            yield return new WaitForSeconds(1);
+        }
+    }
 }

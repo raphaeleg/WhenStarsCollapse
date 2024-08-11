@@ -33,6 +33,8 @@ public class Planet : MonoBehaviour, IDropHandler
     private const int VISIBILITY_DELAY = 4;
     private bool passInitialSpawnCheck = false;
 
+    [SerializeField] HighScore highScore;
+
     private void Start()
     {
         localTimer = stagesTimeThreshold;
@@ -65,7 +67,7 @@ public class Planet : MonoBehaviour, IDropHandler
             
             SuccessfulSpawn.Raise();
             passInitialSpawnCheck = true;
-            GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
+            highScore.stars++;
             return;
         } 
         
@@ -162,11 +164,12 @@ public class Planet : MonoBehaviour, IDropHandler
     }
     private void BecomeWhiteDwarf()
     {
+        highScore.whiteDwarfs++;
         animator.SetTrigger("Dwarf");
     }
     public void BecomeBlackHole()
     {
-        GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
+        highScore.blackHoles++;
         animator.SetTrigger("Explode");
         BlackholeAdded.Raise();
     }
