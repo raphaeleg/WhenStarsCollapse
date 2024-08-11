@@ -35,11 +35,30 @@ public class Planet : MonoBehaviour, IDropHandler
 
     [SerializeField] HighScore highScore;
 
+    public Sprite[] spawnAnim;
+    public Sprite[] whiteDwardDestroyAnim;
+
     private void Start()
     {
         localTimer = stagesTimeThreshold;
         gameObject.transform.localScale = new Vector3(2,2,2);
+        StartCoroutine(StartAnim());
     }
+    IEnumerator StartAnim()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
+        transform.Find("Image").localPosition = new Vector3(3.1f, -2.9f, 0);
+        for (int i = 0; i < spawnAnim.Length; i++)
+        {
+            transform.Find("Image").GetComponent<Image>().sprite = spawnAnim[i];
+            yield return new WaitForSeconds(0.05f);
+        }
+        transform.Find("Image").GetComponent<Animator>().enabled = true;
+        transform.Find("Image").localScale = new Vector3(1, 1, 1);
+        transform.Find("Image").localPosition = Vector3.zero;
+    }
+
     private void Update()
     {
         UpdateTimer();
@@ -92,6 +111,18 @@ public class Planet : MonoBehaviour, IDropHandler
     {
         // 20 more seconds until disappearing
         if (localTimer > 0) { return; }
+        StartCoroutine(WhiteDwarfDestroy());
+    }
+    IEnumerator WhiteDwarfDestroy()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").localPosition = new Vector3(9.2f, 16.4f, 0);
+        transform.Find("Image").localScale = new Vector3(5, 5, 5);
+        for (int i = 0; i < whiteDwardDestroyAnim.Length; i++)
+        {
+            transform.Find("Image").GetComponent<Image>().sprite = whiteDwardDestroyAnim[i];
+            yield return new WaitForSeconds(0.05f);
+        }
         Destroy(gameObject);
     }
 

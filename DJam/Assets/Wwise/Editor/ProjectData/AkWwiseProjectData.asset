@@ -796,9 +796,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8584782409874497956
     List: []
-  ExpandedFileSystemItemIds: 01000000020000000300000006000000070000000c0000000e000000100000001300000019000000
-  ExpandedWaapiItemIds: 020000000300000006000000070000000c0000000e000000100000001300000019000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
