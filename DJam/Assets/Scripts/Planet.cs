@@ -48,22 +48,6 @@ public class Planet : MonoBehaviour, IDropHandler
         gameObject.transform.localScale = new Vector3(2,2,2);
         StartCoroutine(StartAnim());
     }
-    IEnumerator StartAnim()
-    {
-        transform.Find("Image").GetComponent<Animator>().enabled = false;
-        transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
-        transform.Find("Image").localPosition = new Vector3(3.1f, -2.9f, 0);
-        for (int i = 0; i < spawnAnim.Length; i++)
-        {
-            if (i == 10)
-                BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
-            transform.Find("Image").GetComponent<Image>().sprite = spawnAnim[i];
-            yield return new WaitForSeconds(0.05f);
-        }
-        transform.Find("Image").GetComponent<Animator>().enabled = true;
-        transform.Find("Image").localScale = new Vector3(1, 1, 1);
-        transform.Find("Image").localPosition = Vector3.zero;
-    }
 
     private void Update()
     {
@@ -110,14 +94,73 @@ public class Planet : MonoBehaviour, IDropHandler
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
     }
 
-    private void SickParticles(bool active)
+    private void ChangeState(bool isIncrease)
     {
-        sickParticles.SetActive(active);
+        if (isIncrease) {
+            state++;
+            if (state == PlanetStates.STAGE1)
+            {
+                StartCoroutine(GetSick());
+            }
+            else if (state == PlanetStates.STAGE2)
+            {
+                StartCoroutine(GetBig());
+            }
+            else
+                animator.SetInteger("Stage", (int)state);
+        }
+        else {
+            state--;
+            if (state == PlanetStates.WHITEDWARF)
+            {
+                StartCoroutine(GetCured());
+            }
+            else
+                animator.SetInteger("Stage", (int)state);
+        }
     }
 
+    #region BlackHole Functionality
+    public void BecomeBlackHole()
+    {
+        StartCoroutine(ExplosionSFX());
+        BackgroundMusic.instance.PlaySFX("SFX_Wind_Loop");
+        highScore.blackHoles++;
+        animator.SetTrigger("Explode");
+        BlackholeAdded.Raise();
+    }
     private void RotateBlackHole()
     {
         gameObject.transform.Rotate(0, 0, Time.deltaTime * RATE_OF_ROTATION);
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (state != PlanetStates.BLACKHOLE) { return; }
+
+        var blackHoleEat = Instantiate(BlackholeOverlay);
+        blackHoleEat.GetComponent<AnimationNoLoop>().destroySelf = true;
+        blackHoleEat.transform.SetParent(transform);
+        blackHoleEat.transform.localScale = new Vector3(2, 2, 2);
+        blackHoleEat.transform.localPosition = Vector3.zero;
+
+        GameObject collider = other.gameObject;
+
+        Planet p = collider.GetComponent<Planet>();
+        if (p != null)
+        {
+            if (p.state == PlanetStates.BLACKHOLE) { return; }
+            p.ShrinkUntilDestroy();
+        }
+        else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
+    }
+    #endregion
+
+    #region WhiteDwarf Functionality
+    private void BecomeWhiteDwarf()
+    {
+        highScore.whiteDwarfs++;
+        animator.SetTrigger("Dwarf");
     }
 
     private void UpdateWhiteDwarf()
@@ -138,26 +181,47 @@ public class Planet : MonoBehaviour, IDropHandler
         }
         Destroy(gameObject);
     }
+    #endregion
 
-    private void OnTriggerStay2D(Collider2D other)
+    # region Behaviour with Cures
+    public void OnDrop(PointerEventData eventData)
     {
-        if (state != PlanetStates.BLACKHOLE) { return; }
+        if (IsNotCurable()) { return; }
 
-        var blackHoleEat = Instantiate(BlackholeOverlay);
-        blackHoleEat.GetComponent<AnimationNoLoop>().destroySelf = true;
-        blackHoleEat.transform.SetParent(transform);
-        blackHoleEat.transform.localScale = new Vector3(2,2,2);
-        blackHoleEat.transform.localPosition = Vector3.zero;
+        GameObject dropped = eventData.pointerDrag;
+        if (IsRightCure(dropped.name))
+        {
+            BackgroundMusic.instance.PlaySFX("SFX_Boost");
+            if (dropped.name == "CureA")
+            { GameObject.Find("A_List").GetComponent<CureStat>().totalCures--; }
+            if (dropped.name == "CureB")
+            { GameObject.Find("B_List").GetComponent<CureStat>().totalCures--; }
+            if (dropped.name == "CureC")
+            { GameObject.Find("C_List").GetComponent<CureStat>().totalCures--; }
 
-        GameObject collider = other.gameObject;
-
-        Planet p = collider.GetComponent<Planet>();
-        if (p != null) {
-            if (p.state == PlanetStates.BLACKHOLE) { return; }
-            p.ShrinkUntilDestroy(); 
+            Cure();
         }
-        else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
+
     }
+    private bool IsNotCurable()
+    {
+        return state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF || state == PlanetStates.INITIAL || isCuring;
+    }
+    private void SickParticles(bool active)
+    {
+        sickParticles.SetActive(active);
+    }
+    private bool IsRightCure(string item) { return item == cureMap[type]; }
+
+    public void Cure()
+    {
+        ChangeState(false);
+        isCuring = true;
+        CuringParticles.SetActive(true);
+    }
+    #endregion
+
+    #region Collide With BlackHole
 
     public void ShrinkUntilDestroy()
     {
@@ -176,61 +240,24 @@ public class Planet : MonoBehaviour, IDropHandler
         Destroy(gameObject);
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        if (IsNotCurable()) { return; }
+    #endregion
 
-        GameObject dropped = eventData.pointerDrag;
-        if (IsRightCure(dropped.name))
+    #region VFX
+    IEnumerator StartAnim()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
+        transform.Find("Image").localPosition = new Vector3(3.1f, -2.9f, 0);
+        for (int i = 0; i < spawnAnim.Length; i++)
         {
-            BackgroundMusic.instance.PlaySFX("SFX_Boost");
-            if (dropped.name == "CureA")
-               { GameObject.Find("A_List").GetComponent<CureStat>().totalCures--; }
-            if (dropped.name == "CureB")
-               { GameObject.Find("B_List").GetComponent<CureStat>().totalCures--; }
-            if (dropped.name == "CureC")
-               { GameObject.Find("C_List").GetComponent<CureStat>().totalCures--; }
-
-            Cure();
+            if (i == 10)
+                BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
+            transform.Find("Image").GetComponent<Image>().sprite = spawnAnim[i];
+            yield return new WaitForSeconds(0.05f);
         }
-        
-    }
-
-    private bool IsNotCurable()
-    {
-        return state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF || state == PlanetStates.INITIAL || isCuring;
-    }
-    private bool IsRightCure(string item) { return item == cureMap[type]; }
- 
-    public void Cure() {
-        ChangeState(false);
-        isCuring = true; 
-        CuringParticles.SetActive(true);
-    }
-    private void ChangeState(bool isIncrease)
-    {
-        if (isIncrease) {
-            state++;
-            if (state == PlanetStates.STAGE1)
-            {
-                StartCoroutine(GetSick());
-            }
-            else if (state == PlanetStates.STAGE2)
-            {
-                StartCoroutine(GetBig());
-            }
-            else
-                animator.SetInteger("Stage", (int)state);
-        }
-        else {
-            state--;
-            if (state == PlanetStates.STAGE1)
-            {
-                StartCoroutine(GetCured());
-            }
-            else
-                animator.SetInteger("Stage", (int)state);
-        }
+        transform.Find("Image").GetComponent<Animator>().enabled = true;
+        transform.Find("Image").localScale = new Vector3(1, 1, 1);
+        transform.Find("Image").localPosition = Vector3.zero;
     }
     IEnumerator GetSick()
     {
@@ -250,6 +277,7 @@ public class Planet : MonoBehaviour, IDropHandler
     }
     IEnumerator GetCured()
     {
+        //yield return new WaitForSeconds(1);
         transform.Find("Image").GetComponent<Animator>().enabled = false;
         transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
         transform.Find("Image").localPosition = new Vector3(3.1f, -3.1f, 0);
@@ -282,23 +310,10 @@ public class Planet : MonoBehaviour, IDropHandler
         animator.SetInteger("Stage", (int)state);
     }
 
-    private void BecomeWhiteDwarf()
-    {
-        highScore.whiteDwarfs++;
-        animator.SetTrigger("Dwarf");
-    }
-    public void BecomeBlackHole()
-    {
-        StartCoroutine(ExplosionSFX());
-        BackgroundMusic.instance.PlaySFX("SFX_Wind_Loop");
-        highScore.blackHoles++;
-        animator.SetTrigger("Explode");
-        BlackholeAdded.Raise();
-    }
-
     IEnumerator ExplosionSFX()
     {
         yield return new WaitForSeconds(0.25f);
         BackgroundMusic.instance.PlaySFX("SFX_Explosion");
     }
+    #endregion
 }
