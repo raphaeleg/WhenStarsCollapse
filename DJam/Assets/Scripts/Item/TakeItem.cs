@@ -12,6 +12,11 @@ public class TakeItem : MonoBehaviour
     private float xMove, yMove;
     private float destroyTime;
 
+    public void OnPointerDown()
+    {
+        OnButtonPressed();
+    }
+
     public void OnButtonPressed()
     {
         // sfx.Play();
