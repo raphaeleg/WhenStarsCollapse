@@ -37,7 +37,6 @@ public class Planet : MonoBehaviour, IDropHandler
 
     private void Start()
     {
-        GetComponent<Image>().color = new Color(0,0,0, 0);
         animator = GetComponent<Animator>();
         PlanetList.Add(gameObject);
     }
@@ -67,7 +66,6 @@ public class Planet : MonoBehaviour, IDropHandler
             if (passInitialSpawnCheck) { return; }
             if (localTimer > VISIBILITY_DELAY) {  return; }
             
-            GetComponent<Image>().color = new Color(1,1,1, 1);
             SuccessfulSpawn.Raise();
             passInitialSpawnCheck = true;
             GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
@@ -101,12 +99,16 @@ public class Planet : MonoBehaviour, IDropHandler
     {
         if (state != PlanetStates.BLACKHOLE) { return; }
         GameObject collider = other.gameObject;
+        collider.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
         if (collider.GetComponent<Planet>() != null)
         {
             PlanetList.Planets.Remove(collider);
             if (collider.GetComponent<Planet>().state == PlanetStates.INITIAL) { KillSpawnedPlanet.Raise(); }
         }
-        Destroy(collider);
+        if (collider.transform.localScale.x <= 0)
+        {
+            Destroy(collider);
+        }
     }
 
     public void OnDrop(PointerEventData eventData)
