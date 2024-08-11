@@ -562,7 +562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a star.
+  m_text: Over time, your stars will shrink and become specks of particles.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -594,9 +594,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is the cycle of a star.
+  m_text: This then create new stars, expanding your universe with even further.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -881,9 +881,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is your universe.
+  m_text: This is your universe of stars.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -1568,9 +1568,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And eat the stars.
+  m_text: They consume all nearby stars, creating a barren and lifeless universe.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -1931,9 +1931,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"What an amazing universe!"'
+  m_text: Yet, your stars can also get sick at times.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -2207,9 +2207,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2848,7 +2848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: When it does, it'll become a black hole.
+  m_text: When they get too big, they turn into black holes.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -2880,9 +2880,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7034,8 +7034,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And stop your stars from becoming black holes before they eat up all other
-    stars.
+  m_text: Grow your universe. Make it last. Keep your stars safe from turning into
+    black holes.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -7067,9 +7067,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7402,7 +7402,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep your universe safe for as long as possible.
+  m_text: To avoid this, you can collect the meteors to create a spell that will
+    heal your sick stars.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -7434,9 +7435,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7859,7 +7860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: However, the sun can get sick and expand.
+  m_text: As your star get sick, they get bigger until it becomes a supergiant.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8035463832888293250, guid: 44aa3bbf23d794f49a348c53a68fd4ce, type: 2}
@@ -7891,9 +7892,9 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8262,7 +8263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are Helios, the Sun God.
+  m_text: You are the Sun God.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8655532619898052763, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
@@ -8289,14 +8290,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 56
+  m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
