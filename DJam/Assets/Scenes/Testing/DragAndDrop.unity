@@ -11065,3 +11065,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072853396}
   m_CullTransparentMesh: 1
+--- !u!1 &2116348465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2116348467}
+  - component: {fileID: 2116348466}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2116348466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116348465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846c3a36edcec4449a5ee7df13896d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle:
+  - {fileID: 2800000, guid: 08aaba90978bbd1458104c81cc9ba8b7, type: 3}
+  - {fileID: 2800000, guid: da067bb77fe68324f81425ad141e01f3, type: 3}
+  - {fileID: 2800000, guid: 7dc1510af58c93444955e7e8bbff4395, type: 3}
+  - {fileID: 2800000, guid: 14ef9948ddabc3d4398db4a066354cb2, type: 3}
+  - {fileID: 2800000, guid: 2275e3346a9dccc4baf6af7cc42b3f12, type: 3}
+  - {fileID: 2800000, guid: 94cfeff4e16b43a46ac86efa68922237, type: 3}
+  - {fileID: 2800000, guid: df0f4f72eaae319418da59ce98d66951, type: 3}
+  click:
+  - {fileID: 2800000, guid: b9aee2997aba740428f1128c618ecbe5, type: 3}
+  - {fileID: 2800000, guid: 576badc313a7f8a4eb3cf2e8f9ce17e8, type: 3}
+  - {fileID: 2800000, guid: 34dac74f91d0a1940bede05c820c750d, type: 3}
+  - {fileID: 2800000, guid: 0766f05ba5b84044ebe5e4382c7e50f9, type: 3}
+  - {fileID: 2800000, guid: 02117ac6934f370469590e66ff5dd18b, type: 3}
+  isClicking: 0
+--- !u!4 &2116348467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116348465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.24768032, y: -5.213607, z: 152.79237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
