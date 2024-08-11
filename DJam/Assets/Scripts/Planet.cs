@@ -14,9 +14,9 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] PlanetType type = PlanetType.BLUE;
     public static Dictionary<PlanetType, string> cureMap = new()
         {
-            { PlanetType.BLUE, "CureA" },
+            { PlanetType.BLUE, "CureC" },
             { PlanetType.GREEN, "CureB" },
-            { PlanetType.PINK, "CureC" }
+            { PlanetType.PINK, "CureA" }
         };
     [SerializeField] PlanetRuntimeSet PlanetList;
     [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
