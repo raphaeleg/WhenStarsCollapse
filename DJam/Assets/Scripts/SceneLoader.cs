@@ -8,19 +8,25 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Gameplay");
+        StartCoroutine(Running("DragAndDrop"));
     }
     public void LoadTutorialScene()
     {
-        SceneManager.LoadScene("Tutorial");
+        StartCoroutine(Running("Tutorial"));
     }
     public void LoadGameOverScene()
     {
-        SceneManager.LoadScene("WinScreen");
+        StartCoroutine(Running("WinScreen"));
     }
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(Running("MainMenu"));
+    }
+    IEnumerator Running(string sceneName)
+    {
+        GameObject.Find("Canvas - Transition").GetComponent<SceneTransition>().PlayTransition();
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadScene(sceneName);
     }
     public void Quit()
     {

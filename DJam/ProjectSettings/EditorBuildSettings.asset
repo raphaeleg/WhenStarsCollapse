@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 48b0f13a1a54c294faae2756f100a400
+  - enabled: 1
+    path: Assets/Scenes/Testing/DragAndDrop.unity
+    guid: e6cce165ffc38cb4db0f6e25aa4292c6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 83df1919945583d40a19f9b70bd3e688
   m_configObjects: {}
