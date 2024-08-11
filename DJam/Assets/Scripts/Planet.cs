@@ -49,7 +49,7 @@ public class Planet : MonoBehaviour, IDropHandler
                 UpdateWhiteDwarf();
                 break;
             case PlanetStates.BLACKHOLE:
-                UpdateBlackHole();
+                RotateBlackHole();
                 break;
             default:
                 UpdateState();
@@ -75,9 +75,8 @@ public class Planet : MonoBehaviour, IDropHandler
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
     }
 
-    private void UpdateBlackHole()
+    private void RotateBlackHole()
     {
-        // Rotate
         gameObject.transform.Rotate(0, 0, Time.deltaTime * RATE_OF_ROTATION);
     }
 
@@ -101,7 +100,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF) { return; }
+        if (IsNotCurable()) { return; }
 
         GameObject dropped = eventData.pointerDrag;
         if (IsRightCure(dropped.name))
@@ -118,7 +117,17 @@ public class Planet : MonoBehaviour, IDropHandler
         
     }
 
+    private bool IsNotCurable()
+    {
+        return state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF || isCuring;
+    }
     private bool IsRightCure(string item) { return item == cureMap[type]; }
+ 
+    public void Cure() { 
+        state--;
+        planetImage.sprite = planetImageList[(int)state];
+        isCuring = true; 
+    }
     public void BecomeBlackHole()
     {
         GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
@@ -126,11 +135,4 @@ public class Planet : MonoBehaviour, IDropHandler
         BlackholeAdded.Raise();
     }
     public void RemoveFromList() { PlanetList.Remove(gameObject); }
- 
-    public void Cure() { 
-        state--;
-        planetImage.sprite = planetImageList[(int)state];
-        isCuring = true; 
-    }
-
 }
