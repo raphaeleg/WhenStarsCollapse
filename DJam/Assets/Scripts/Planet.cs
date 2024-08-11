@@ -197,6 +197,10 @@ public class Planet : MonoBehaviour, IDropHandler
             {
                 StartCoroutine(GetSick());
             }
+            else if (state == PlanetStates.STAGE2)
+            {
+                StartCoroutine(GetBig());
+            }
             else
                 animator.SetInteger("Stage", (int)state);
         }
@@ -239,6 +243,23 @@ public class Planet : MonoBehaviour, IDropHandler
         animator.SetInteger("Stage", (int)state);
         transform.Find("Image").localScale = new Vector3(1, 1, 1);
         transform.Find("Image").localPosition = Vector3.zero;
+    }
+    IEnumerator GetBig()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").GetComponent<Image>().color = Color.black;
+        yield return new WaitForSeconds(0.2f);
+        transform.Find("Image").GetComponent<Image>().color = Color.white;
+        yield return new WaitForSeconds(0.3f);
+        transform.Find("Image").GetComponent<Image>().color = Color.black;
+        yield return new WaitForSeconds(0.2f);
+        transform.Find("Image").GetComponent<Image>().color = Color.white;
+        yield return new WaitForSeconds(0.3f);
+        transform.Find("Image").GetComponent<Image>().color = Color.black;
+        yield return new WaitForSeconds(0.3f);
+        transform.Find("Image").GetComponent<Animator>().enabled = true;
+        transform.Find("Image").GetComponent<Image>().color = Color.white;
+        animator.SetInteger("Stage", (int)state);
     }
 
     private void BecomeWhiteDwarf()
