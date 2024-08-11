@@ -20,6 +20,7 @@ public class Planet : MonoBehaviour, IDropHandler
         };
     [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
     [SerializeField] bool isCuring = false;
+    [SerializeField] GameObject CuringParticles;
 
     [SerializeField] private float localTimer = 10f;
 
@@ -70,6 +71,7 @@ public class Planet : MonoBehaviour, IDropHandler
         localTimer = stagesTimeThreshold;
         if (isCuring) {                 // curing gives another chance
             isCuring = false;
+            CuringParticles.SetActive(false);
             ChangeState(false);
             if (state == PlanetStates.WHITEDWARF) { BecomeWhiteDwarf(); }
             return;
@@ -149,6 +151,7 @@ public class Planet : MonoBehaviour, IDropHandler
     public void Cure() {
         ChangeState(false);
         isCuring = true; 
+        CuringParticles.SetActive(true);
     }
     private void ChangeState(bool isIncrease)
     {
