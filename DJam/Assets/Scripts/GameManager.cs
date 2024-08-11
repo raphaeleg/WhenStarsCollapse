@@ -6,14 +6,15 @@ public class GameManager : MonoBehaviour
 {
     // Planet
     [SerializeField] List<GameObject> PlanetPrefabs;
-    const float TIMER_PLANET = 10f;
+    const float TIMER_PLANET = 5f;
 
     // Canvas
     public Transform parentTarget;
     public RectTransform canvas;
     float maxWidth = 0;
     float maxHeight = 0;
-    private const float padding = 50;
+    private const float PADDING = 100;
+    private const float UI_WIDTH = 70;
 
     private float localTimer;
     [SerializeField] private SceneLoader sceneLoader;
@@ -54,8 +55,9 @@ public class GameManager : MonoBehaviour
 
     private Vector2 GenerateRandomPosition()
     {
-        var x = Random.Range(-maxWidth + padding, maxWidth - padding);
-        var y = Random.Range(-maxHeight + padding, maxHeight - padding);
+        // Available space: 
+        var x = Random.Range(-maxWidth + PADDING, maxWidth - PADDING);
+        var y = Random.Range(-maxHeight + UI_WIDTH, maxHeight - PADDING);
         return new Vector2(x, y);
     }
 
