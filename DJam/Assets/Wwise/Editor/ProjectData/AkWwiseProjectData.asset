@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 655ba2e355229048b071e154bc1b56bd
     GuidInternal: 
-    m_lastTime: -8584782423305188127
+    m_lastTime: -8584782409874463340
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -37,7 +37,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8584782423305257915
+    m_lastTime: -8584782409874142762
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -303,7 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e0413868a2b42042872db8fd44f72981
     GuidInternal: 
-    m_lastTime: -8584782330943638710
+    m_lastTime: -8584782322079708266
     List:
     - name: Chaotic
       guid: 29d5151d5edd7c468754b23da6924765
@@ -379,7 +379,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: d6192568da932d40ba4a235c32f4e5c9
     GuidInternal: 
-    m_lastTime: -8584782390463853141
+    m_lastTime: -8584782322078275809
     List:
     - name: General
       guid: 4934f23a4b33524ea121be0490f1e77f
@@ -407,7 +407,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: b3be215a0a751f4b88158eec7ccce157
     GuidInternal: 
-    m_lastTime: -8584782338551262716
+    m_lastTime: -8584782322080701746
     List:
     - name: Game_Start
       guid: 17d80c6c633a04428e7a00d90d6a026d
@@ -441,8 +441,8 @@ MonoBehaviour:
         guid: afb376170874904fb950199f01045f16
       Path: Events\Default Work Unit\SFX_Boost
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.7240831
+      minDuration: 1.7240831
     - name: SFX_Click_0
       guid: d798391481668b469aa1355852e10686
       id: 3042835402
@@ -458,8 +458,8 @@ MonoBehaviour:
         guid: d798391481668b469aa1355852e10686
       Path: Events\Default Work Unit\SFX_Click_0
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.36247167
+      minDuration: 0.36247167
     - name: SFX_Click_1
       guid: ca7455f77a35304796546a78c9dbe687
       id: 3042835403
@@ -475,8 +475,8 @@ MonoBehaviour:
         guid: ca7455f77a35304796546a78c9dbe687
       Path: Events\Default Work Unit\SFX_Click_1
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.5953287
+      minDuration: 1.5953287
     - name: SFX_Click_2
       guid: 8accd8407626e94c84cfcd334c7da73f
       id: 3042835400
@@ -492,8 +492,8 @@ MonoBehaviour:
         guid: 8accd8407626e94c84cfcd334c7da73f
       Path: Events\Default Work Unit\SFX_Click_2
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.9711565
+      minDuration: 1.9711565
     - name: SFX_Explosion
       guid: 5f083d8791ac9146b8ad9f38c0595bbc
       id: 992806370
@@ -509,8 +509,8 @@ MonoBehaviour:
         guid: 5f083d8791ac9146b8ad9f38c0595bbc
       Path: Events\Default Work Unit\SFX_Explosion
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 7.423322
+      minDuration: 2.4048038
     - name: SFX_Force_Field
       guid: 2c48cdd1b63e2546a7343c6d1ab9edd9
       id: 1811704235
@@ -526,8 +526,8 @@ MonoBehaviour:
         guid: 2c48cdd1b63e2546a7343c6d1ab9edd9
       Path: Events\Default Work Unit\SFX_Force_Field
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.5959184
+      minDuration: 1.5959184
     - name: SFX_Wind_Loop
       guid: 2d5769a09666004bb44f2135030a1690
       id: 764278592
@@ -557,7 +557,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 412647115bb2864894eaf7ebb6be67ca
     GuidInternal: 
-    m_lastTime: -8584782329988414632
+    m_lastTime: -8584782322080691666
     List:
     - name: Intensity
       guid: e360211ac8cf864f88058ceb1b8db2a8
@@ -612,7 +612,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory Soundseed Air Game Syncs
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-    m_lastTime: -8584782423306006092
+    m_lastTime: -8584782409912397369
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -766,7 +766,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: e87363b8b56a014f9ed28281e85c76df
     GuidInternal: 
-    m_lastTime: -8584782423307454432
+    m_lastTime: -8584782409874856244
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -780,7 +780,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 27fcc5740758654ca33a6d33af55ad8c
     GuidInternal: 
-    m_lastTime: -8584782423305537644
+    m_lastTime: -8584782409874794394
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -794,7 +794,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 2f370b800ee1754aa50a44d446d428e7
     GuidInternal: 
-    m_lastTime: -8584782423306775451
+    m_lastTime: -8584782409874497956
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0600000007000000
