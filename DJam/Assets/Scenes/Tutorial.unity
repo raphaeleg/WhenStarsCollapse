@@ -239,6 +239,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1879065758}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &30928308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +463,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eb2fb4a620a043c4480d6c8026531703, type: 3}
   - {fileID: 21300000, guid: 0d9138ebe53a1ae4aae3ee4b04d1c97b, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &32944528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1184,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 713112274}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &167255017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1354,18 @@ MonoBehaviour:
       - m_Target: {fileID: 172745074}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1650063366}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1550,6 +1587,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7498cdcdb45be65428e28cd3ae91387f, type: 3}
   - {fileID: 21300000, guid: 24780090829657c449ad1636627ea0ad, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &286384872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,6 +1804,18 @@ MonoBehaviour:
       - m_Target: {fileID: 323738963}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 713112274}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2292,6 +2342,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f4c33b361d20eab478b8c0ee96930f16, type: 3}
   - {fileID: 21300000, guid: 732a57a9db75c2448b093c54eb5b1bcb, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &398330931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2866,6 +2917,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 398330930}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &521743865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,6 +3087,18 @@ MonoBehaviour:
       - m_Target: {fileID: 549222439}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 286384871}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3636,6 +3711,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ff329cbe9a1a5b146872b8105e83659f, type: 3}
   - {fileID: 21300000, guid: 039a508faec5dfe45b07c5acc310c9db, type: 3}
   rate: 0.03
+  loop: 1
 --- !u!114 &713112275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3908,6 +3984,18 @@ MonoBehaviour:
       - m_Target: {fileID: 853044823}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1642535531}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5174,72 +5262,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1161635719
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1161635720}
-  - component: {fileID: 1161635721}
-  m_Layer: 0
-  m_Name: Tut (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1161635720
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161635719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1736398915}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!328 &1161635721
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161635719}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 131b6cca2c934534aa0b10abd890f6b1, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8600000, guid: 5714dfb736eefe34ebc9414fb5f84d12, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
-  m_AspectRatio: 5
-  m_DataSource: 0
-  m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
-  m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!1 &1282043004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5911,6 +5933,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c0f5ed10b175874598c86394a27c6fe, type: 3}
   - {fileID: 21300000, guid: ab5552a3a76e8644eb784ff5457a1f44, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &1345467634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6048,6 +6071,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1346873853}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 32944527}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6215,6 +6250,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1352057954}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 398330930}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6579,7 +6626,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431812082
 GameObject:
@@ -6688,6 +6735,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1431812084}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 286384871}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6855,6 +6914,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1448647402}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1345467633}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7166,6 +7237,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1650063366}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1484863880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7392,6 +7475,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1506829908}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1345467633}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7725,6 +7820,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1533512620}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1642535531}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8106,6 +8213,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82edb70ded0d1f3488dce8586438b12f, type: 3}
   - {fileID: 21300000, guid: fcf10c57a6249554f8e3cfbd615153ed, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &1642535532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8347,6 +8455,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ccf435a30ad6a1d42bbff41337a8332b, type: 3}
   - {fileID: 21300000, guid: eaed253c132afae41ba52593eb38b3b2, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &1650063367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8484,6 +8593,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1650830639}
         m_TargetAssemblyTypeName: SetActiveButton, Assembly-CSharp
         m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 32944527}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8912,38 +9033,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726308938}
   m_CullTransparentMesh: 1
---- !u!1 &1736398914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1736398915}
-  m_Layer: 0
-  m_Name: VideoManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1736398915
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736398914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 861.8651, y: -100.86555, z: -10.452828}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1161635720}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778407461
 GameObject:
   m_ObjectHideFlags: 0
@@ -9213,6 +9302,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1879065758}
+        m_TargetAssemblyTypeName: Animation, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1794606766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9275,7 +9376,6 @@ GameObject:
   - component: {fileID: 1806585956}
   - component: {fileID: 1806585958}
   - component: {fileID: 1806585960}
-  - component: {fileID: 1806585959}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -9311,20 +9411,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806585955}
   m_CullTransparentMesh: 1
---- !u!114 &1806585959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806585955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7956f46b24d0c04b8c4aa3a768980ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frames: []
-  rate: 0.05
 --- !u!114 &1806585960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9338,7 +9424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9516,6 +9602,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7452e69979e59dc4e84d9c03aeda2ed4, type: 3}
   - {fileID: 21300000, guid: 30f2b28c3f6bb884eb6041434dac7cee, type: 3}
   rate: 0.05
+  loop: 1
 --- !u!114 &1879065759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10614,35 +10701,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2033413568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7956f46b24d0c04b8c4aa3a768980ca, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames:
-  - {fileID: 21300000, guid: 4a96f59fad23c0843b6e7536f2645907, type: 3}
-  - {fileID: 21300000, guid: 25eaadc0f1cf52041b7e44413d5d6b8b, type: 3}
-  - {fileID: 21300000, guid: 1626435fc19ce0248b4a0ca91e592dc9, type: 3}
-  - {fileID: 21300000, guid: 7417544de389d494cb8327920dd2f327, type: 3}
-  - {fileID: 21300000, guid: 1e724f165b0640848bda2ca2604a1b05, type: 3}
-  - {fileID: 21300000, guid: 58be05a1f759d26459845c68594b4971, type: 3}
-  - {fileID: 21300000, guid: 4a4a8758d7b3ad2479f63883ffe1e74f, type: 3}
-  - {fileID: 21300000, guid: 248d5b9620666fb4c8aaa38d7ed2616b, type: 3}
-  - {fileID: 21300000, guid: 4a32c35e131092a4dbd84299083affaf, type: 3}
-  - {fileID: 21300000, guid: 0cf6567130e8ded438e4c8ce35c9b6e3, type: 3}
-  - {fileID: 21300000, guid: 29b03b56b57ab8a46844916d70ee4c4a, type: 3}
-  - {fileID: 21300000, guid: 5af2efa543f0410429536ec1f2c8f4c6, type: 3}
-  - {fileID: 21300000, guid: cdd3c318d0f68184ba79c861bee7f336, type: 3}
-  - {fileID: 21300000, guid: fe44b5df6ebb2444397242b9991ac3a5, type: 3}
-  - {fileID: 21300000, guid: 54c28834ebf73f0459fe95780bcb6de2, type: 3}
-  - {fileID: 21300000, guid: 37b214f6b0d61f44b9fd324eb6ed4cdd, type: 3}
-  - {fileID: 21300000, guid: 90462c5d89b16cc478df16156584a72b, type: 3}
-  - {fileID: 21300000, guid: 7eb97e50515896b40adcdbea9d8199be, type: 3}
-  - {fileID: 21300000, guid: ac5ec1cdc5332da4b85689d61c69031a, type: 3}
-  - {fileID: 21300000, guid: abbc3a5d6ef3a8f4c9c632ee7dec521c, type: 3}
-  - {fileID: 21300000, guid: 028be934262d1684f9c015216f52c030, type: 3}
-  - {fileID: 21300000, guid: 1e0c268360871cb4bbff9bc26dc312f9, type: 3}
-  - {fileID: 21300000, guid: d864164ca65a8ae4cb54599e1ec39ef6, type: 3}
-  - {fileID: 21300000, guid: 153a38b598a700d47be088a9453b7b48, type: 3}
-  rate: 0.05
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2071276398
 GameObject:
   m_ObjectHideFlags: 0
