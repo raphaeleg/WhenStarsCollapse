@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8204498}
   - component: {fileID: 8204500}
   - component: {fileID: 8204499}
+  - component: {fileID: 8204501}
   m_Layer: 5
   m_Name: RunePanel
   m_TagString: Untagged
@@ -202,6 +203,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8204497}
   m_CullTransparentMesh: 1
+--- !u!114 &8204501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
+  cameraSpeed: 2
+  distanceRange: 15
 --- !u!1 &152909816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,9 +2731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3876,6 +3892,7 @@ GameObject:
   - component: {fileID: 987345046}
   - component: {fileID: 987345045}
   - component: {fileID: 987345044}
+  - component: {fileID: 987345049}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -4001,7 +4018,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4023,6 +4040,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987345042}
   m_CullTransparentMesh: 1
+--- !u!114 &987345049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987345042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
+  cameraSpeed: 2
+  distanceRange: 15
 --- !u!1 &1022539401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,6 +5144,7 @@ GameObject:
   - component: {fileID: 1275548819}
   - component: {fileID: 1275548818}
   - component: {fileID: 1275548822}
+  - component: {fileID: 1275548823}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -5224,7 +5257,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5259,6 +5292,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1.1
+--- !u!114 &1275548823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275548816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
+  cameraSpeed: 2
+  distanceRange: 15
 --- !u!1 &1280577979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6608,6 +6656,7 @@ GameObject:
   - component: {fileID: 1700411129}
   - component: {fileID: 1700411128}
   - component: {fileID: 1700411127}
+  - component: {fileID: 1700411132}
   m_Layer: 5
   m_Name: Guide
   m_TagString: Untagged
@@ -6733,7 +6782,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6755,6 +6804,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700411125}
   m_CullTransparentMesh: 1
+--- !u!114 &1700411132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700411125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
+  cameraSpeed: 2
+  distanceRange: 15
 --- !u!1 &1843026883
 GameObject:
   m_ObjectHideFlags: 0
@@ -7490,6 +7554,7 @@ GameObject:
   - component: {fileID: 2021551655}
   - component: {fileID: 2021551654}
   - component: {fileID: 2021551653}
+  - component: {fileID: 2021551656}
   m_Layer: 5
   m_Name: Stats
   m_TagString: Untagged
@@ -7557,7 +7622,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7579,6 +7644,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021551651}
   m_CullTransparentMesh: 1
+--- !u!114 &2021551656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021551651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
+  cameraSpeed: 2
+  distanceRange: 15
 --- !u!1 &2072853396
 GameObject:
   m_ObjectHideFlags: 0
