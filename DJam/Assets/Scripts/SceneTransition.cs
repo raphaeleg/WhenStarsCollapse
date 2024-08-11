@@ -39,7 +39,7 @@ public class SceneTransition : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.5f);
 
         while (i <= 1f)
         {
