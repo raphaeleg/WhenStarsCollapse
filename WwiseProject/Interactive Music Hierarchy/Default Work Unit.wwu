@@ -910,6 +910,289 @@
 						</MusicSegment>
 					</ChildrenList>
 				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="Menu Music" ID="{FD4B383E-6DFE-43AF-AED1-BAAF9DC974C0}" ShortID="37986217">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="140"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{699AC32A-DAC7-463C-8DB0-A15B1E4AE7C7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{E989D10C-D46C-4AA5-BAE4-F36A307E9B97}" ShortID="1067079980">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{CFBA7D30-5410-4102-94AA-D2C758E9B71A}" ShortID="916420310">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="DJam_Menu" ID="{2AE9F0C9-D3E2-4B5D-A1EC-28C7A63F75E0}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{87FC6AC3-4BFD-4D58-BF29-861747F6FB19}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{C6A29797-5F40-461E-9E17-95A69CA296EC}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="DJam_Menu" ID="{2AE9F0C9-D3E2-4B5D-A1EC-28C7A63F75E0}" ShortID="81664123">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="26068.9795918367"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{699AC32A-DAC7-463C-8DB0-A15B1E4AE7C7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="DJam_Menu" ID="{C155DDFA-6A37-4B4B-8043-99900EAB9905}" ShortID="448066677">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{4CB6737D-D2F2-4B6C-95B9-46D48B4925C9}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Menu" ID="{B0619F77-B0AD-4098-BCE1-8EA3E4BEEA14}">
+											<Language>SFX</Language>
+											<AudioFile>DJam_Menu.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="519822131"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{7DB68567-827D-4687-BE29-0943111E25C0}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Menu" ID="{40275425-714F-47B3-8388-DE733C8FE8ED}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="26068.9795918367"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Menu" ID="{B0619F77-B0AD-4098-BCE1-8EA3E4BEEA14}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{E1EA31B0-29CC-4C63-B800-1F61DFA0CAD7}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{CE710AD1-F7C8-4097-A4EB-082946DCA8E6}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="26068.9795918367"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="Game Over Music" ID="{D0FBEB27-696D-4E5A-87BA-04B33C036B8F}" ShortID="209968456">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="30"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{699AC32A-DAC7-463C-8DB0-A15B1E4AE7C7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{1448871D-BD4C-4BAA-B409-FF85023B02B8}" ShortID="652251138">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{084125FE-B4BF-4E7A-9589-2997346D5503}" ShortID="451279961">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="DJam_Lost" ID="{3217B96A-8051-431E-8055-8B18B3934835}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{83BE0BB2-8601-4ADB-83E5-D4CB0380B9F6}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{261ACB24-91C6-4869-A28C-C8D9BE33F77A}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="DJam_Lost" ID="{3217B96A-8051-431E-8055-8B18B3934835}" ShortID="131056137">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="47722.376773488"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{699AC32A-DAC7-463C-8DB0-A15B1E4AE7C7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="DJam_Lost" ID="{BE220EA2-527B-491A-BEC3-4C18CD134BEE}" ShortID="523738042">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{0AB62D3C-48F2-4885-9DC3-1910A1A0560C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DJam_Lost" ID="{8ECD59CC-D0C5-48F8-9FC3-8E8EC82E8F03}">
+											<Language>SFX</Language>
+											<AudioFile>DJam_Lost.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="344329721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{91FEA642-239F-4A12-AFA9-B8FAF97C07B5}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="DJam_Lost" ID="{EB4F8133-7F99-4A2A-AABB-805769B9DA0A}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="41795.9410430839"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="3699.53260746437"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="DJam_Lost" ID="{8ECD59CC-D0C5-48F8-9FC3-8E8EC82E8F03}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{D40BC238-87BC-46C3-814E-8AE9E5863B8E}">
+												<PropertyList>
+													<Property Name="TimeMs" Type="Real64" Value="3699.53260746437"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{48389683-27CF-4A75-A42A-3DF71845CAE8}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="45493.2133963711"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>
