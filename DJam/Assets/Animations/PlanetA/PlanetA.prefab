@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3357225511286625156}
   - component: {fileID: 7873451436911731053}
   - component: {fileID: 5109349175434023176}
+  - component: {fileID: 7625760473554807992}
   m_Layer: 5
   m_Name: PlanetA
   m_TagString: Untagged
@@ -184,3 +185,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7625760473554807992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123824592646378944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 3
+  distanceRange: 300

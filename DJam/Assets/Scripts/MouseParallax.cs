@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class MouseParallax : MonoBehaviour
 {
+    private Vector2 origin;
     public float cameraSpeed;
     public float distanceRange = 1f;
+
+    private void Start()
+    {
+        origin = transform.localPosition;
+    }
 
     // Camera follow mouse position
     void FixedUpdate()
@@ -19,7 +25,8 @@ public class MouseParallax : MonoBehaviour
 
         // Camera go to mouse
         Vector2 targetPos = new Vector2(-xPos, -yPos);
-        transform.localPosition = Vector2.Lerp(transform.localPosition, targetPos*distanceRange, cameraSpeed * Time.deltaTime);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, targetPos * distanceRange, cameraSpeed * Time.deltaTime);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, origin + targetPos * distanceRange, cameraSpeed * Time.deltaTime);
 
     }
 }
