@@ -898,6 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
   cameraSpeed: 5
   distanceRange: 25
 --- !u!1 &359899617
@@ -2854,6 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
   cameraSpeed: 2
   distanceRange: 150
 --- !u!114 &1485736866
@@ -2930,7 +2932,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 202.2}
-  m_SizeDelta: {x: 1013.0351, y: 200}
+  m_SizeDelta: {x: 1500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601162736
 MonoBehaviour:
@@ -2952,7 +2954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WHEN STARS SUS
+  m_text: WHEN STARS COLLAPSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
   m_sharedMaterial: {fileID: -8655532619898052763, guid: afb608fc1559dda458ec31980c791fcf, type: 2}
@@ -3631,6 +3633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
   cameraSpeed: 5
   distanceRange: 25
 --- !u!1 &1856095140
@@ -4272,6 +4275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3445c11a88247b847893456223b46561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  origin: {x: 0, y: 0}
   cameraSpeed: 3
   distanceRange: 100
 --- !u!114 &2094061935

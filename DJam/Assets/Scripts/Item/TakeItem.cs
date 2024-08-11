@@ -59,7 +59,7 @@ public class TakeItem : MonoBehaviour
     private void Update()
     {
         destroyTime += Time.deltaTime;
-        gameObject.GetComponent<RectTransform>().localPosition += new Vector3(xMove * Time.deltaTime * 1000, yMove * Time.deltaTime * 1000, 0);
+        gameObject.GetComponent<MouseParallax>().origin += new Vector2(xMove * Time.deltaTime * 1000, yMove * Time.deltaTime * 1000);
         if (destroyTime > 5f)
             Destroy(gameObject);
     }
