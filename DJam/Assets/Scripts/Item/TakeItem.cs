@@ -17,6 +17,10 @@ public class TakeItem : MonoBehaviour
     {
         OnButtonPressed();
     }
+    public void OnPointerUp()
+    {
+        OnButtonPressed();
+    }
 
     public void OnButtonPressed()
     {
