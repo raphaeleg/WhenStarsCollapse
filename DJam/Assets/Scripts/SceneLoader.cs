@@ -10,7 +10,11 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
-    public void LoadWinScene()
+    public void LoadTutorialScene()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+    public void LoadGameOverScene()
     {
         SceneManager.LoadScene("WinScreen");
     }

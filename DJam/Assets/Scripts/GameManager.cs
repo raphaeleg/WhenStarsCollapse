@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         int currentBlackHoles = GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles;
         if (currentBlackHoles >= 6)
         {
-            sceneLoader.LoadWinScene();
+            sceneLoader.LoadGameOverScene();
         }
     }
 }
