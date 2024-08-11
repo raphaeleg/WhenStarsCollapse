@@ -32,6 +32,7 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] private Animator animator;
     private const int VISIBILITY_DELAY = 4;
     private bool passInitialSpawnCheck = false;
+    [SerializeField] private GameObject sickParticles;
 
     [SerializeField] HighScore highScore;
 
@@ -103,7 +104,14 @@ public class Planet : MonoBehaviour, IDropHandler
             return;
         }
         ChangeState(true);
+        if (state == PlanetStates.STAGE3) { SickParticles(true); }
+        else { SickParticles(false); }
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
+    }
+
+    private void SickParticles(bool active)
+    {
+        sickParticles.SetActive(active);
     }
 
     private void RotateBlackHole()
