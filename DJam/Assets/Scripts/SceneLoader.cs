@@ -27,6 +27,8 @@ public class SceneLoader : MonoBehaviour
         GameObject.Find("Canvas - Transition").GetComponent<SceneTransition>().PlayTransition();
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(sceneName);
+        if (sceneName == "DragAndDrop" || sceneName == "MainMenu")
+            BackgroundMusic.instance.AudioSettingsSetup();
     }
     public void Quit()
     {

@@ -47,13 +47,19 @@ public class BackgroundMusic : MonoBehaviour
     public void SoundEffectsChanged()
     {
         if (!sfxMute)
+        {
+            soundEffects = sfxSlider.value;
             AkSoundEngine.SetRTPCValue("SFX_Volume", 100 * sfxSlider.value);
+        }
     }
 
     public void MusicVolumeChanged()
     {
         if (!bgmMute)
+        {
+            musicVolume = volumeSlider.value;
             AkSoundEngine.SetRTPCValue("Music_Volume", 100 * volumeSlider.value);
+        }
     }
 
     public void SoundEffectsMuted()
@@ -86,4 +92,19 @@ public class BackgroundMusic : MonoBehaviour
         }
     }
 
+    public void AudioSettingsSetup()
+    {
+        if (sfxMute)
+            sfxImage.sprite = sfxMuteImage;
+        else
+            sfxImage.sprite = sfxNotMuteImage;
+
+        if (bgmMute)
+            bgmImage.sprite = bgmMuteImage;
+        else
+            bgmImage.sprite = bgmNotMuteImage;
+
+        sfxSlider.value = soundEffects;
+        volumeSlider.value = musicVolume;
+    }
 }
