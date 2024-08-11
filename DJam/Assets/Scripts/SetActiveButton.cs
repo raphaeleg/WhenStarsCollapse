@@ -12,6 +12,8 @@ public class SetActiveButton : MonoBehaviour
     // SetActive changes when button is clicked
     public void ButtonPressed()
     {
+        BackgroundMusic.instance.PlaySFX("SFX_Click_2");
+
         if (sfx != null)
         {
             sfx.Play();

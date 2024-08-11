@@ -35,6 +35,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void Quit()
     {
+        BackgroundMusic.instance.PlaySFX("SFX_Click_2");
         Application.Quit();
     }
 }
