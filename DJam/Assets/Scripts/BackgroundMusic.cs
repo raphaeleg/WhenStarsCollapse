@@ -10,10 +10,19 @@ public class BackgroundMusic : MonoBehaviour
     public float soundEffects = 0.5f;
     public float musicVolume = 0.5f;
 
+    public bool sfxMute = false;
+    public bool bgmMute = false;
+
+    public Image sfxImage;
+    public Image bgmImage;
+    public Sprite sfxNotMuteImage;
+    public Sprite sfxMuteImage;
+    public Sprite bgmNotMuteImage;
+    public Sprite bgmMuteImage;
+
     // Sliders
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider volumeSlider;
-
 
     [SerializeField] private AK.Wwise.Event musicEvent;
 
@@ -37,12 +46,44 @@ public class BackgroundMusic : MonoBehaviour
 
     public void SoundEffectsChanged()
     {
-        AkSoundEngine.SetRTPCValue("SFX_Volume", 100 * sfxSlider.value);
+        if (!sfxMute)
+            AkSoundEngine.SetRTPCValue("SFX_Volume", 100 * sfxSlider.value);
     }
 
     public void MusicVolumeChanged()
     {
-        AkSoundEngine.SetRTPCValue("Music_Volume", 100 * volumeSlider.value);
+        if (!bgmMute)
+            AkSoundEngine.SetRTPCValue("Music_Volume", 100 * volumeSlider.value);
+    }
+
+    public void SoundEffectsMuted()
+    {
+        sfxMute = !sfxMute;
+        if (sfxMute)
+        {
+            sfxImage.sprite = sfxMuteImage;
+            AkSoundEngine.SetRTPCValue("SFX_Volume", 0);
+        }
+        else
+        {
+            sfxImage.sprite = sfxNotMuteImage;
+            AkSoundEngine.SetRTPCValue("SFX_Volume", 100 * sfxSlider.value);
+        }
+    }
+
+    public void MusicVolumeMuted()
+    {
+        bgmMute = !bgmMute;
+        if (bgmMute)
+        {
+            bgmImage.sprite = bgmMuteImage;
+            AkSoundEngine.SetRTPCValue("Music_Volume", 0);
+        }
+        else
+        {
+            bgmImage.sprite = bgmNotMuteImage;
+            AkSoundEngine.SetRTPCValue("Music_Volume", 100 * volumeSlider.value);
+        }
     }
 
 }
