@@ -302,9 +302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
-  - {fileID: -523636105, guid: c13230cfcec860241ade08d5e291172d, type: 3}
-  - {fileID: -292772443, guid: c13230cfcec860241ade08d5e291172d, type: 3}
-  - {fileID: -631977524, guid: c13230cfcec860241ade08d5e291172d, type: 3}
+  - {fileID: 20313432, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
+  - {fileID: -597389296, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
+  - {fileID: -829609296, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
+  - {fileID: -1697863072, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
+  - {fileID: 1559607367, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
+  - {fileID: -1090717471, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
 --- !u!114 &4205241498191681485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -523636105, guid: c13230cfcec860241ade08d5e291172d, type: 3}
+  m_Sprite: {fileID: 20313432, guid: f9d12d84abab44348836fc05e3a947db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

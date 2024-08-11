@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
-  - {fileID: -523636105, guid: c13230cfcec860241ade08d5e291172d, type: 3}
-  - {fileID: -292772443, guid: c13230cfcec860241ade08d5e291172d, type: 3}
-  - {fileID: -631977524, guid: c13230cfcec860241ade08d5e291172d, type: 3}
+  - {fileID: 1544810142, guid: d51ea77932a4d294cb830ea995906c05, type: 3}
+  - {fileID: 972233597, guid: d51ea77932a4d294cb830ea995906c05, type: 3}
+  - {fileID: 1044214412, guid: d51ea77932a4d294cb830ea995906c05, type: 3}
 --- !u!114 &325190199192180080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -523636105, guid: c13230cfcec860241ade08d5e291172d, type: 3}
+  m_Sprite: {fileID: 1544810142, guid: d51ea77932a4d294cb830ea995906c05, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
