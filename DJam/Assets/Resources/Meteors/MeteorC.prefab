@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   origin: {x: 0, y: 0}
-  cameraSpeed: 3
-  distanceRange: 300
+  cameraSpeed: 2
+  distanceRange: 150
 --- !u!1 &6741541941928713304
 GameObject:
   m_ObjectHideFlags: 0

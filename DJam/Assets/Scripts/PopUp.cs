@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public float power = 1.1f;
     private Vector3 origin;
 
     private void Start()
@@ -14,7 +15,7 @@ public class PopUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.localScale = origin * 1.2f;
+        transform.localScale = origin * power;
     }
 
     public void OnPointerExit(PointerEventData eventData)
