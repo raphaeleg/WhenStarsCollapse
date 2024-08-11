@@ -7,13 +7,14 @@
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -35,13 +36,14 @@
 				<Sound Name="Force Field" ID="{E51DD288-F8BB-4E96-88C7-AAC4AC4AB912}" ShortID="202403260">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -60,6 +62,7 @@
 				<Sound Name="Mouse Click" ID="{98C77F24-6AF2-4155-9149-B6C6C305F021}" ShortID="825361885">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>6</Value>
@@ -71,7 +74,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -90,13 +93,14 @@
 				<Sound Name="Pixel Game Element" ID="{49AE8FF1-6A9C-40EB-B03B-DF708353C153}" ShortID="613433471">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -115,6 +119,7 @@
 				<Sound Name="Pixel Game Stop" ID="{96D833F0-2967-439E-81C8-83EF0320B813}" ShortID="70137123">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-8</Value>
@@ -126,7 +131,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -150,6 +155,7 @@
 				<Sound Name="Pixel Restore Object" ID="{1FE917DF-2BF9-41C5-9B39-B5B0C9372F85}" ShortID="643012139">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-8</Value>
@@ -161,7 +167,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -180,13 +186,14 @@
 				<Sound Name="Pixels Fail 1" ID="{9B3A0D38-AF48-4422-A77C-0A64D84E561C}" ShortID="260668608">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -205,13 +212,14 @@
 				<Sound Name="Pixels Fail 2" ID="{1A2140E8-616B-4E72-8DA8-BDD03366F1D0}" ShortID="402136286">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -230,13 +238,14 @@
 				<Sound Name="Retro Pixel Short Fail" ID="{844146F1-2772-4B8F-A4B5-7DBF45E05CC9}" ShortID="659140020">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -255,13 +264,14 @@
 				<Sound Name="Single Pixel Beep Tone" ID="{0D21A149-455C-4882-8200-B89058C3C80C}" ShortID="98083960">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -281,6 +291,7 @@
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
 								<Value>-1200</Value>
@@ -297,7 +308,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -316,6 +327,7 @@
 				<Sound Name="Vintage Pixel Game Micro Boost" ID="{B64532DF-877B-45C4-9EE4-DE6254645884}" ShortID="137466580">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-6</Value>
@@ -327,7 +339,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -351,6 +363,7 @@
 				<RandomSequenceContainer Name="Explosion" ID="{747B9034-960B-4498-9BE6-2A09628E4CB3}" ShortID="631491355">
 					<PropertyList>
 						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -386,20 +399,21 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+							<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Explosion" ID="{917E1875-42F6-4CEF-B170-3F222B87790E}" ShortID="643200125">
 							<PropertyList>
 								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+									<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -421,6 +435,7 @@
 						<Sound Name="Short Explosion" ID="{71A42718-AB53-45AB-9F36-053F14BA855B}" ShortID="724228402">
 							<PropertyList>
 								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-0.5</Value>
@@ -432,7 +447,7 @@
 									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+									<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -455,6 +470,7 @@
 						<Sound Name="Single Explosion" ID="{9F34B121-CA7A-4DBF-BFC5-562070F3A8A5}" ShortID="394464081">
 							<PropertyList>
 								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-2</Value>
@@ -466,7 +482,7 @@
 									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+									<ObjectRef Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>

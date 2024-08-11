@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{DEE455B6-4C6A-D3FD-1598-E377440FE062}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{1CC53DC9-7409-9668-4571-85902DC0F166}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
@@ -17,13 +17,29 @@
 					<ShortName>DJamTracks\DJam_Background_Peaceful_PulseBass.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_PulseBass_878E18E0.wem</CachePath>
 				</File>
+				<File Id="61719077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Single Explosion.wav</ShortName>
+					<CachePath>SFX/Single Explosion_F983A897.wem</CachePath>
+				</File>
 				<File Id="70237918" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Peaceful_PianoChords.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Peaceful_PianoChords_878E18E0.wem</CachePath>
 				</File>
+				<File Id="125807789" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Short Explosion.wav</ShortName>
+					<CachePath>SFX/Short Explosion_210EE5CA.wem</CachePath>
+				</File>
+				<File Id="144244272" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pixel Game Stop.wav</ShortName>
+					<CachePath>SFX/Pixel Game Stop_88EEFE43.wem</CachePath>
+				</File>
 				<File Id="172608153" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Shared_ElectricPiano.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Shared_ElectricPiano_878E18E0.wem</CachePath>
+				</File>
+				<File Id="293925616" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Vintage Pixel Game Micro Boost.wav</ShortName>
+					<CachePath>SFX/Vintage Pixel Game Micro Boost_324A8A54.wem</CachePath>
 				</File>
 				<File Id="352461213" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Peaceful_SynthWoodwind.wav</ShortName>
@@ -32,6 +48,10 @@
 				<File Id="403790523" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Chaotic_LeadSequence.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_LeadSequence_878E18E0.wem</CachePath>
+				</File>
+				<File Id="432053944" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Explosion.wav</ShortName>
+					<CachePath>SFX/Explosion_9BAAD657.wem</CachePath>
 				</File>
 				<File Id="544728659" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Chaotic_RoughSynth.wav</ShortName>
@@ -53,9 +73,21 @@
 					<ShortName>DJamTracks\DJam_Background_Chaotic_Noise.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_Noise_878E18E0.wem</CachePath>
 				</File>
+				<File Id="670437946" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swirling Wind Loop.wav</ShortName>
+					<CachePath>SFX/Swirling Wind Loop_878E18E0.wem</CachePath>
+				</File>
 				<File Id="685727578" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Chaotic_SynthBass.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_SynthBass_878E18E0.wem</CachePath>
+				</File>
+				<File Id="765626669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Force Field.wav</ShortName>
+					<CachePath>SFX/Force Field_D1B7D816.wem</CachePath>
+				</File>
+				<File Id="977047859" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pixel Restore Object.wav</ShortName>
+					<CachePath>SFX/Pixel Restore Object_D1B7D816.wem</CachePath>
 				</File>
 				<File Id="987715602" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Peaceful_Plucks.wav</ShortName>
@@ -64,6 +96,10 @@
 				<File Id="994183132" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJamTracks\DJam_Background_Chaotic_HarshLead.wav</ShortName>
 					<CachePath>SFX/DJamTracks/DJam_Background_Chaotic_HarshLead_878E18E0.wem</CachePath>
+				</File>
+				<File Id="1054444170" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mouse Click.wav</ShortName>
+					<CachePath>SFX/Mouse Click_D1B7D816.wem</CachePath>
 				</File>
 				<File Id="1066025924" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DJam_Background_Chaotic_RhythmeticPad.wav</ShortName>
@@ -94,9 +130,48 @@
 						<MediaRef Id="1070743898"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2387590214" Name="SFX_Boost" DurationType="OneShot" DurationMin="1.7240831" DurationMax="1.7240831">
+					<MediaRefs>
+						<MediaRef Id="293925616"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3042835402" Name="SFX_Click_0" DurationType="OneShot" DurationMin="0.36247167" DurationMax="0.36247167">
+					<MediaRefs>
+						<MediaRef Id="1054444170"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3042835403" Name="SFX_Click_1" DurationType="OneShot" DurationMin="1.5953287" DurationMax="1.5953287">
+					<MediaRefs>
+						<MediaRef Id="144244272"/>
+						<MediaRef Id="1054444170"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3042835400" Name="SFX_Click_2" DurationType="OneShot" DurationMin="1.9711565" DurationMax="1.9711565">
+					<MediaRefs>
+						<MediaRef Id="977047859"/>
+						<MediaRef Id="1054444170"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="992806370" Name="SFX_Explosion" DurationType="OneShot" DurationMin="2.4048038" DurationMax="7.423322">
+					<MediaRefs>
+						<MediaRef Id="61719077"/>
+						<MediaRef Id="125807789"/>
+						<MediaRef Id="432053944"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1811704235" Name="SFX_Force_Field" DurationType="OneShot" DurationMin="1.5959184" DurationMax="1.5959184">
+					<MediaRefs>
+						<MediaRef Id="765626669"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="764278592" Name="SFX_Wind_Loop" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="670437946"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{512AC9EF-9F96-C623-3E78-FD2487922988}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7F51451E-2BA6-0421-25EB-409287DD5825}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -116,6 +191,7 @@
 				<GameParameter Id="1006694123" Name="Music_Volume"/>
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="1564184899" Name="SFX_Volume"/>
 				<GameParameter Id="2470328564" Name="Intensity"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
@@ -255,5 +331,5 @@
 			</AcousticTextures>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{34A516B4-6CE6-18EC-4617-9CAF5B420FEB}</FileHash>
+	<FileHash>{1C51C188-C9AA-B047-CB63-96CB11485C33}</FileHash>
 </SoundBanksInfo>

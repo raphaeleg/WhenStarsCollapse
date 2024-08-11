@@ -14,12 +14,20 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAME_START = 733168346U;
+        static const AkUniqueID SFX_BOOST = 2387590214U;
+        static const AkUniqueID SFX_CLICK_0 = 3042835402U;
+        static const AkUniqueID SFX_CLICK_1 = 3042835403U;
+        static const AkUniqueID SFX_CLICK_2 = 3042835400U;
+        static const AkUniqueID SFX_EXPLOSION = 992806370U;
+        static const AkUniqueID SFX_FORCE_FIELD = 1811704235U;
+        static const AkUniqueID SFX_WIND_LOOP = 764278592U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID INTENSITY = 2470328564U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
+        static const AkUniqueID SFX_VOLUME = 1564184899U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;

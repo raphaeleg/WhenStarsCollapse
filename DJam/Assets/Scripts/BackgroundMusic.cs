@@ -32,14 +32,12 @@ public class BackgroundMusic : MonoBehaviour
 
     private void Start()
     {
-        //AkSoundEngine.PostEvent("Game_Start", gameObject);
         musicEvent.Post(gameObject);
-        // AkSoundEngine.SetRTPCValue("Intensity", 100);
     }
 
     public void SoundEffectsChanged()
     {
-        soundEffects = sfxSlider.value;
+        AkSoundEngine.SetRTPCValue("SFX_Volume", 100 * sfxSlider.value);
     }
 
     public void MusicVolumeChanged()

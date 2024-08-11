@@ -9,11 +9,8 @@
 						<Property Name="Min" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="Music_Volume" ID="{16520DD9-7061-44E9-B134-076167AE074D}">
-					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="100"/>
-					</PropertyList>
-				</GameParameter>
+				<GameParameter Name="Music_Volume" ID="{16520DD9-7061-44E9-B134-076167AE074D}"/>
+				<GameParameter Name="SFX_Volume" ID="{48A9CBAD-8D72-4770-B358-7BCA24440D5C}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
