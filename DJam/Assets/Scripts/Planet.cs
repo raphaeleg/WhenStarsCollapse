@@ -145,6 +145,8 @@ public class Planet : MonoBehaviour, IDropHandler
         blackHoleEat.transform.localPosition = Vector3.zero;
 
         GameObject collider = other.gameObject;
+        StartCoroutine(MoveCollider(collider));
+        
 
         Planet p = collider.GetComponent<Planet>();
         if (p != null)
@@ -153,6 +155,17 @@ public class Planet : MonoBehaviour, IDropHandler
             p.ShrinkUntilDestroy();
         }
         else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
+    }
+
+    IEnumerator MoveCollider(GameObject collider)
+    {
+        float time = 0.5f;
+        while (time > 0 && collider != null)
+        {
+            var directionToCollider = collider.transform.position - transform.position;
+            collider.transform.localPosition -= 5f * directionToCollider;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
     #endregion
 
