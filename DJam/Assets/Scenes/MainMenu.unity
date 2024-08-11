@@ -3566,6 +3566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f850bf9b487e3804fb84964e94d9de7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7dc879097f240ec4a91b4dbe268e580c, type: 2}
 --- !u!1 &1240696960
 GameObject:
   m_ObjectHideFlags: 0
@@ -6195,6 +6199,10 @@ PrefabInstance:
       propertyPath: sfxNotMuteImage
       value: 
       objectReference: {fileID: 21300000, guid: 6730a0bb903c68d428519fdc54c4f427, type: 3}
+    - target: {fileID: 945422642872017013, guid: 0effa381ce23cf94fa2fe0a2c16ecbf1, type: 3}
+      propertyPath: musicEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: a97c52c391735714db17b4b5da22fb14, type: 2}
     - target: {fileID: 4560883415153604184, guid: 0effa381ce23cf94fa2fe0a2c16ecbf1, type: 3}
       propertyPath: m_RootOrder
       value: 5

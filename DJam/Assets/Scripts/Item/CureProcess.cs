@@ -13,9 +13,9 @@ public class CureProcess : MonoBehaviour
 
     IEnumerator Running()
     {
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < 200; i++)
         {
-            transform.Find("ProcessBar").localScale = new Vector3((i+1)/500f, 1f, 1f);
+            transform.Find("ProcessBar").localScale = new Vector3((i+1)/200f, 1f, 1f);
             yield return new WaitForSeconds(0.01f);
         }
         gameObject.GetComponent<CureStat>().totalCures++;

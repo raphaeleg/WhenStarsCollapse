@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AK.Wwise;
 
 public class SceneLoader : MonoBehaviour
 {
+    public AK.Wwise.Event buttonSFX;
     public void LoadGameScene()
     {
         StartCoroutine(Running("DragAndDrop"));
@@ -24,6 +26,7 @@ public class SceneLoader : MonoBehaviour
     }
     IEnumerator Running(string sceneName)
     {
+        buttonSFX.Post(gameObject);
         GameObject.Find("Canvas - Transition").GetComponent<SceneTransition>().PlayTransition();
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(sceneName);
