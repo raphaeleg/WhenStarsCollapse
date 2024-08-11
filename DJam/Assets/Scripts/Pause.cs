@@ -26,14 +26,14 @@ public class Pause : MonoBehaviour
                 other2.ButtonPressed();
             Time.timeScale = 0;
             pauseUI.SetActive(true);
-            BackgroundMusic.instance.PlaySFX("SFX_Click_2");
+            //BackgroundMusic.instance.PlaySFX("SFX_Click_2");
             gameObject.GetComponent<Image>().sprite = imagePause;
         }
         else
         {
             Time.timeScale = 1;
             pauseUI.SetActive(false);
-            BackgroundMusic.instance.PlaySFX("SFX_Click_1");
+            //BackgroundMusic.instance.PlaySFX("SFX_Click_1");
             gameObject.GetComponent<Image>().sprite = imageNotPause;
         }
     }

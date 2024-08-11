@@ -72,7 +72,7 @@ public class TypeWriter : MonoBehaviour
             {
                 _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
             }
-            BackgroundMusic.instance.PlaySFX("SFX_Click_1");
+            //BackgroundMusic.instance.PlaySFX("SFX_Click_1");
             _tmpProText.text += c;
             _tmpProText.text += leadingChar;
             yield return new WaitForSeconds(timeBtwChars);

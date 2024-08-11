@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using AK.Wwise;
-using System.Xml.Linq;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -26,16 +24,16 @@ public class SceneLoader : MonoBehaviour
     }
     IEnumerator Running(string sceneName)
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Click_2");
+        //BackgroundMusic.instance.PlaySFX("SFX_Click_2");
         GameObject.Find("Canvas - Transition").GetComponent<SceneTransition>().PlayTransition();
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(sceneName);
-        if (sceneName == "DragAndDrop" || sceneName == "MainMenu")
-            BackgroundMusic.instance.AudioSettingsSetup();
+        //if (sceneName == "DragAndDrop" || sceneName == "MainMenu")
+            //BackgroundMusic.instance.AudioSettingsSetup();
     }
     public void Quit()
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Click_2");
+        //BackgroundMusic.instance.PlaySFX("SFX_Click_2");
         Application.Quit();
     }
 }

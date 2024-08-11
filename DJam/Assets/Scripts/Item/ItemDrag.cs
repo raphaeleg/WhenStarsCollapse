@@ -20,7 +20,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Click_0");
+        //BackgroundMusic.instance.PlaySFX("SFX_Click_0");
         // sfx.Play();
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
@@ -34,7 +34,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Click_0");
+        //BackgroundMusic.instance.PlaySFX("SFX_Click_0");
         // sfx.Play();
         transform.SetParent(parent);
         transform.SetSiblingIndex(0);

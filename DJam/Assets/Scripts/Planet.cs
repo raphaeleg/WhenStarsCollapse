@@ -124,7 +124,7 @@ public class Planet : MonoBehaviour, IDropHandler
     public void BecomeBlackHole()
     {
         StartCoroutine(ExplosionSFX());
-        BackgroundMusic.instance.PlaySFX("SFX_Wind_Loop");
+        //BackgroundMusic.instance.PlaySFX("SFX_Wind_Loop");
         highScore.blackHoles++;
         animator.SetTrigger("Explode");
         BlackholeAdded.Raise();
@@ -202,7 +202,7 @@ public class Planet : MonoBehaviour, IDropHandler
         GameObject dropped = eventData.pointerDrag;
         if (IsRightCure(dropped.name))
         {
-            BackgroundMusic.instance.PlaySFX("SFX_Boost");
+            //BackgroundMusic.instance.PlaySFX("SFX_Boost");
             if (dropped.name == "CureA")
             { GameObject.Find("A_List").GetComponent<CureStat>().totalCures--; }
             if (dropped.name == "CureB")
@@ -261,8 +261,8 @@ public class Planet : MonoBehaviour, IDropHandler
         transform.Find("Image").localPosition = new Vector3(3.1f, -2.9f, 0);
         for (int i = 0; i < spawnAnim.Length; i++)
         {
-            if (i == 10)
-                BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
+            //if (i == 10)
+               // BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
             transform.Find("Image").GetComponent<Image>().sprite = spawnAnim[i];
             yield return new WaitForSeconds(0.05f);
         }
@@ -272,7 +272,7 @@ public class Planet : MonoBehaviour, IDropHandler
     }
     IEnumerator GetSick()
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
+        //BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
         transform.Find("Image").GetComponent<Animator>().enabled = false;
         transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
         transform.Find("Image").localPosition = new Vector3(3.1f, -3.1f, 0);
@@ -304,7 +304,7 @@ public class Planet : MonoBehaviour, IDropHandler
     }
     IEnumerator GetBig()
     {
-        BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
+        //BackgroundMusic.instance.PlaySFX("SFX_Force_Field");
         transform.Find("Image").GetComponent<Animator>().enabled = false;
         transform.Find("Image").GetComponent<Image>().color = Color.black;
         yield return new WaitForSeconds(0.2f);
@@ -324,7 +324,7 @@ public class Planet : MonoBehaviour, IDropHandler
     IEnumerator ExplosionSFX()
     {
         yield return new WaitForSeconds(0.25f);
-        BackgroundMusic.instance.PlaySFX("SFX_Explosion");
+        //BackgroundMusic.instance.PlaySFX("SFX_Explosion");
     }
     #endregion
 }

@@ -25,7 +25,7 @@ public class TakeItem : MonoBehaviour
     public void OnButtonPressed()
     {
         // sfx.Play();
-        BackgroundMusic.instance.PlaySFX("SFX_Click_1");
+        //BackgroundMusic.instance.PlaySFX("SFX_Click_1");
         if (gameObject.name == "MeteorA")
             GameObject.Find("A_List").GetComponent<CureStat>().totalMeteors++;
         if (gameObject.name == "MeteorB")
