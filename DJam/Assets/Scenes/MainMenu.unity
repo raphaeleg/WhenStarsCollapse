@@ -2181,7 +2181,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7577961643576469764, guid: 68a491e2c8e70ee4390d453ec971390c, type: 3}
+      - m_Target: {fileID: 1204515239}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadTutorialScene
         m_Mode: 1
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7577961643576469764, guid: 68a491e2c8e70ee4390d453ec971390c, type: 3}
+      - m_Target: {fileID: 1204515239}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
