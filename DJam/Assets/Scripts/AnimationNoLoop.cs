@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationNoLoop : MonoBehaviour
 {
     public Sprite[] frames;
+    public bool destroySelf = false;
 
     void Start()
     {
@@ -17,6 +18,10 @@ public class AnimationNoLoop : MonoBehaviour
         {
             gameObject.GetComponent<UnityEngine.UI.Image>().sprite = frames[i];
             yield return new WaitForSeconds(0.1f);
+        }
+        if (destroySelf)
+        {
+            Destroy(gameObject);
         }
     }
 }

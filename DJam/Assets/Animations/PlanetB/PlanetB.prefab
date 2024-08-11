@@ -14718,6 +14718,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 26431afa28d8beb409acc4ece8c67682, type: 3}
   - {fileID: 21300000, guid: 7c30ea3ce3223324ca665fef390e0462, type: 3}
   - {fileID: 21300000, guid: 908436ae7af1de64ca64064b19d53e6d, type: 3}
+  BlackholeOverlay: {fileID: 1465120860040976368, guid: d7fbfa105dcc27b408c85869f4caf92d, type: 3}
 --- !u!58 &3357225511286625156
 CircleCollider2D:
   m_ObjectHideFlags: 0

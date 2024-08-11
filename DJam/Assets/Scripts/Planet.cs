@@ -40,6 +40,7 @@ public class Planet : MonoBehaviour, IDropHandler
     public Sprite[] getSickAnim;
     public Sprite[] whiteDwardDestroyAnim;
     public Sprite[] curedAnim;
+    [SerializeField] GameObject BlackholeOverlay;
 
     private void Start()
     {
@@ -141,6 +142,13 @@ public class Planet : MonoBehaviour, IDropHandler
     private void OnTriggerStay2D(Collider2D other)
     {
         if (state != PlanetStates.BLACKHOLE) { return; }
+
+        var blackHoleEat = Instantiate(BlackholeOverlay);
+        blackHoleEat.GetComponent<AnimationNoLoop>().destroySelf = true;
+        blackHoleEat.transform.SetParent(transform);
+        blackHoleEat.transform.localScale = new Vector3(2,2,2);
+        blackHoleEat.transform.localPosition = Vector3.zero;
+
         GameObject collider = other.gameObject;
 
         Planet p = collider.GetComponent<Planet>();
@@ -154,7 +162,6 @@ public class Planet : MonoBehaviour, IDropHandler
     public void ShrinkUntilDestroy()
     {
         StartCoroutine(Shrink());
-
     }
 
     IEnumerator Shrink()
