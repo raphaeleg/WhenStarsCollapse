@@ -27,14 +27,15 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] GameEventSO BlackholeAdded;
 
     private Image planetImage;
-    [SerializeField] private List<Sprite> planetImageList;
+    public List<Sprite> planetImageList;
 
 
     private void Start()
     {
         planetImage = GetComponent<Image>();
-        GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
         PlanetList.Add(gameObject);
+
+        GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
     }
 
     private void Update()
@@ -122,4 +123,5 @@ public class Planet : MonoBehaviour, IDropHandler
         planetImage.sprite = planetImageList[(int)state];
         isCuring = true; 
     }
+
 }

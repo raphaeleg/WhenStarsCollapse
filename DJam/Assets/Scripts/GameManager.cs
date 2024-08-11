@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Planet
-    [SerializeField] GameObject PlanetPrefab;
+    [SerializeField] List<GameObject> PlanetPrefabs;
     [SerializeField] PlanetRuntimeSet PlanetList;
     const float TIMER_PLANET = 10f;
 
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float localTimer;
     [SerializeField] private SceneLoader sceneLoader;
+
 
     private void Start()
     {
@@ -41,7 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void GenerateNewPlanet()
     {
-        GameObject planet = Instantiate(PlanetPrefab);
+        int rand = Random.Range(0,PlanetPrefabs.Count);
+        GameObject planet = Instantiate(PlanetPrefabs[rand]);
         planet.transform.SetParent(parentTarget);
         planet.transform.localPosition = GenerateRandomPosition();
     }
