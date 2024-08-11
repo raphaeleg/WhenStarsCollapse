@@ -3566,10 +3566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f850bf9b487e3804fb84964e94d9de7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSFX:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7dc879097f240ec4a91b4dbe268e580c, type: 2}
 --- !u!1 &1240696960
 GameObject:
   m_ObjectHideFlags: 0

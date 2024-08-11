@@ -6,6 +6,14 @@
 				<SoundcasterSession Name="General" ID="{3001A3E6-B6EE-42D5-A07E-2C8CC984A2A4}">
 					<ModuleList>
 						<Module>
+							<ObjectRef Name="Play_Menu" ID="{2D1FFD92-8E82-4CEA-9A01-402624FFF413}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Game_Over" ID="{4A7D91BC-A92D-4EF8-9CE9-5E9B1C5CADF2}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Game_Start" ID="{6C0CD817-3A63-4204-8E7A-00D90D6A026D}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
 							<Position X="1" Y="1"/>
 						</Module>

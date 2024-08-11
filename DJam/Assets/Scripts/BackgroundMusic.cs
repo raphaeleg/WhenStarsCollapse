@@ -107,4 +107,16 @@ public class BackgroundMusic : MonoBehaviour
         sfxSlider.value = soundEffects;
         volumeSlider.value = musicVolume;
     }
+
+    /// <summary>
+    /// Play an SFX, with or without a source.
+    /// </summary>
+    /// <param name="sfxName">
+    /// The name of the SFX. Go to Window > Wwise Picker for a list of all sfx names (events).
+    /// </param>
+    public void PlaySFX(string sfxName)
+    {
+        Debug.Log("Called");
+        AkSoundEngine.PostEvent(sfxName, gameObject);
+    }
 }

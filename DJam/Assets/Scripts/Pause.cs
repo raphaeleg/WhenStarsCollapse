@@ -15,6 +15,7 @@ public class Pause : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseUI.SetActive(true);
+            BackgroundMusic.instance.PlaySFX("SFX_Click_2");
         }
         else
         {

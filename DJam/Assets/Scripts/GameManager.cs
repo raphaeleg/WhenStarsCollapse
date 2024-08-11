@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         maxWidth = canvas.rect.width + canvas.rect.x;
         maxHeight = canvas.rect.height + canvas.rect.y;
         GenerateNewPlanet();
+        highScore.Restart();
         StartCoroutine(PerSecond());
     }
 

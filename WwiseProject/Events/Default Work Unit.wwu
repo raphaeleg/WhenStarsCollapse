@@ -11,11 +11,14 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Background Music" ID="{65EACD9E-B8E2-4809-9B5C-3E13E90E3BBD}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+									<ObjectRef Name="Menu Music" ID="{FD4B383E-6DFE-43AF-AED1-BAAF9DC974C0}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{457C7E8B-36C1-41F2-B3BD-7CB728F04294}" ShortID="449628622">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Background Music" ID="{65EACD9E-B8E2-4809-9B5C-3E13E90E3BBD}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
@@ -110,6 +113,47 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Vintage Pixel Game Micro Boost" ID="{B64532DF-877B-45C4-9EE4-DE6254645884}" WorkUnitID="{1A02E538-DAB4-4420-A078-A6D7534FF862}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Menu" ID="{2D1FFD92-8E82-4CEA-9A01-402624FFF413}">
+					<ChildrenList>
+						<Action Name="" ID="{D6894B0D-C7C0-417F-82B6-B7B042D687DD}" ShortID="185825482">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{E31DFCDE-4837-4B3A-8D0D-577BBAD17265}" ShortID="347146786">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Music" ID="{FD4B383E-6DFE-43AF-AED1-BAAF9DC974C0}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Game_Over" ID="{4A7D91BC-A92D-4EF8-9CE9-5E9B1C5CADF2}">
+					<ChildrenList>
+						<Action Name="" ID="{8DBB5D06-68A7-42BD-8674-22D8B7C61B44}" ShortID="695322896">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Background Music" ID="{65EACD9E-B8E2-4809-9B5C-3E13E90E3BBD}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{2E816A65-5186-4FF2-9250-1E88A3FED643}" ShortID="616123232">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Game Over Music" ID="{D0FBEB27-696D-4E5A-87BA-04B33C036B8F}" WorkUnitID="{B9565B1C-B038-4E04-90D6-7F217DD5D200}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
