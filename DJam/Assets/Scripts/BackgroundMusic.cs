@@ -116,6 +116,7 @@ public class BackgroundMusic : MonoBehaviour
     /// </param>
     public void PlaySFX(string sfxName)
     {
+        Debug.Log("Called");
         AkSoundEngine.PostEvent(sfxName, gameObject);
     }
 }
