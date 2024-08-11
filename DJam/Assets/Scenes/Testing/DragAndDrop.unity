@@ -1763,8 +1763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetPrefabs:
   - {fileID: 8123824592646378944, guid: 6799bdacee4b21b4ea3fb4797c29bcce, type: 3}
-  - {fileID: 8123824592646378944, guid: a0ea3030ea101c949aa062d130b5c8aa, type: 3}
-  - {fileID: 8123824592646378944, guid: 99023971cf52b1843b5fcaa682d4a788, type: 3}
+  - {fileID: 8123824592646378944, guid: 55b63566de355c84fabf8bee88ad85dc, type: 3}
+  - {fileID: 8123824592646378944, guid: df905948f0758cb48806382ceba2a19d, type: 3}
   PlanetList: {fileID: 11400000, guid: e81290b75187b784da10c6c9c42d6869, type: 2}
   parentTarget: {fileID: 614852973}
   canvas: {fileID: 614852973}

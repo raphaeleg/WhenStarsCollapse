@@ -7,16 +7,15 @@ using static Planet;
 
 public class Planet : MonoBehaviour, IDropHandler
 {
-    // States: Normal, Symptom, WhiteStar, BlackHole
     public enum PlanetStates { WHITEDWARF, INITIAL, STAGE1, STAGE2, STAGE3, BLACKHOLE};
     [SerializeField] PlanetStates state = PlanetStates.INITIAL;
     public enum PlanetType {BLUE, GREEN, PINK};
     [SerializeField] PlanetType type = PlanetType.BLUE;
     public static Dictionary<PlanetType, string> cureMap = new()
         {
-            { PlanetType.BLUE, "CureC" },
+            { PlanetType.PINK, "CureA" },
             { PlanetType.GREEN, "CureB" },
-            { PlanetType.PINK, "CureA" }
+            { PlanetType.BLUE, "CureC" }
         };
     [SerializeField] PlanetRuntimeSet PlanetList;
     [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
@@ -26,14 +25,13 @@ public class Planet : MonoBehaviour, IDropHandler
 
     [SerializeField] GameEventSO BlackholeAdded;
 
-    private Image planetImage;
-    public List<Sprite> planetImageList;
     private const int RATE_OF_ROTATION = 10;
+    private Animator animator;
 
 
     private void Start()
     {
-        planetImage = GetComponent<Image>();
+        animator = GetComponent<Animator>();
         PlanetList.Add(gameObject);
 
         GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
@@ -65,13 +63,11 @@ public class Planet : MonoBehaviour, IDropHandler
         localTimer = stagesTimeThreshold;
         if (isCuring) {                 // curing gives another chance
             isCuring = false;
-            state--;
-            planetImage.sprite = planetImageList[(int)state];
-            if (state == PlanetStates.WHITEDWARF) { RemoveFromList(); }
+            ChangeState(false);
+            if (state == PlanetStates.WHITEDWARF) { BecomeWhiteDwarf(); }
             return;
         }
-        state++;
-        planetImage.sprite = planetImageList[(int)state];
+        ChangeState(true);
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
     }
 
@@ -119,18 +115,30 @@ public class Planet : MonoBehaviour, IDropHandler
 
     private bool IsNotCurable()
     {
-        return state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF || isCuring;
+        return state == PlanetStates.BLACKHOLE || state == PlanetStates.WHITEDWARF || state == PlanetStates.INITIAL || isCuring;
     }
     private bool IsRightCure(string item) { return item == cureMap[type]; }
  
-    public void Cure() { 
-        state--;
-        planetImage.sprite = planetImageList[(int)state];
+    public void Cure() {
+        ChangeState(false);
         isCuring = true; 
+    }
+    private void ChangeState(bool isIncrease)
+    {
+        if (isIncrease) { state++; }
+        else { state--; }
+        animator.SetInteger("Stage", (int)state);
+        //planetImage.sprite = planetImageList[(int)state];
+    }
+    private void BecomeWhiteDwarf()
+    {
+        animator.SetTrigger("Dwarf");
+        RemoveFromList();
     }
     public void BecomeBlackHole()
     {
         GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles++;
+        animator.SetTrigger("Explode");
         RemoveFromList();
         BlackholeAdded.Raise();
     }
