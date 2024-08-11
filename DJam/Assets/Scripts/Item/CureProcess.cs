@@ -16,7 +16,7 @@ public class CureProcess : MonoBehaviour
         for (int i = 0; i < 200; i++)
         {
             transform.Find("ProcessBar").localScale = new Vector3((i+1)/200f, 1f, 1f);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.0f);
         }
         gameObject.GetComponent<CureStat>().totalCures++;
         gameObject.GetComponent<CureStat>().totalMeteors = 0;
