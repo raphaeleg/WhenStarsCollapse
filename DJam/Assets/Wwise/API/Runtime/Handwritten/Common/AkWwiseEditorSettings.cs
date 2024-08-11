@@ -114,7 +114,12 @@ public class WwiseSettings
 					baseDir = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(platformSoundBankPaths.Values.First()));
 				}
 			}
-			var generatedSoundbanksDir = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(settings.WwiseProjectPath), baseDir);
+
+			var wwiseProjectPath = System.IO.Path.Combine(UnityEngine.Application.dataPath, System.IO.Path.GetDirectoryName(settings.WwiseProjectPath));
+			wwiseProjectPath = System.IO.Path.GetFullPath(wwiseProjectPath);
+			var generatedSoundbanksDir = System.IO.Path.Combine(wwiseProjectPath, baseDir);
+			generatedSoundbanksDir = System.IO.Path.GetFullPath(generatedSoundbanksDir);
+			generatedSoundbanksDir = generatedSoundbanksDir.Remove(0, (UnityEngine.Application.dataPath + "/").Length);
 			settings.GeneratedSoundbanksPath = generatedSoundbanksDir;
 		}
 		settings.CheckGeneratedBanksPath();

@@ -1,6 +1,494 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{1A02E538-DAB4-4420-A078-A6D7534FF862}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{1A02E538-DAB4-4420-A078-A6D7534FF862}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{1A02E538-DAB4-4420-A078-A6D7534FF862}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Abstract Wind Background" ID="{EAC2B15C-9FA6-4C12-8347-F0CEF549B7CF}" ShortID="128598869">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Abstract Wind Background" ID="{AE07CAB1-B174-4C45-96A5-AB41560BA59A}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Abstract Wind Background.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="130712960"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Abstract Wind Background" ID="{AE07CAB1-B174-4C45-96A5-AB41560BA59A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Force Field" ID="{E51DD288-F8BB-4E96-88C7-AAC4AC4AB912}" ShortID="202403260">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Force Field" ID="{D0F0D890-FF2C-4337-8122-F6BC4661FDD1}">
+							<Language>SFX</Language>
+							<AudioFile>Force Field.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="765626669"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Force Field" ID="{D0F0D890-FF2C-4337-8122-F6BC4661FDD1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Mouse Click" ID="{98C77F24-6AF2-4155-9149-B6C6C305F021}" ShortID="825361885">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Mouse Click" ID="{CCF951A7-5C56-418E-9546-DF69233F119D}">
+							<Language>SFX</Language>
+							<AudioFile>Mouse Click.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1054444170"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Mouse Click" ID="{CCF951A7-5C56-418E-9546-DF69233F119D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pixel Game Element" ID="{49AE8FF1-6A9C-40EB-B03B-DF708353C153}" ShortID="613433471">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pixel Game Element" ID="{6042BB0B-92B3-4771-83A4-8B8740FC3E95}">
+							<Language>SFX</Language>
+							<AudioFile>Pixel Game Element.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="267315474"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pixel Game Element" ID="{6042BB0B-92B3-4771-83A4-8B8740FC3E95}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pixel Game Stop" ID="{96D833F0-2967-439E-81C8-83EF0320B813}" ShortID="70137123">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pixel Game Stop" ID="{69E70503-5FE9-4628-9BF2-9C7C85542C43}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.0434694479029454"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.0434694479029454"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Pixel Game Stop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="144244272"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pixel Game Stop" ID="{69E70503-5FE9-4628-9BF2-9C7C85542C43}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pixel Restore Object" ID="{1FE917DF-2BF9-41C5-9B39-B5B0C9372F85}" ShortID="643012139">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pixel Restore Object" ID="{B88B0F9D-E8BE-4AA1-BDB3-0A13F1F92ECD}">
+							<Language>SFX</Language>
+							<AudioFile>Pixel Restore Object.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="977047859"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pixel Restore Object" ID="{B88B0F9D-E8BE-4AA1-BDB3-0A13F1F92ECD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pixels Fail 1" ID="{9B3A0D38-AF48-4422-A77C-0A64D84E561C}" ShortID="260668608">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pixels Fail 1" ID="{FF473115-B1F5-438E-AC1C-9F652189A52B}">
+							<Language>SFX</Language>
+							<AudioFile>Pixels Fail 1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="791103627"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pixels Fail 1" ID="{FF473115-B1F5-438E-AC1C-9F652189A52B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pixels Fail 2" ID="{1A2140E8-616B-4E72-8DA8-BDD03366F1D0}" ShortID="402136286">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pixels Fail 2" ID="{0E8E348E-7849-4203-B916-A7FA38D69E97}">
+							<Language>SFX</Language>
+							<AudioFile>Pixels Fail 2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="656185175"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pixels Fail 2" ID="{0E8E348E-7849-4203-B916-A7FA38D69E97}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Retro Pixel Short Fail" ID="{844146F1-2772-4B8F-A4B5-7DBF45E05CC9}" ShortID="659140020">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Retro Pixel Short Fail" ID="{A9DBBD4B-32F6-4F6D-B7E0-519523ED5142}">
+							<Language>SFX</Language>
+							<AudioFile>Retro Pixel Short Fail.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="337798685"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Retro Pixel Short Fail" ID="{A9DBBD4B-32F6-4F6D-B7E0-519523ED5142}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Single Pixel Beep Tone" ID="{0D21A149-455C-4882-8200-B89058C3C80C}" ShortID="98083960">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Single Pixel Beep Tone" ID="{EEF9C4B7-61F5-482B-BC67-66C8AE87A4E5}">
+							<Language>SFX</Language>
+							<AudioFile>Single Pixel Beep Tone.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="222994632"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Single Pixel Beep Tone" ID="{EEF9C4B7-61F5-482B-BC67-66C8AE87A4E5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Swirling Wind Loop" ID="{5711AD6B-1066-4620-BAB3-853ED55028E7}" ShortID="634547927">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-1200</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Swirling Wind Loop" ID="{0278FCE7-404A-45C6-876D-E8D454250293}">
+							<Language>SFX</Language>
+							<AudioFile>Swirling Wind Loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="670437946"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Swirling Wind Loop" ID="{0278FCE7-404A-45C6-876D-E8D454250293}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Vintage Pixel Game Micro Boost" ID="{B64532DF-877B-45C4-9EE4-DE6254645884}" ShortID="137466580">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Vintage Pixel Game Micro Boost" ID="{7B3C08DF-B3B3-47A2-91E4-7D6D3963A014}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.0231731596263616"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.0231731596263616"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Vintage Pixel Game Micro Boost.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="293925616"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Vintage Pixel Game Micro Boost" ID="{7B3C08DF-B3B3-47A2-91E4-7D6D3963A014}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Explosion" ID="{747B9034-960B-4498-9BE6-2A09628E4CB3}" ShortID="631491355">
+					<PropertyList>
+						<Property Name="OverrideConversion" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{58FE5099-AD4B-4A1F-BD56-C80BD667D3A9}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="700"/>
+											<Property Name="Min" Type="Real64" Value="-700"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{299D37FC-9714-4277-88FC-9883D1963F6F}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="4"/>
+											<Property Name="Min" Type="Real64" Value="-4"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Explosion" ID="{917E1875-42F6-4CEF-B170-3F222B87790E}" ShortID="643200125">
+							<PropertyList>
+								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Explosion" ID="{88777245-C365-4663-BE9E-6FB6D3615A07}">
+									<PropertyList>
+										<Property Name="TrimBegin" Type="Real64" Value="0.185935810221525"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Explosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="432053944"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Explosion" ID="{88777245-C365-4663-BE9E-6FB6D3615A07}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Short Explosion" ID="{71A42718-AB53-45AB-9F36-053F14BA855B}" ShortID="724228402">
+							<PropertyList>
+								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-0.5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Short Explosion" ID="{644196C6-8A99-4858-AAF7-A1296F3A207A}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.01305520970546"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Short Explosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="125807789"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Short Explosion" ID="{644196C6-8A99-4858-AAF7-A1296F3A207A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Single Explosion" ID="{9F34B121-CA7A-4DBF-BFC5-562070F3A8A5}" ShortID="394464081">
+							<PropertyList>
+								<Property Name="OverrideConversion" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music Master" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{683841E0-B4A2-4220-872D-B8FD44F72981}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Single Explosion" ID="{7B74F873-7EC1-4D98-B35B-0B755EB42FB6}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.225287356321839"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Single Explosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="61719077"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Single Explosion" ID="{7B74F873-7EC1-4D98-B35B-0B755EB42FB6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

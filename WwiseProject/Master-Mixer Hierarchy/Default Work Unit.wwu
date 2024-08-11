@@ -103,7 +103,7 @@
 										</PropertyList>
 										<ReferenceList>
 											<Reference Name="ControlInput">
-												<ObjectRef Name="Volume" ID="{16520DD9-7061-44E9-B134-076167AE074D}" WorkUnitID="{11472641-B25B-4886-94EA-F7EBB6BE67CA}"/>
+												<ObjectRef Name="Music_Volume" ID="{16520DD9-7061-44E9-B134-076167AE074D}" WorkUnitID="{11472641-B25B-4886-94EA-F7EBB6BE67CA}"/>
 											</Reference>
 											<Reference Name="Curve">
 												<Custom>
@@ -132,6 +132,13 @@
 							</Reference>
 						</ObjectList>
 					</ObjectLists>
+				</Bus>
+				<Bus Name="SFX Master" ID="{ECD98282-D691-4838-BD1F-E0EEC36A0111}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{7B303EEE-8B80-4FB6-8C14-28F86C10A961}" WorkUnitID="{FEFD759F-34A7-433C-87F8-0232314C3ADB}"/>
+						</Reference>
+					</ReferenceList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

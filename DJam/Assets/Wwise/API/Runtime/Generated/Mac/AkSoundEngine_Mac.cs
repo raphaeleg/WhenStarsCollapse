@@ -1181,6 +1181,7 @@ public partial class AkSoundEngine {
   public const double AK_DEFAULT_BANK_THROUGHPUT = 1*1024*1024/1000.0;
   public const uint AKCOMPANYID_AUDIOKINETIC = 0;
   public const uint AK_LISTENERS_MASK_ALL = 0xFFFFFFFF;
+  public const uint AKMOTION_RESIDENT_MODE = 0x80000000;
   public const int NULL = 0;
   public const int AKCURVEINTERPOLATION_NUM_STORAGE_BIT = 5;
   public const int AK_MAX_LANGUAGE_NAME_SIZE = (32);

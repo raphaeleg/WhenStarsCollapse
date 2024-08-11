@@ -14,12 +14,15 @@ public class BackgroundMusic : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider volumeSlider;
 
+
+    [SerializeField] private AK.Wwise.Event musicEvent;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            // DontDestroyOnLoad(this);
         }
         else if (this != instance)
         {
@@ -29,7 +32,8 @@ public class BackgroundMusic : MonoBehaviour
 
     private void Start()
     {
-        AkSoundEngine.PostEvent("Game_Start", gameObject);
+        //AkSoundEngine.PostEvent("Game_Start", gameObject);
+        musicEvent.Post(gameObject);
         // AkSoundEngine.SetRTPCValue("Intensity", 100);
     }
 
@@ -40,7 +44,7 @@ public class BackgroundMusic : MonoBehaviour
 
     public void MusicVolumeChanged()
     {
-        AkSoundEngine.SetRTPCValue("Volume", 100 * volumeSlider.value);
+        AkSoundEngine.SetRTPCValue("Music_Volume", 100 * volumeSlider.value);
     }
 
 }

@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2B126E36-39ED-4CD5-AF75-CFC11763EF65}" SchemaVersion="119">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{2B126E36-39ED-4CD5-AF75-CFC11763EF65}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2B126E36-39ED-4CD5-AF75-CFC11763EF65}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="General" ID="{3001A3E6-B6EE-42D5-A07E-2C8CC984A2A4}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Game_Start" ID="{6C0CD817-3A63-4204-8E7A-00D90D6A026D}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Click_0" ID="{143998D7-6681-468B-9AA1-355852E10686}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Click_2" ID="{40D8CC8A-2676-4CE9-84CF-CD334C7DA73F}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Force_Field" ID="{D1CD482C-3EB6-4625-A734-3C6D1AB9EDD9}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Boost" ID="{1776B3AF-7408-4F90-B950-199F01045F16}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Click_1" ID="{F75574CA-357A-4730-9654-6A78C9DBE687}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Explosion" ID="{873D085F-AC91-4691-B8AD-9F38C0595BBC}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Wind_Loop" ID="{A069572D-6696-4B00-B44F-2135030A1690}" WorkUnitID="{5A21BEB3-750A-4B1F-8815-8EEC7CCCE157}"/>
+							<Position X="2" Y="4"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Intensity" ID="{1A2160E3-CFC8-4F86-8805-8CEB1B8DB2A8}"/>
+							<Value>1</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

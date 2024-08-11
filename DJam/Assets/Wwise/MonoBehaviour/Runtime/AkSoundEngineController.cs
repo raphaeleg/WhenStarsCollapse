@@ -105,6 +105,15 @@ public class AkSoundEngineController
 
 	public void Init(AkInitializer akInitializer)
 	{
+#if UNITY_EDITOR
+		var arguments = System.Environment.GetCommandLineArgs();
+		if (UnityEngine.Application.isBatchMode && System.Array.IndexOf(arguments, "-wwiseEnableWithNoGraphics") < 0)
+		{
+			UnityEngine.Debug.LogWarning("WwiseUnity: Sound engine will not be initialized in batch/nographics mode. To override, specify -wwiseEnableWithNoGraphics");
+			return;
+		}
+#endif
+
 		// Only initialize the room manager during play.
 		bool initRoomManager = true;
 #if UNITY_EDITOR
