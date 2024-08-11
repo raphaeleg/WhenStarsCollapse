@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -99,13 +99,8 @@ MonoBehaviour:
   isCuring: 0
   localTimer: 5
   BlackholeAdded: {fileID: 11400000, guid: f538e547e9935354695fcec8c95141b6, type: 2}
-  planetImageList:
-  - {fileID: 21300000, guid: 55dd2b38257f66e4bb202d31e385b334, type: 3}
-  - {fileID: 21300000, guid: d18f65c73592dbc479821ed668f86105, type: 3}
-  - {fileID: 21300000, guid: 701522feb71df4441b3d4cc7a5bc24f6, type: 3}
-  - {fileID: 21300000, guid: 701522feb71df4441b3d4cc7a5bc24f6, type: 3}
-  - {fileID: 21300000, guid: f52441de36d2e8f438efeef978210111, type: 3}
-  - {fileID: 21300000, guid: b54b3b88e4cf42044a80840652a1def6, type: 3}
+  KillSpawnedPlanet: {fileID: 11400000, guid: f57fe277a02d3d443bc1d54cc39be8f4, type: 2}
+  SuccessfulSpawn: {fileID: 11400000, guid: 7f685f15b3e61c541b29c1cfbc84c5a9, type: 2}
 --- !u!58 &3357225511286625156
 CircleCollider2D:
   m_ObjectHideFlags: 0

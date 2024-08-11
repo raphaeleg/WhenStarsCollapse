@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,17 +25,21 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] private float localTimer = 10f;
 
     [SerializeField] GameEventSO BlackholeAdded;
+    [SerializeField] GameEventSO KillSpawnedPlanet;
+    [SerializeField] GameEventSO SuccessfulSpawn;
 
     private const int RATE_OF_ROTATION = 10;
     private Animator animator;
+    private const int VISIBILITY_DELAY = 4;
+    private bool passInitialSpawnCheck = false;
+
 
 
     private void Start()
     {
+        GetComponent<Image>().color = new Color(0,0,0, 0);
         animator = GetComponent<Animator>();
         PlanetList.Add(gameObject);
-
-        GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
     }
 
     private void Update()
@@ -58,7 +63,16 @@ public class Planet : MonoBehaviour, IDropHandler
     private void UpdateTimer() { if (localTimer > 0) { localTimer -= Time.deltaTime; } }
 
     private void UpdateState() {
-        if (localTimer > 0) { return; } // still waiting
+        if (localTimer > 0) {   // still waiting
+            if (passInitialSpawnCheck) { return; }
+            if (localTimer > VISIBILITY_DELAY) {  return; }
+            
+            GetComponent<Image>().color = new Color(1,1,1, 1);
+            SuccessfulSpawn.Raise();
+            passInitialSpawnCheck = true;
+            GameObject.Find("ScoreManager").GetComponent<HighScore>().stars++;
+            return;
+        } 
         
         localTimer = stagesTimeThreshold;
         if (isCuring) {                 // curing gives another chance
@@ -90,6 +104,7 @@ public class Planet : MonoBehaviour, IDropHandler
         if (collider.GetComponent<Planet>() != null)
         {
             PlanetList.Planets.Remove(collider);
+            if (collider.GetComponent<Planet>().state == PlanetStates.INITIAL) { KillSpawnedPlanet.Raise(); }
         }
         Destroy(collider);
     }

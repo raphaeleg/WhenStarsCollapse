@@ -16,9 +16,11 @@ public class GameManager : MonoBehaviour
     float maxHeight = 0;
     private const float padding = 50;
 
-    [SerializeField] private float localTimer;
+    private float localTimer;
     [SerializeField] private SceneLoader sceneLoader;
 
+    private const int MAX_SPAWN_ATTEMPTS = 5;
+    [SerializeField] private int spawnAttempts = 0;
 
     private void Start()
     {
@@ -40,8 +42,9 @@ public class GameManager : MonoBehaviour
     }
     private void UpdateTimer() { if (localTimer > 0) { localTimer -= Time.deltaTime; } }
 
-    private void GenerateNewPlanet()
+    public void GenerateNewPlanet()
     {
+        spawnAttempts++;
         int rand = Random.Range(0,PlanetPrefabs.Count);
         GameObject planet = Instantiate(PlanetPrefabs[rand]);
         planet.transform.SetParent(parentTarget);
@@ -57,10 +60,15 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoseCondition()
     {
-        int currentBlackHoles = GameObject.Find("ScoreManager").GetComponent<HighScore>().blackHoles;
-        if (currentBlackHoles >= 6)
+        if (spawnAttempts >= MAX_SPAWN_ATTEMPTS)
         {
             sceneLoader.LoadGameOverScene();
         }
+        //Debug.Log("Detected Failed Planet. Spawn Attempts: " + spawnAttempts + " when previously: " + previousSpawnAttempt +" and confirmed successes: "+confirmSuccessfulSpawn);
+        // spawn was changed
+        // if it's stable
+        GenerateNewPlanet();
     }
+
+    public void RestartSpawnAttempts() { spawnAttempts = 0; }
 }

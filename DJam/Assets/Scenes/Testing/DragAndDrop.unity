@@ -1951,6 +1951,7 @@ GameObject:
   - component: {fileID: 677286829}
   - component: {fileID: 677286828}
   - component: {fileID: 677286830}
+  - component: {fileID: 677286831}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1977,8 +1978,7 @@ MonoBehaviour:
   PlanetList: {fileID: 11400000, guid: e81290b75187b784da10c6c9c42d6869, type: 2}
   parentTarget: {fileID: 614852973}
   canvas: {fileID: 614852973}
-  localTimer: 0
-  sceneLoader: {fileID: 7577961643576469764, guid: 68a491e2c8e70ee4390d453ec971390c, type: 3}
+  sceneLoader: {fileID: 182635589}
 --- !u!4 &677286829
 Transform:
   m_ObjectHideFlags: 0
@@ -2006,13 +2006,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010ae0d37b51270459965f5191bd8027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: f538e547e9935354695fcec8c95141b6, type: 2}
+  Event: {fileID: 11400000, guid: f57fe277a02d3d443bc1d54cc39be8f4, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 677286828}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: CheckLoseCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &677286831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677286827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010ae0d37b51270459965f5191bd8027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7f685f15b3e61c541b29c1cfbc84c5a9, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 677286828}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartSpawnAttempts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
