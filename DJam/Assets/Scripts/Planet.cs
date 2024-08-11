@@ -18,11 +18,11 @@ public class Planet : MonoBehaviour, IDropHandler
             { PlanetType.GREEN, "CureB" },
             { PlanetType.BLUE, "CureC" }
         };
-    [SerializeField] private float stagesTimeThreshold = 10f;    // Time between each stage
+    [SerializeField] private float stagesTimeThreshold = 15f;    // Time between each stage
     [SerializeField] bool isCuring = false;
     [SerializeField] GameObject CuringParticles;
 
-    [SerializeField] private float localTimer = 10f;
+    [SerializeField] private float localTimer;
 
     [SerializeField] GameEventSO BlackholeAdded;
     [SerializeField] GameEventSO KillSpawnedPlanet;
@@ -35,6 +35,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     private void Start()
     {
+        localTimer = stagesTimeThreshold;
         gameObject.transform.localScale = new Vector3(2,2,2);
     }
     private void Update()
