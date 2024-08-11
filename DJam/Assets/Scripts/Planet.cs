@@ -28,6 +28,7 @@ public class Planet : MonoBehaviour, IDropHandler
 
     private Image planetImage;
     public List<Sprite> planetImageList;
+    private const int RATE_OF_ROTATION = 10;
 
 
     private void Start()
@@ -45,9 +46,10 @@ public class Planet : MonoBehaviour, IDropHandler
         switch (state)
         {
             case PlanetStates.WHITEDWARF:
-                UpdateFinalState();
+                UpdateWhiteDwarf();
                 break;
             case PlanetStates.BLACKHOLE:
+                UpdateBlackHole();
                 break;
             default:
                 UpdateState();
@@ -73,8 +75,15 @@ public class Planet : MonoBehaviour, IDropHandler
         if (state == PlanetStates.BLACKHOLE) { BecomeBlackHole(); }
     }
 
-    private void UpdateFinalState()
+    private void UpdateBlackHole()
     {
+        // Rotate
+        gameObject.transform.Rotate(0, 0, Time.deltaTime * RATE_OF_ROTATION);
+    }
+
+    private void UpdateWhiteDwarf()
+    {
+        // 20 more seconds until disappearing
         if (localTimer > 0) { return; }
         Destroy(gameObject);
     }
