@@ -36,7 +36,9 @@ public class Planet : MonoBehaviour, IDropHandler
     [SerializeField] HighScore highScore;
 
     public Sprite[] spawnAnim;
+    public Sprite[] getSickAnim;
     public Sprite[] whiteDwardDestroyAnim;
+    public Sprite[] curedAnim;
 
     private void Start()
     {
@@ -189,10 +191,56 @@ public class Planet : MonoBehaviour, IDropHandler
     }
     private void ChangeState(bool isIncrease)
     {
-        if (isIncrease) { state++; }
-        else { state--; }
-        animator.SetInteger("Stage", (int)state);
+        if (isIncrease) {
+            state++;
+            if (state == PlanetStates.STAGE1)
+            {
+                StartCoroutine(GetSick());
+            }
+            else
+                animator.SetInteger("Stage", (int)state);
+        }
+        else {
+            state--;
+            if (state == PlanetStates.STAGE1)
+            {
+                StartCoroutine(GetCured());
+            }
+            else
+                animator.SetInteger("Stage", (int)state);
+        }
     }
+    IEnumerator GetSick()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
+        transform.Find("Image").localPosition = new Vector3(3.1f, -3.1f, 0);
+        for (int i = 0; i < getSickAnim.Length; i++)
+        {
+            transform.Find("Image").GetComponent<Image>().sprite = getSickAnim[i];
+            yield return new WaitForSeconds(0.05f);
+        }
+        transform.Find("Image").GetComponent<Animator>().enabled = true;
+        animator.SetInteger("Stage", (int)state);
+        transform.Find("Image").localScale = new Vector3(1, 1, 1);
+        transform.Find("Image").localPosition = Vector3.zero;
+    }
+    IEnumerator GetCured()
+    {
+        transform.Find("Image").GetComponent<Animator>().enabled = false;
+        transform.Find("Image").localScale = new Vector3(2.35f, 2.35f, 2.35f);
+        transform.Find("Image").localPosition = new Vector3(3.1f, -3.1f, 0);
+        for (int i = 0; i < curedAnim.Length; i++)
+        {
+            transform.Find("Image").GetComponent<Image>().sprite = curedAnim[i];
+            yield return new WaitForSeconds(0.05f);
+        }
+        transform.Find("Image").GetComponent<Animator>().enabled = true;
+        animator.SetInteger("Stage", (int)state);
+        transform.Find("Image").localScale = new Vector3(1, 1, 1);
+        transform.Find("Image").localPosition = Vector3.zero;
+    }
+
     private void BecomeWhiteDwarf()
     {
         highScore.whiteDwarfs++;
