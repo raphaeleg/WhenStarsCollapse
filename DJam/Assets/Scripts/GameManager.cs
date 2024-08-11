@@ -58,6 +58,13 @@ public class GameManager : MonoBehaviour
         // Available space: 
         var x = Random.Range(-maxWidth + PADDING, maxWidth - PADDING);
         var y = Random.Range(-maxHeight + UI_WIDTH, maxHeight - PADDING);
+        Debug.Log(x + "" + y);
+        while ((x > 500 & y < -250) || (x < -250 && y > 250) || (x > 550 && y > 250))
+        {
+            Debug.Log("rerandomize");
+            x = Random.Range(-maxWidth + PADDING, maxWidth - PADDING);
+            y = Random.Range(-maxHeight + UI_WIDTH, maxHeight - PADDING);
+        }
         return new Vector2(x, y);
     }
 
