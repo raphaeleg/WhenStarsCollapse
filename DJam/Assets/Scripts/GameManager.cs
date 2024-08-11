@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     // Planet
     [SerializeField] List<GameObject> PlanetPrefabs;
-    [SerializeField] PlanetRuntimeSet PlanetList;
     const float TIMER_PLANET = 10f;
 
     // Canvas
@@ -22,10 +21,12 @@ public class GameManager : MonoBehaviour
     private const int MAX_SPAWN_ATTEMPTS = 5;
     [SerializeField] private int spawnAttempts = 0;
 
+    private bool lostGame = false;
+
     private void Start()
     {
+        lostGame = false;
         localTimer = TIMER_PLANET;
-        PlanetList.Clear();
         maxWidth = canvas.rect.width + canvas.rect.x;
         maxHeight = canvas.rect.height + canvas.rect.y;
         GenerateNewPlanet();
@@ -60,13 +61,22 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoseCondition()
     {
+        Debug.Log("SpawnAttempt: " + spawnAttempts);
         if (spawnAttempts >= MAX_SPAWN_ATTEMPTS)
         {
-            sceneLoader.LoadGameOverScene();
+            if (!lostGame)
+            {
+                lostGame = true;
+                sceneLoader.LoadGameOverScene();
+            }
         }
+        StartCoroutine(GenNewPlanetCooldown());
         //Debug.Log("Detected Failed Planet. Spawn Attempts: " + spawnAttempts + " when previously: " + previousSpawnAttempt +" and confirmed successes: "+confirmSuccessfulSpawn);
-        // spawn was changed
-        // if it's stable
+    }
+
+    IEnumerator GenNewPlanetCooldown()
+    {
+        yield return new WaitForSeconds(0.2f*spawnAttempts);
         GenerateNewPlanet();
     }
 
