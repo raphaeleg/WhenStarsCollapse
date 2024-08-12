@@ -7,8 +7,8 @@ public class BackgroundMusic : MonoBehaviour
 {
     public static BackgroundMusic instance = null;
 
-    public float soundEffects = 0.5f;
-    public float musicVolume = 0.5f;
+    public float soundEffects = 0f;
+    public float musicVolume = 0f;
 
     public bool sfxMute = false;
     public bool bgmMute = false;
