@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DragAndDrop.unity
     guid: e6cce165ffc38cb4db0f6e25aa4292c6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
-    guid: 83df1919945583d40a19f9b70bd3e688
+    guid: 304e35f001ee9b142baf149329303c10
   m_configObjects: {}
