@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{437f0f89-2720-407f-ab4a-585418b9a7da}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../WhenStarsCollapse/Assets/FMODBanks</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{b2b5f373-1bc9-451e-a41b-c5c15eb22563}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{8e875f1f-d25b-4c84-9fb9-0a40fc65c09b}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{bc77514c-6487-4fdc-8232-09da6ab548e7}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{930e94f3-160b-4803-bf4c-939f2345c898}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{885e1bb0-828c-45ea-b070-6aacf5c0eac1}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{eba0e5dc-4c03-4d01-af61-329b3e9b80c0}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{0a1d6115-32fc-4c0d-8202-5bef16802c73}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{00800d62-3d40-4161-a68d-9302c8a12705}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{1cdb8d11-f805-4cd0-a45f-18f6530e1e22}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{4c090d63-a52a-43d5-aaf2-f143c24bd992}</destination>
+		</relationship>
+	</object>
+</objects>

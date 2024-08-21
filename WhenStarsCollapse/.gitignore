@@ -74,3 +74,11 @@ crashlytics-build.properties
 # Other IDE stuff
 .vscode/
 .idea/
+
+#FMOD Editor Generated Files
+/[Aa]ssets/FMODStudioCache.asset
+/[Aa]ssets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
+/[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+/[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
