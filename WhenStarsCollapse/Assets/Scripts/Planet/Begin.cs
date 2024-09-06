@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Begin : State
 {
@@ -14,5 +13,11 @@ public class Begin : State
         //highScore.stars++;
 
         Planet.SetState(new Sick(Planet));
+    }
+
+    public override IEnumerator Shrink()
+    {
+        // KillSpawnedPlanet.Raise();
+        return base.Shrink();
     }
 }
