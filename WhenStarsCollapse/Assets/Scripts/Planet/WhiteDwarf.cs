@@ -11,19 +11,13 @@ public class WhiteDwarf : State
 
     public override IEnumerator Start()
     {
-        // highScore.whiteDwarfs++;
-        // animator.SetTrigger("Dwarf");
+        Planet.visuals.Anim_BecomeDwarf();
+        EventManager.TriggerEvent("whiteDwarfSpawn", 0);
 
         yield return new WaitForSeconds(20);
-
-        /*transform.Find("Image").GetComponent<Animator>().enabled = false;
-        transform.Find("Image").localPosition = new Vector3(9.2f, 16.4f, 0);
-        transform.Find("Image").localScale = new Vector3(5, 5, 5);
-        for (int i = 0; i < whiteDwardDestroyAnim.Length; i++)
-        {
-            transform.Find("Image").GetComponent<Image>().sprite = whiteDwardDestroyAnim[i];
-            yield return new WaitForSeconds(0.05f);
-        }*/
+        
+        Planet.visuals.Anim_DestroyDwarf();
+        yield return new WaitForSeconds(0.5f);
         Planet.OnDestroy();
     }
 }

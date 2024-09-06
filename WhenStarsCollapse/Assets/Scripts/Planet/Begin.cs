@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Begin : State
 {
+    private const int VISIBILITY_DELAY = 3;
+
     public Begin(Planet planet) : base(planet) { }
     public override IEnumerator Start()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(VISIBILITY_DELAY);
 
-        //SuccessfulSpawn.Raise();
-        //highScore.stars++;
-
+        EventManager.TriggerEvent("isSuccessfulSpawn", 0);
+        Planet.visuals.gameObject.SetActive(true);
+        yield return new WaitForSeconds(VISIBILITY_DELAY);
+        Planet.visuals.SetPlanetType((int) Planet.type);
         Planet.SetState(new Sick(Planet));
     }
 
     public override IEnumerator Shrink()
     {
-        // KillSpawnedPlanet.Raise();
+        EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
         return base.Shrink();
     }
 }

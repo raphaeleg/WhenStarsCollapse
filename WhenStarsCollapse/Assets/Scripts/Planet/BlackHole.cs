@@ -5,25 +5,14 @@ using UnityEngine;
 public class BlackHole : State
 {
     public BlackHole(Planet planet) : base(planet) { }
-    private const int RATE_OF_ROTATION = 10;
 
     public override IEnumerator Start()
     {
-        Debug.Log("BlackHole");
-        /*StartCoroutine(ExplosionSFX());
-        BackgroundMusic.instance.PlaySFX("SFX_Wind_Loop");
-        highScore.blackHoles++;
-        animator.SetTrigger("Explode");
-        BlackholeAdded.Raise();*/
-        yield break;
-    }
+        Planet.visuals.Anim_BecomeBlackHole();
+        yield return new WaitForSeconds(0.5f);
 
-    public override IEnumerator Update()
-    {
-        Planet.transform.Rotate(0, 0, Time.deltaTime * RATE_OF_ROTATION);
-        yield break;
+        EventManager.TriggerEvent("blackHoleSpawn", 0);
     }
-
     public override void OnTriggerStay2D(Collider2D other)
     {
         /*var blackHoleEat = Instantiate(BlackholeOverlay);
@@ -34,25 +23,12 @@ public class BlackHole : State
 
         GameObject collider = other.gameObject;
         Planet p = collider.GetComponent<Planet>();
-        if (p != null)
-        {
-        //    if (p.state == PlanetStates.BLACKHOLE) { return; }
-        //    p.ShrinkUntilDestroy();
-        }
+        if (p != null) { p.ShrinkUntilDestroy(); }
         //else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
-        //StartCoroutine(MoveCollider(collider));
+        Planet.StartSuckIn(collider);
     }
 
-    public IEnumerator MoveCollider(GameObject collider)
-    {
-        float time = 0.5f;
-        while (time > 0 && collider != null)
-        {
-            var directionToCollider = collider.transform.position - Planet.transform.position;
-            collider.transform.localPosition -= 5f * directionToCollider;
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
+    
 
     public override IEnumerator Shrink()
     {

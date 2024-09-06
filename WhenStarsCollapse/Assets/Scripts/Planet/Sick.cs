@@ -13,13 +13,15 @@ public class Sick : State
 
     public override IEnumerator Start()
     {
+        Planet.visuals.Anim_Sick();
         // GetSick() Animation
         while (stage < 4 && stage > 0)
         {
             yield return new WaitForSeconds(5);
             stage++;
             Debug.Log("Stage " + stage);
-            // stage == 2 && GetBig() Animation
+
+            if (stage == 2) { Planet.visuals.Anim_GetBig(); }
             //SickParticles(stage == 3)
         }
         Planet.SetState(stage == 4 ? new BlackHole(Planet) : new WhiteDwarf(Planet));
