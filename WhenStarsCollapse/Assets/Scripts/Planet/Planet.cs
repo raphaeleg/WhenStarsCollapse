@@ -21,6 +21,8 @@ public class Planet : StateMachine
 
     public void Start()
     {
+        int typesLength = System.Enum.GetValues(typeof(Type)).Length;
+        type = (Type)Random.Range(0,typesLength);
         SetState(new Begin(this));
     }
     public void Update()
@@ -45,7 +47,7 @@ public class Planet : StateMachine
     {
         if (triggeredShrink) { return; }
         triggeredShrink = true;
-        
+
         StartCoroutine(State.Shrink(collider));
     }
 
