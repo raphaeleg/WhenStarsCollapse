@@ -48,9 +48,3 @@ namespace Planets
         }
     }
 }
-
-/*
-Planet
-- Sprite overlays
-- particle system
-*/

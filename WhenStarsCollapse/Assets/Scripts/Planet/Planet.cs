@@ -6,8 +6,22 @@ using UnityEngine.EventSystems;
 
 namespace Planets
 {
-    public class Planet : StateMachine
+    /* TODO
+    - Sprite overlays
+    - particle system
+    */
+    public class Planet : MonoBehaviour
     {
+        #region StateMachine
+        protected State State;
+
+        public void SetState(State state)
+        {
+            State = state;
+            StartCoroutine(State.Start());
+        }
+        #endregion
+
         public enum Type { BLUE, GREEN, RED };
         public Type type = Type.BLUE;
         public PlanetVisuals visuals;
@@ -23,8 +37,7 @@ namespace Planets
 
         public void Start()
         {
-            int typesLength = System.Enum.GetValues(typeof(Type)).Length;
-            type = (Type)Random.Range(0,typesLength);
+            SetType();
             SetState(new Begin(this));
         }
         public void Update()
@@ -56,6 +69,11 @@ namespace Planets
         public void OnDestroy()
         {
             Destroy(gameObject);
+        }
+        private void SetType()
+        {
+            int typesLength = System.Enum.GetValues(typeof(Type)).Length;
+            type = (Type)Random.Range(0,typesLength);
         }
     }
 }
