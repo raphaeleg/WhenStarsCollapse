@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00217aef3675749689feaad14a41fad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectTransform: {fileID: 4924049448427315659}
   collider2d: {fileID: 6571083225015534841}
 --- !u!95 &5027683106339679501
 Animator:

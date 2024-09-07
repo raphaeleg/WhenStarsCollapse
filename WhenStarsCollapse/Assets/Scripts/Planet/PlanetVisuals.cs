@@ -9,6 +9,7 @@ public class PlanetVisuals : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    [SerializeField] Transform objectTransform;
     [SerializeField] BoxCollider2D collider2d;
 
     private void Start() {
@@ -25,15 +26,15 @@ public class PlanetVisuals : MonoBehaviour
     }
 
     public void ShrinkBy(Vector3 step) {
-        transform.localScale -= step;
+        objectTransform.localScale -= step;
     }
     public void MoveTowards(Vector3 target, float step) {
-        var direction = transform.localPosition - target;
+        var direction = objectTransform.localPosition - target;
         var posStep = direction*step;
-        transform.localPosition -= posStep;
+        objectTransform.localPosition -= posStep;
     }
     public bool IsGreaterThan(float threshold){
-        return transform.localScale.x > threshold;
+        return objectTransform.localScale.x > threshold;
     }
 
     public void Anim_Spawn(){
