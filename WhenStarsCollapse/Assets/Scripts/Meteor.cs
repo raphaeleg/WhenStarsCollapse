@@ -6,37 +6,25 @@ namespace Meteors
 {
     public class Meteor : MonoBehaviour
     {
-        /* TODO
-        Meteor
-        - Click -> Get cure @ RuneBar & destroy
-        - Sucked in by BlackHole
-        */
         public enum Type { BLUE, GREEN, RED };
         public Type type = Type.BLUE;
         private Animator animator;
+
         Vector3 direction = Vector3.zero;
         private static float SPEED = 5f;
         private static float DIR_RANGE_MAX = 0.5f;
         private static float DIR_RANGE_MIN = 0.3f;
         
+        #region Initialization
         public void Init(Vector3 pos, Vector2 spawnLoc) 
         {
+            animator = gameObject.GetComponent<Animator>();
+            SetType();
+
             transform.position = pos;
             RandomDirection(spawnLoc);
             RotateMeteor();
         }
-
-        private void Start()
-        {
-            animator = gameObject.GetComponent<Animator>();
-            SetType();
-        }
-
-        private void Update()
-        {
-            transform.position += (direction * SPEED * Time.deltaTime); 
-        }
-
         private void SetType()
         {
             int typesLength = System.Enum.GetValues(typeof(Type)).Length;
@@ -65,6 +53,18 @@ namespace Meteors
         private void RotateMeteor() {
             float angle = Mathf.Atan2(direction.y,direction.x)*180/Mathf.PI;
             transform.Rotate(0f,0f,angle);
+        }
+        #endregion
+
+        private void Update()
+        {
+            transform.position += (direction * SPEED * Time.deltaTime); 
+        }
+
+        private void OnMouseDown()
+        {
+            // TODO: Get Cure depending on type
+            Destroy(gameObject);
         }
 
         private void OnTriggerExit2D(Collider2D other) {

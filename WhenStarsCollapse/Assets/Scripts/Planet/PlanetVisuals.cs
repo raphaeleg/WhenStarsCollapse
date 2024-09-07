@@ -27,18 +27,6 @@ namespace Planets
             if (isRotating) {transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION);}
         }
 
-        public void ShrinkBy(Vector3 step) {
-            objectTransform.localScale -= step;
-        }
-        public void MoveTowards(Vector3 target, float step) {
-            var direction = objectTransform.localPosition - target;
-            var posStep = direction*step;
-            objectTransform.localPosition -= posStep;
-        }
-        public bool IsGreaterThan(float threshold){
-            return objectTransform.localScale.x > threshold;
-        }
-
         public void Anim_Spawn(){
             animator.SetTrigger("Spawn");
         }

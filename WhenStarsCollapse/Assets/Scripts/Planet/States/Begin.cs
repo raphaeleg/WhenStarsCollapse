@@ -34,14 +34,13 @@ namespace Planets
             Planet.OnDestroy();
         }
 
-        public override IEnumerator Shrink(GameObject collider)
+        public override void ShrinkUntilDestroy(GameObject collider)
         {
-            if (sentTrigger) { yield break; }
+            if (sentTrigger) { return; }
             sentTrigger = true;
 
             EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
-            base.Shrink(collider);
-            yield break;
+            base.ShrinkUntilDestroy(collider);
         }
     }
 }

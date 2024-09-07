@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Meteors;
 
 namespace Planets
 {
@@ -23,16 +24,17 @@ namespace Planets
             blackHoleEat.transform.localScale = new Vector3(2, 2, 2);
             blackHoleEat.transform.localPosition = Vector3.zero;*/
 
-            GameObject collider = other.gameObject;
-            if (other.GetComponent<Planet>()!= null) { other.GetComponent<Planet>().ShrinkUntilDestroy(Planet.gameObject); }
-            //else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
+            if (other.CompareTag("Planet")) {
+                other.GetComponent<Planet>().ShrinkUntilDestroy(Planet.gameObject); 
+            }
+            else if (other.GetComponent<Anim_Shrink>()) {
+                other.GetComponent<Anim_Shrink>().ShrinkUntilDestroy(Planet.gameObject); 
+            }
         }
 
-        
-
-        public override IEnumerator Shrink(GameObject collider)
+        public override void ShrinkUntilDestroy(GameObject collider)
         {
-            yield break;
+            return;
         }
     }
 }

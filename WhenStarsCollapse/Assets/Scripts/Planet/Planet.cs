@@ -10,18 +10,8 @@ namespace Planets
     - Sprite overlays
     - particle system
     */
-    public class Planet : MonoBehaviour
+    public class Planet : StateMachine
     {
-        #region StateMachine
-        protected State State;
-
-        public void SetState(State state)
-        {
-            State = state;
-            StartCoroutine(State.Start());
-        }
-        #endregion
-
         public enum Type { BLUE, GREEN, RED };
         public Type type = Type.BLUE;
         public PlanetVisuals visuals;
@@ -33,7 +23,6 @@ namespace Planets
                 { Type.BLUE, "CureC" }
             };
         private bool IsRightCure(string item) { return item == cureMap[type]; }
-        private bool triggeredShrink = false;
 
         public void Start()
         {
@@ -53,17 +42,13 @@ namespace Planets
             StartCoroutine(State.Heal()); 
         }
 
+        public void ShrinkUntilDestroy(GameObject other) {
+            State.ShrinkUntilDestroy(other);
+        }
+
         public void OnTriggerEnter2D(Collider2D other)
         {
             State.Collided(other);
-        }
-
-        public void ShrinkUntilDestroy(GameObject collider)
-        {
-            if (triggeredShrink) { return; }
-            triggeredShrink = true;
-
-            StartCoroutine(State.Shrink(collider));
         }
 
         public void OnDestroy()

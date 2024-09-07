@@ -30,21 +30,9 @@ namespace Planets
             return;
         }
 
-        public virtual IEnumerator Shrink(GameObject collider)
+        public virtual void ShrinkUntilDestroy(GameObject collider)
         {
-            const float INTERVAL = 0.01f;
-
-            Vector3 scale = Planet.transform.localScale;
-            float ratio = scale.x/scale.y;
-            Vector3 scaleStep = new(INTERVAL*ratio, INTERVAL, 0);
-            
-            while (Planet.visuals.IsGreaterThan(INTERVAL))
-            {
-                Planet.visuals.ShrinkBy(scaleStep);
-                Planet.visuals.MoveTowards(collider.transform.localPosition,INTERVAL);
-                yield return new WaitForSeconds(INTERVAL);
-            }
-            Planet.OnDestroy();
+            Planet.GetComponent<Anim_Shrink>().ShrinkUntilDestroy(collider);
         }
     }
 }
