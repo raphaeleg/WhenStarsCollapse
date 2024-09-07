@@ -19,6 +19,7 @@ namespace Planets
 
             EventManager.TriggerEvent("isSuccessfulSpawn", 0);
             Planet.visuals.gameObject.SetActive(true);
+            Planet.gameObject.GetComponent<Anim_Shrink>().enableShrink();
             yield return new WaitForSeconds(VISIBILITY_DELAY);
             Planet.visuals.SetPlanetType((int) Planet.type);
             Planet.SetState(new Sick(Planet));

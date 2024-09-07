@@ -64,6 +64,7 @@ namespace Meteors
         private void OnMouseDown()
         {
             // TODO: Get Cure depending on type
+            // TODO: render meteors ON TOP of planets
             Destroy(gameObject);
         }
 

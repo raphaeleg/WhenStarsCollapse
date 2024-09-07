@@ -5,12 +5,16 @@ using UnityEngine;
 public class Anim_Shrink : MonoBehaviour
 {
     [SerializeField] float speed = 4f;
-    private bool triggeredShrink = false;
+    public bool triggeredShrink = true;
+
+    public bool isShrinking() { return triggeredShrink; }
+    public void disableShrink() { triggeredShrink = true; }
+    public void enableShrink() { triggeredShrink = false; }
 
     public void ShrinkUntilDestroy(GameObject collider)
     {
         if (triggeredShrink) { return; }
-        triggeredShrink = true;
+        disableShrink();
 
         StartCoroutine(Shrink(collider));
     }

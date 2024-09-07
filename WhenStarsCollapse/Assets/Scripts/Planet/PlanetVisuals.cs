@@ -10,17 +10,20 @@ namespace Planets
         private bool isRotating = false;
 
         private SpriteRenderer spriteRenderer;
-        private Animator animator;
+        private Animator animatorMain;
+        private Animator animatorOverlay;
+
         [SerializeField] Transform objectTransform;
         [SerializeField] BoxCollider2D collider2d;
 
         private void Start() {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            animator = gameObject.GetComponent<Animator>();
+            animatorMain = gameObject.GetComponent<Animator>();
+            animatorOverlay = transform.parent.GetChild(0).gameObject.GetComponent<Animator>();
         }
 
         public void SetPlanetType(int t) {
-            animator.SetInteger("Type", t); // 0 = blue, 1 = green, 2 = red
+            animatorMain.SetInteger("Type", t); // 0 = blue, 1 = green, 2 = red
         }
 
         private void Update() {
@@ -28,14 +31,14 @@ namespace Planets
         }
 
         public void Anim_Spawn(){
-            animator.SetTrigger("Spawn");
+            animatorMain.SetTrigger("Spawn");
         }
 
         public void Anim_Sick() {
-            animator.SetTrigger("Sick");
+            animatorMain.SetTrigger("Sick");
         }
         public void Anim_GetBig() {
-            animator.SetTrigger("GetBig");
+            animatorMain.SetTrigger("GetBig");
         }
 
         public void Anim_BecomeBlackHole() {
@@ -44,14 +47,20 @@ namespace Planets
             collider2d.size = new Vector2(1.5f, 1.5f);
         }
         public void Anim_Explode() {
-            animator.SetTrigger("Explode");
+            animatorMain.SetTrigger("Explode");
+        }
+        public void Anim_Eat() {
+            animatorOverlay.SetTrigger("Eat");
+        }
+        public void Anim_Heal() {
+            animatorOverlay.SetTrigger("Heal");
         }
 
         public void Anim_BecomeDwarf(){
-            animator.SetTrigger("Dwarf_Spawn");
+            animatorMain.SetTrigger("Dwarf_Spawn");
         }
         public void Anim_DestroyDwarf(){
-            animator.SetTrigger("Dwarf_Destroy");
+            animatorMain.SetTrigger("Dwarf_Destroy");
         }
     }
 }
