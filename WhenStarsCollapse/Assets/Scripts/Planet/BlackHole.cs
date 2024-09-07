@@ -13,7 +13,7 @@ public class BlackHole : State
 
         EventManager.TriggerEvent("blackHoleSpawn", 0);
     }
-    public override void OnTriggerStay2D(Collider2D other)
+    public override void Collided(Collider2D other)
     {
         /*var blackHoleEat = Instantiate(BlackholeOverlay);
         blackHoleEat.GetComponent<AnimationNoLoop>().destroySelf = true;
@@ -22,15 +22,13 @@ public class BlackHole : State
         blackHoleEat.transform.localPosition = Vector3.zero;*/
 
         GameObject collider = other.gameObject;
-        Planet p = collider.GetComponent<Planet>();
-        if (p != null) { p.ShrinkUntilDestroy(); }
+        if (other.GetComponent<Planet>()!= null) { other.GetComponent<Planet>().ShrinkUntilDestroy(Planet.gameObject); }
         //else { collider.GetComponent<TakeItem>().ShrinkUntilDestroy(); }
-        Planet.StartSuckIn(collider);
     }
 
     
 
-    public override IEnumerator Shrink()
+    public override IEnumerator Shrink(GameObject collider)
     {
         yield break;
     }

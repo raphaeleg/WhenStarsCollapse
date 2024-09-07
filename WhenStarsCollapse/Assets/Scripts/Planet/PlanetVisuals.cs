@@ -9,6 +9,7 @@ public class PlanetVisuals : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    [SerializeField] BoxCollider2D collider2d;
 
     private void Start() {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -21,6 +22,18 @@ public class PlanetVisuals : MonoBehaviour
 
     private void Update() {
         if (isRotating) {transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION);}
+    }
+
+    public void ShrinkBy(Vector3 step) {
+        transform.localScale -= step;
+    }
+    public void MoveTowards(Vector3 target, float step) {
+        var direction = transform.localPosition - target;
+        var posStep = direction*step;
+        transform.localPosition -= posStep;
+    }
+    public bool IsGreaterThan(float threshold){
+        return transform.localScale.x > threshold;
     }
 
     public void Anim_Spawn(){
@@ -37,8 +50,8 @@ public class PlanetVisuals : MonoBehaviour
     public void Anim_BecomeBlackHole() {
         Anim_Explode();
         isRotating = true;
+        collider2d.size = new Vector2(1.5f, 1.5f);
     }
-
     public void Anim_Explode() {
         animator.SetTrigger("Explode");
     }

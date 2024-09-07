@@ -24,18 +24,23 @@ public abstract class State
         yield break;
     }
 
-    public virtual void OnTriggerStay2D(Collider2D other)
-    {
+    public virtual void Collided(Collider2D other) {
         return;
     }
 
-    public virtual IEnumerator Shrink()
+    public virtual IEnumerator Shrink(GameObject collider)
     {
-        Transform t = Planet.gameObject.transform;
-        while (t.localScale.x > 0f)
+        const float INTERVAL = 0.01f;
+
+        Vector3 scale = Planet.transform.localScale;
+        float ratio = scale.x/scale.y;
+        Vector3 scaleStep = new(INTERVAL*ratio, INTERVAL, 0);
+        
+        while (Planet.visuals.IsGreaterThan(INTERVAL))
         {
-            t.localScale -= new Vector3(0.1f, 0.1f, 0f);
-            yield return new WaitForSeconds(0.1f);
+            Planet.visuals.ShrinkBy(scaleStep);
+            Planet.visuals.MoveTowards(collider.transform.localPosition,INTERVAL);
+            yield return new WaitForSeconds(INTERVAL);
         }
         Planet.OnDestroy();
     }

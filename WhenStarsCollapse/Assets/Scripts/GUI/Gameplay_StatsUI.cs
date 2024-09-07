@@ -10,6 +10,8 @@ public class Gameplay_StatsUI : MonoBehaviour
     [SerializeField] TMP_Text timerText;
     [SerializeField] TMP_Text starsText;
     [SerializeField] TMP_Text blackHolesText;
+
+    #region Event Listeners
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
@@ -37,6 +39,7 @@ public class Gameplay_StatsUI : MonoBehaviour
             EventManager.StopListening(pair.Key, pair.Value);
         }
     }
+    #endregion
 
     public void Event_UpdateTimerText(int val) 
     {

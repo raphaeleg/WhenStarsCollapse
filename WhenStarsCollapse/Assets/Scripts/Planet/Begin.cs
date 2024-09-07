@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Begin : State
 {
-    private const int VISIBILITY_DELAY = 3;
+    private const int VISIBILITY_DELAY = 1;
+    private bool sentTrigger = false;
 
     public Begin(Planet planet) : base(planet) { }
     public override IEnumerator Start()
     {
         yield return new WaitForSeconds(VISIBILITY_DELAY);
+
+        if (sentTrigger) { yield break; }
+        sentTrigger = true;
 
         EventManager.TriggerEvent("isSuccessfulSpawn", 0);
         Planet.visuals.gameObject.SetActive(true);
@@ -18,9 +22,23 @@ public class Begin : State
         Planet.SetState(new Sick(Planet));
     }
 
-    public override IEnumerator Shrink()
+    public override void Collided(Collider2D other)
     {
+        if(other.GetComponent<Planet>() == null) {return;}
+        if (sentTrigger) { return; }
+        sentTrigger = true;
+
         EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
-        return base.Shrink();
+        Planet.OnDestroy();
+    }
+
+    public override IEnumerator Shrink(GameObject collider)
+    {
+        if (sentTrigger) { yield break; }
+        sentTrigger = true;
+
+        EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
+        base.Shrink(collider);
+        yield break;
     }
 }

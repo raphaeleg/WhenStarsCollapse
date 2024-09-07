@@ -17,6 +17,7 @@ public class Planet : StateMachine
             { Type.BLUE, "CureC" }
         };
     private bool IsRightCure(string item) { return item == cureMap[type]; }
+    private bool triggeredShrink = false;
 
     public void Start()
     {
@@ -35,26 +36,21 @@ public class Planet : StateMachine
         StartCoroutine(State.Heal()); 
     }
 
-    public void ShrinkUntilDestroy()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(State.Shrink());
+        State.Collided(other);
+    }
+
+    public void ShrinkUntilDestroy(GameObject collider)
+    {
+        if (triggeredShrink) { return; }
+        triggeredShrink = true;
+        
+        StartCoroutine(State.Shrink(collider));
     }
 
     public void OnDestroy()
     {
         Destroy(gameObject);
-    }
-
-    public void StartSuckIn(GameObject collider) { StartCoroutine(SuckIn(collider)); }
-    public IEnumerator SuckIn(GameObject collider)
-    {
-        float time = 0.5f;
-        while (time > 0 && collider != null)
-        {
-            var directionToCollider = collider.transform.position - transform.position;
-            var step = 5f * directionToCollider;
-            collider.transform.localPosition -= step;
-            yield return new WaitForSeconds(0.1f);
-        }
     }
 }
