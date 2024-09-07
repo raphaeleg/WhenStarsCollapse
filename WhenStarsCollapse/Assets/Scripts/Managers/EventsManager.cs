@@ -32,10 +32,7 @@ public class EventManager : MonoBehaviour
 
     void Init()
     {
-        if (eventDictionary == null)
-        {
-            eventDictionary = new Dictionary<string, Action<int>>();
-        }
+        eventDictionary ??= new Dictionary<string, Action<int>>();
     }
 
     public static void StartListening(string eventName, Action<int> listener)
@@ -45,6 +42,7 @@ public class EventManager : MonoBehaviour
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent += listener;
+            instance.eventDictionary[eventName] = thisEvent;
         }
         else
         {
@@ -68,7 +66,7 @@ public class EventManager : MonoBehaviour
         Action<int> thisEvent = null;
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
-            thisEvent.Invoke(h);
+            thisEvent?.Invoke(h);
         }
     }
 }

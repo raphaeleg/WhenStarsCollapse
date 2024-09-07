@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -36,8 +35,7 @@ namespace Planets
         {
             GameObject dropped = eventData.pointerDrag;
             if (!IsRightCure(dropped.name)) { yield break; }
-
-            // TODO: Minus from runebar list
+            EventManager.TriggerEvent("AddCure_Red", -1);
             StartCoroutine(State.Heal()); 
         }
 

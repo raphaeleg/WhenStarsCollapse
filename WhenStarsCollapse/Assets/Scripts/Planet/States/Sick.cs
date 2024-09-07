@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Planets
 {
@@ -22,7 +20,6 @@ namespace Planets
             {
                 yield return new WaitForSeconds(5);
                 stage++;
-                Debug.Log("Stage " + stage);
 
                 if (stage == 2) { Planet.visuals.Anim_GetBig(); }
                 Planet.visuals.SickParticle(stage == 3);

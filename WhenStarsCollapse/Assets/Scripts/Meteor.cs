@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Meteors
@@ -60,12 +58,12 @@ namespace Meteors
 
         private void Update()
         {
-            transform.position += (direction * SPEED * Time.deltaTime); 
+            transform.position += SPEED * Time.deltaTime * direction; 
         }
 
         private void OnMouseDown()
         {
-            // TODO: Get Cure depending on type
+            EventManager.TriggerEvent("CollectMeteor_Red", 0);
             Destroy(gameObject);
         }
 
