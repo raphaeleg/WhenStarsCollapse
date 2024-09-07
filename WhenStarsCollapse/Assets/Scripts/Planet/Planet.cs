@@ -7,8 +7,7 @@ using UnityEngine.EventSystems;
 namespace Planets
 {
     /* TODO
-    - Sprite overlays
-    - particle system
+    - Healing
     */
     public class Planet : StateMachine
     {

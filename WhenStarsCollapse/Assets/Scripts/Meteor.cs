@@ -18,7 +18,7 @@ namespace Meteors
         #region Initialization
         public void Init(Vector3 pos, Vector2 spawnLoc) 
         {
-            animator = gameObject.GetComponent<Animator>();
+            animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
             SetType();
 
             transform.position = pos;
@@ -29,6 +29,8 @@ namespace Meteors
         {
             int typesLength = System.Enum.GetValues(typeof(Type)).Length;
             type = (Type)Random.Range(0,typesLength);
+            animator.SetInteger("Type", (int)type);
+            animator.SetTrigger("Initialize");
         }
         private void RandomDirection(Vector2 spawnLoc) {
             bool isNegative = Random.value > 0.5f;
@@ -64,7 +66,6 @@ namespace Meteors
         private void OnMouseDown()
         {
             // TODO: Get Cure depending on type
-            // TODO: render meteors ON TOP of planets
             Destroy(gameObject);
         }
 
