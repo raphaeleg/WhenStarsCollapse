@@ -11,7 +11,8 @@ namespace Planets
 
         public int stage = 1;
         public bool isCuring = false;
-        
+        private const int HEAL_DURATION = 5;
+
 
         public override IEnumerator Start()
         {
@@ -24,22 +25,17 @@ namespace Planets
                 Debug.Log("Stage " + stage);
 
                 if (stage == 2) { Planet.visuals.Anim_GetBig(); }
-                //SickParticles(stage == 3)
+                Planet.visuals.SickParticle(stage == 3);
             }
             Planet.SetState(stage == 4 ? new BlackHole(Planet) : new WhiteDwarf(Planet));
         }
         public override IEnumerator Heal()
         {
             if (isCuring) { yield break; }
-
+            Planet.visuals.Anim_Heal(HEAL_DURATION);
             isCuring = true;
-            //CuringParticles.SetActive(true);
-
             yield return new WaitForSeconds(5);
-
             isCuring = false;
-            //CuringParticles.SetActive(false);
-
             Planet.SetState(new WhiteDwarf(Planet));    // TODO
         }
         
