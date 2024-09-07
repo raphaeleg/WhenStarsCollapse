@@ -9,7 +9,6 @@ namespace Meteors
         [SerializeField] BoxCollider2D BoxCollider;
         [SerializeField] GameObject MeteorPrefab;
         private const int SPAWN_INTERVALS = 2;
-        private const float MIN_DIR = 0.2f;
 
         private void Start() {
             StartCoroutine("InfiniteSpawn");
@@ -19,48 +18,36 @@ namespace Meteors
             while(true) {
                 GameObject meteor = Instantiate(MeteorPrefab);
                 meteor.transform.SetParent(gameObject.transform);
-                InitializePoints(meteor.GetComponent<Meteor>());
+                SetPosition(meteor.GetComponent<Meteor>());
 
                 yield return new WaitForSeconds(SPAWN_INTERVALS);
             }
         }
 
-        private void InitializePoints(Meteor m) {
-            // origin
-            int rndSide = Random.Range(0,2);
-            int rndExtreme = Random.Range(0,2);
+        private void SetPosition(Meteor meteor) {
+            bool isSpawnY = Random.value > 0.5f;
+            bool isSpawnPositive = Random.value > 0.5f;
 
             Bounds bound = BoxCollider.bounds;
-            float rndX = Random.Range(0,bound.max.x);
-            float rndY = Random.Range(0,bound.max.y);
-            float dirRangeClamp = Random.Range(-1,-MIN_DIR);
-            float dirRange = Random.Range(-1,1);
-            if (dirRange == 0) { dirRange = MIN_DIR; }
-
-            Vector2 rndOrigin = Vector2.zero;
-            Vector2 rndDir = Vector2.zero;
+            var rndX = Random.Range(bound.min.x,bound.max.x);
+            var rndY = Random.Range(bound.min.y,bound.max.y);
             
-            switch(rndSide){
-                case 0:
-                    float extremeX = bound.max.x;
-                    if (rndExtreme == 0) { 
-                        extremeX = bound.min.x; 
-                        dirRangeClamp = -dirRangeClamp;
-                    }
-                    rndOrigin = new(extremeX,rndY);
-                    rndDir = new(dirRangeClamp, dirRange);
+            Vector2 generalSpawnLoc = Vector2.zero;
+
+            switch(isSpawnY){
+                case false:     // instantiate at left/right
+                    // isSpawnPositive == false -> at left
+                    float extremeX = isSpawnPositive ? bound.max.x : bound.min.x;
+                    generalSpawnLoc.x = isSpawnPositive ? 1 : -1;
+                    meteor.Init(new(extremeX,rndY), generalSpawnLoc);
                     break;
-                default:
-                    float extremeY = bound.max.y;
-                    if (rndExtreme == 0) { 
-                        extremeY = bound.min.y; 
-                        dirRangeClamp = -dirRangeClamp;
-                    }
-                    rndOrigin = new(rndX,extremeY);
-                    rndDir = new(dirRange, dirRangeClamp);
+                default:    // instantiate at top/bottom
+                    // isSpawnPositive == false -> at bottom
+                    float extremeY = isSpawnPositive ? bound.max.y : bound.min.y;
+                    generalSpawnLoc.y = isSpawnPositive ? 1 : -1;
+                    meteor.Init(new(rndX,extremeY), generalSpawnLoc);
                     break;
             }
-            m.Init(rndOrigin, rndDir.normalized);
         }
     }
 }
