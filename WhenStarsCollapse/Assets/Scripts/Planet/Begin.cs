@@ -2,43 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Begin : State
+namespace Planets
 {
-    private const int VISIBILITY_DELAY = 1;
-    private bool sentTrigger = false;
-
-    public Begin(Planet planet) : base(planet) { }
-    public override IEnumerator Start()
+    public class Begin : State
     {
-        yield return new WaitForSeconds(VISIBILITY_DELAY);
+        private const int VISIBILITY_DELAY = 1;
+        private bool sentTrigger = false;
 
-        if (sentTrigger) { yield break; }
-        sentTrigger = true;
+        public Begin(Planet planet) : base(planet) { }
+        public override IEnumerator Start()
+        {
+            yield return new WaitForSeconds(VISIBILITY_DELAY);
 
-        EventManager.TriggerEvent("isSuccessfulSpawn", 0);
-        Planet.visuals.gameObject.SetActive(true);
-        yield return new WaitForSeconds(VISIBILITY_DELAY);
-        Planet.visuals.SetPlanetType((int) Planet.type);
-        Planet.SetState(new Sick(Planet));
-    }
+            if (sentTrigger) { yield break; }
+            sentTrigger = true;
 
-    public override void Collided(Collider2D other)
-    {
-        if(other.GetComponent<Planet>() == null) {return;}
-        if (sentTrigger) { return; }
-        sentTrigger = true;
+            EventManager.TriggerEvent("isSuccessfulSpawn", 0);
+            Planet.visuals.gameObject.SetActive(true);
+            yield return new WaitForSeconds(VISIBILITY_DELAY);
+            Planet.visuals.SetPlanetType((int) Planet.type);
+            Planet.SetState(new Sick(Planet));
+        }
 
-        EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
-        Planet.OnDestroy();
-    }
+        public override void Collided(Collider2D other)
+        {
+            if(other.GetComponent<Planet>() == null) {return;}
+            if (sentTrigger) { return; }
+            sentTrigger = true;
 
-    public override IEnumerator Shrink(GameObject collider)
-    {
-        if (sentTrigger) { yield break; }
-        sentTrigger = true;
+            EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
+            Planet.OnDestroy();
+        }
 
-        EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
-        base.Shrink(collider);
-        yield break;
+        public override IEnumerator Shrink(GameObject collider)
+        {
+            if (sentTrigger) { yield break; }
+            sentTrigger = true;
+
+            EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);
+            base.Shrink(collider);
+            yield break;
+        }
     }
 }
