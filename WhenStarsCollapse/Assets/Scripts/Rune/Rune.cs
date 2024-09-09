@@ -8,16 +8,17 @@ namespace Runes
 {
     public class Rune : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        private RuneManager parent;
         private Image image;
         [SerializeField] Sprite active;
         [SerializeField] Sprite inactive;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
-
         private void Awake()
         {
+            parent = transform.parent.GetComponent<RuneManager>();
             SubscribedEvents = new() {
-                { "SetCure_Red", Event_UpdateRune },
+                { parent.TypeToString("SetCure"), Event_UpdateRune },
             };
         }
 

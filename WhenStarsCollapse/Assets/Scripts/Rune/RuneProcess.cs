@@ -8,13 +8,15 @@ namespace Runes
 
     public class RuneProcess : MonoBehaviour
     {
+        private RuneManager parent;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
 
         private void Awake()
         {
+            parent = transform.parent.GetComponent<RuneManager>();
             SubscribedEvents = new() {
-                { "ProcessCure_Red", Event_StartProcess },
+                { parent.TypeToString("ProcessCure"), Event_StartProcess },
             };
         }
 
@@ -38,7 +40,7 @@ namespace Runes
         {
             StartCoroutine("Running");
         }
-    
+
         private IEnumerator Running()
         {
             for (int i = 0; i < 25; i++)
@@ -47,7 +49,7 @@ namespace Runes
                 yield return new WaitForSeconds(0.01f);
             }
             transform.localScale = new Vector3(0f, 1f, 1f);
-            EventManager.TriggerEvent("AddCure_Red", 1);
+            EventManager.TriggerEvent(parent.TypeToString("AddCure"), 1);
         }
     }
 }

@@ -4,8 +4,22 @@ using UnityEngine;
 
 namespace Runes
 {
+
     public class RuneManager : StateMachine
     {
+        public enum Type { RED, GREEN, BLUE };
+        [SerializeField] Type type;
+        public string TypeToString(string prefix)
+        {
+            return type switch
+            {
+                Type.RED => prefix + "_Red",
+                Type.GREEN => prefix + "_Green",
+                Type.BLUE => prefix + "_Blue",
+                _ => prefix + "_Unknown",
+            };
+        }
+
         private int cures = 0;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
@@ -13,7 +27,7 @@ namespace Runes
         private void Awake()
         {
             SubscribedEvents = new() {
-                { "AddCure_Red", Event_CalcCure },
+                { TypeToString("AddCure"), Event_CalcCure },
             };
         }
 
