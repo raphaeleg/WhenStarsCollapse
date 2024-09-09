@@ -21,13 +21,9 @@ namespace Planets
         {
             yield break;
         }
-        public virtual IEnumerator Heal()
+        public virtual IEnumerator Collided(Collider2D other)
         {
             yield break;
-        }
-
-        public virtual void Collided(Collider2D other) {
-            return;
         }
 
         public virtual void ShrinkUntilDestroy(GameObject collider)

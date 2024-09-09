@@ -7,16 +7,15 @@ namespace Runes
 {
     public class RuneCount : MonoBehaviour
     {
-        private RuneManager parent;
         private TMP_Text text;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
 
         private void Awake()
         {
-            parent = transform.parent.GetComponent<RuneManager>();
+            Faction faction = transform.parent.GetComponent<Faction>();
             SubscribedEvents = new() {
-                { parent.TypeToString("SetCure"), Event_UpdateText },
+                { faction.StringType("SetCure"), Event_UpdateText },
             };
         }
 

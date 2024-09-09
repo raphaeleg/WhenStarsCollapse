@@ -7,27 +7,16 @@ namespace Runes
 
     public class RuneManager : StateMachine
     {
-        public enum Type { RED, GREEN, BLUE };
-        [SerializeField] Type type;
-        public string TypeToString(string prefix)
-        {
-            return type switch
-            {
-                Type.RED => prefix + "_Red",
-                Type.GREEN => prefix + "_Green",
-                Type.BLUE => prefix + "_Blue",
-                _ => prefix + "_Unknown",
-            };
-        }
-
+        private Faction faction;
         private int cures = 0;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
 
         private void Awake()
         {
+            faction = GetComponent<Faction>();
             SubscribedEvents = new() {
-                { TypeToString("AddCure"), Event_CalcCure },
+                { faction.StringType("AddCure"), Event_CalcCure },
             };
         }
 
@@ -50,7 +39,7 @@ namespace Runes
         public void Event_CalcCure(int val)
         {
             cures += val;
-            EventManager.TriggerEvent("SetCure_Red", cures);
+            EventManager.TriggerEvent(faction.StringType("SetCure"), cures);
         }
     }
 }

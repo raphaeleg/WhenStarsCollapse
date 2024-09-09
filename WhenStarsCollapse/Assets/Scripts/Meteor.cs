@@ -4,29 +4,18 @@ namespace Meteors
 {
     public class Meteor : MonoBehaviour
     {
-        public enum Type { BLUE, GREEN, RED };
-        public Type type = Type.BLUE;
         private Animator animator;
+        private Faction faction;
 
         Vector3 direction = Vector3.zero;
         private static float SPEED = 5f;
         private static float DIR_RANGE_MAX = 0.5f;
         private static float DIR_RANGE_MIN = 0.3f;
 
-        public string TypeToString(string prefix)
-        {
-            return type switch
-            {
-                Type.RED => prefix + "_Red",
-                Type.GREEN => prefix + "_Green",
-                Type.BLUE => prefix + "_Blue",
-                _ => prefix + "_Unknown",
-            };
-        }
-
         #region Initialization
         public void Init(Vector3 pos, Vector2 spawnLoc)
         {
+            faction = GetComponent<Faction>();
             animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
             SetType();
 
@@ -36,9 +25,8 @@ namespace Meteors
         }
         private void SetType()
         {
-            int typesLength = System.Enum.GetValues(typeof(Type)).Length;
-            type = (Type)Random.Range(0, typesLength);
-            animator.SetInteger("Type", (int)type);
+            faction.SetRandom();
+            animator.SetInteger("Type", faction.IntType());
             animator.SetTrigger("Initialize");
         }
         private void RandomDirection(Vector2 spawnLoc)
@@ -77,7 +65,7 @@ namespace Meteors
 
         private void OnMouseDown()
         {
-            EventManager.TriggerEvent(TypeToString("CollectMeteor"), 0);
+            EventManager.TriggerEvent(faction.StringType("CollectMeteor"), 0);
             Destroy(gameObject);
         }
 

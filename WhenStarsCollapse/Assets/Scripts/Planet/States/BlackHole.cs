@@ -17,17 +17,20 @@ namespace Planets
 
             EventManager.TriggerEvent("blackHoleSpawn", 0);
         }
-        public override void Collided(Collider2D other)
+        public override IEnumerator Collided(Collider2D other)
         {
             Anim_Shrink otherShrinkAnim = other.GetComponent<Anim_Shrink>();
-            if (other.CompareTag("Planet") == true) {
-                if (!otherShrinkAnim.isShrinking()) { Planet.visuals.Anim_Eat(); Debug.Log("Called"); }
-                other.GetComponent<Planet>().ShrinkUntilDestroy(Planet.gameObject); 
+            if (other.CompareTag("Planet") == true)
+            {
+                if (!otherShrinkAnim.isShrinking()) { Planet.visuals.Anim_Eat(); }
+                other.GetComponent<Planet>().ShrinkUntilDestroy(Planet.gameObject);
             }
-            else if (otherShrinkAnim) {
-                if (!otherShrinkAnim.isShrinking()) { Planet.visuals.Anim_Eat(); Debug.Log("Called2"); }
-                otherShrinkAnim.ShrinkUntilDestroy(Planet.gameObject); 
+            else if (otherShrinkAnim)
+            {
+                if (!otherShrinkAnim.isShrinking()) { Planet.visuals.Anim_Eat(); }
+                otherShrinkAnim.ShrinkUntilDestroy(Planet.gameObject);
             }
+            yield break;
         }
 
         public override void ShrinkUntilDestroy(GameObject collider)

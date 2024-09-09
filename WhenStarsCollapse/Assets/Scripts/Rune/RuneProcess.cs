@@ -8,15 +8,15 @@ namespace Runes
 
     public class RuneProcess : MonoBehaviour
     {
-        private RuneManager parent;
+        private Faction faction;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
 
         private void Awake()
         {
-            parent = transform.parent.GetComponent<RuneManager>();
+            faction = transform.parent.GetComponent<Faction>();
             SubscribedEvents = new() {
-                { parent.TypeToString("ProcessCure"), Event_StartProcess },
+                { faction.StringType("ProcessCure"), Event_StartProcess },
             };
         }
 
@@ -49,7 +49,7 @@ namespace Runes
                 yield return new WaitForSeconds(0.01f);
             }
             transform.localScale = new Vector3(0f, 1f, 1f);
-            EventManager.TriggerEvent(parent.TypeToString("AddCure"), 1);
+            EventManager.TriggerEvent(faction.StringType("AddCure"), 1);
         }
     }
 }

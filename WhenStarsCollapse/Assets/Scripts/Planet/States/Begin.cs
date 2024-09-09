@@ -21,14 +21,14 @@ namespace Planets
             Planet.visuals.gameObject.SetActive(true);
             Planet.gameObject.GetComponent<Anim_Shrink>().enableShrink();
             yield return new WaitForSeconds(VISIBILITY_DELAY);
-            Planet.visuals.SetPlanetType((int) Planet.type);
+            Planet.visuals.SetPlanetType(Planet.faction.IntType());
             Planet.SetState(new Sick(Planet));
         }
 
-        public override void Collided(Collider2D other)
+        public override IEnumerator Collided(Collider2D other)
         {
-            if(other.GetComponent<Planet>() == null) {return;}
-            if (sentTrigger) { return; }
+            if (other.GetComponent<Planet>() == null) { yield break; }
+            if (sentTrigger) { yield break; }
             sentTrigger = true;
 
             EventManager.TriggerEvent("isUnsuccessfulSpawn", 0);

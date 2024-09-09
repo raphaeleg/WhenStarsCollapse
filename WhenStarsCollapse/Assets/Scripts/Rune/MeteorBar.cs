@@ -6,7 +6,7 @@ namespace Runes
 {
     public class MeteorBar : MonoBehaviour
     {
-        private RuneManager parent;
+        private Faction faction;
         private static int METEORS_FOR_CURE = 3;
         private int collectedMeteors = 0;
         private RectTransform _transform;
@@ -21,10 +21,10 @@ namespace Runes
 
         private void Awake()
         {
-            parent = transform.parent.parent.GetComponent<RuneManager>();
+            faction = transform.parent.parent.GetComponent<Faction>();
             SubscribedEvents = new() {
-                { parent.TypeToString("CollectMeteor"), Event_AddMeteor },
-                { parent.TypeToString("SetCure"), Event_ResetMeteor },
+                { faction.StringType("CollectMeteor"), Event_AddMeteor },
+                { faction.StringType("SetCure"), Event_ResetMeteor },
             };
         }
 
@@ -55,7 +55,7 @@ namespace Runes
             SetVisual();
             if (collectedMeteors == METEORS_FOR_CURE)
             {
-                EventManager.TriggerEvent(parent.TypeToString("ProcessCure"), 0);
+                EventManager.TriggerEvent(faction.StringType("ProcessCure"), 0);
             }
         }
 

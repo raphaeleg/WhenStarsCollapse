@@ -8,7 +8,7 @@ namespace Runes
 {
     public class Rune : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        private RuneManager parent;
+        private Faction faction;
         private Image image;
         [SerializeField] Sprite active;
         [SerializeField] Sprite inactive;
@@ -16,9 +16,9 @@ namespace Runes
         private Dictionary<string, Action<int>> SubscribedEvents;
         private void Awake()
         {
-            parent = transform.parent.GetComponent<RuneManager>();
+            faction = transform.parent.GetComponent<Faction>();
             SubscribedEvents = new() {
-                { parent.TypeToString("SetCure"), Event_UpdateRune },
+                { faction.StringType("SetCure"), Event_UpdateRune },
             };
         }
 
@@ -53,8 +53,6 @@ namespace Runes
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            //transform.SetParent(transform.root);
-            //transform.SetAsLastSibling();
             image.raycastTarget = false;
         }
 
@@ -65,8 +63,6 @@ namespace Runes
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            //transform.SetParent(parent);
-            //transform.SetSiblingIndex(0);
             transform.SetLocalPositionAndRotation(new Vector3(-135, 0, 0), Quaternion.identity);
             image.raycastTarget = true;
         }
@@ -79,6 +75,11 @@ namespace Runes
         public void OnPointerExit(PointerEventData eventData)
         {
             transform.localScale = Vector3.one;
+        }
+
+        public new string GetType()
+        {
+            return faction.StringType();
         }
     }
 }
