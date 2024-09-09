@@ -39,4 +39,5 @@ public class Faction : MonoBehaviour
     {
         return prefix + "_" + StringType();
     }
+    public bool CompareType(Faction other) { return type == other.type; }
 }

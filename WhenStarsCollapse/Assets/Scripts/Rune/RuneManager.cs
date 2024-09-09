@@ -8,7 +8,7 @@ namespace Runes
     public class RuneManager : StateMachine
     {
         private Faction faction;
-        private int cures = 0;
+        [SerializeField] int cures = 0;
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
 
@@ -36,6 +36,10 @@ namespace Runes
             }
         }
         #endregion
+        private void Start()
+        {
+            EventManager.TriggerEvent(faction.StringType("SetCure"), cures);
+        }
         public void Event_CalcCure(int val)
         {
             cures += val;

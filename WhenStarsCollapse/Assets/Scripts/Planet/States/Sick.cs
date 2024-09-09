@@ -10,38 +10,38 @@ namespace Planets
 
         public int stage = 1;
         public bool isCuring = false;
-        private const int HEAL_DURATION = 5;
+        private const int INTERVAL = 5;
 
         public override IEnumerator Start()
         {
             Planet.visuals.Anim_Sick();
+            yield return new WaitForSeconds(INTERVAL);
             while (stage < 4 && stage > 0)
             {
-                yield return new WaitForSeconds(5);
                 stage++;
 
-                if (stage == 2) { Planet.visuals.Anim_GetBig(); }
-                Planet.visuals.SickParticle(stage == 3);
+                if (stage is 2) { Planet.visuals.Anim_GetBig(); }
+                Planet.visuals.SickParticle(stage is 3);
+                yield return new WaitForSeconds(INTERVAL);
             }
-            Planet.SetState(stage == 4 ? new BlackHole(Planet) : new WhiteDwarf(Planet));
+            if (stage == 4) { Planet.SetState(new BlackHole(Planet)); }
         }
         private bool cureValidChecking(Rune rune)
         {
-            return rune && IsRightCure(rune.GetType()) && !isCuring;
+            return rune && Planet.faction.CompareType(rune.faction) && !isCuring;
         }
-        private bool IsRightCure(string item) { return Planet.faction.type.ToString() == item; }
-
         public override IEnumerator Collided(Collider2D other)
         {
             Rune rune = other.GetComponent<Rune>();
             if (!cureValidChecking(rune)) { yield break; }
-
             EventManager.TriggerEvent(Planet.faction.StringType("AddCure"), -1);
+            stage = 0;
 
-            Planet.visuals.Anim_Heal(HEAL_DURATION);
             isCuring = true;
+            Planet.visuals.Anim_Heal(INTERVAL);
             yield return new WaitForSeconds(5);
             isCuring = false;
+
             Planet.SetState(new WhiteDwarf(Planet));
         }
     }

@@ -20,30 +20,35 @@ namespace Planets
         [SerializeField] GameObject Particle_Green;
         [SerializeField] GameObject Particle_Blue;
 
-        private void Start() {
+        private void Start()
+        {
             animatorMain = gameObject.GetComponent<Animator>();
             animatorOverlay = transform.parent.GetChild(0).gameObject.GetComponent<Animator>();
         }
 
-        public void SetPlanetType(int t) {
+        public void SetPlanetType(int t)
+        {
             type = t;
             animatorMain.SetInteger("Type", t); // 0 = blue, 1 = green, 2 = red
         }
 
-        private void Update() {
-            if (isRotating) {transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION);}
+        private void Update()
+        {
+            if (isRotating) { transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION); }
         }
 
-        public void Anim_Spawn(){
+        public void Anim_Spawn()
+        {
             animatorMain.SetTrigger("Spawn");
         }
 
-        public void Anim_Sick() {
+        public void Anim_Sick()
+        {
             animatorMain.SetTrigger("Sick");
         }
         public void SickParticle(bool enable)
         {
-            switch(type)
+            switch (type)
             {
                 case 0:
                     Particle_Blue.SetActive(enable);
@@ -56,24 +61,29 @@ namespace Planets
                     break;
             }
         }
-        public void Anim_GetBig() {
+        public void Anim_GetBig()
+        {
             animatorMain.SetTrigger("GetBig");
         }
 
-        public void Anim_BecomeBlackHole() {
+        public void Anim_BecomeBlackHole()
+        {
             Anim_Explode();
             isRotating = true;
             collider2d.size = new Vector2(1.5f, 1.5f);
         }
-        public void Anim_Explode() {
+        public void Anim_Explode()
+        {
             animatorMain.SetTrigger("Explode");
         }
-        public void Anim_Eat() {
+        public void Anim_Eat()
+        {
             animatorOverlay.SetTrigger("Eat");
         }
-        public void Anim_Heal(float duration) {
+        public void Anim_Heal(float duration)
+        {
+            SickParticle(false);
             StartCoroutine("HealParticles", duration);
-            //animatorOverlay.SetTrigger("Heal");
         }
 
         private IEnumerator HealParticles(float duration)
@@ -83,10 +93,12 @@ namespace Planets
             Particle_Heal.SetActive(false);
         }
 
-        public void Anim_BecomeDwarf(){
+        public void Anim_BecomeDwarf()
+        {
             animatorMain.SetTrigger("Dwarf_Spawn");
         }
-        public void Anim_DestroyDwarf(){
+        public void Anim_DestroyDwarf()
+        {
             animatorMain.SetTrigger("Dwarf_Destroy");
         }
     }
