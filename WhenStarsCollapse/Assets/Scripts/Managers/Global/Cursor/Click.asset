@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Click
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManager/CursorAnimation
+  cursorType: 2
+  playOnce: 1
+  textureArray:
+  - {fileID: 2800000, guid: b9aee2997aba740428f1128c618ecbe5, type: 3}
+  - {fileID: 2800000, guid: 576badc313a7f8a4eb3cf2e8f9ce17e8, type: 3}
+  - {fileID: 2800000, guid: 34dac74f91d0a1940bede05c820c750d, type: 3}
+  - {fileID: 2800000, guid: 0766f05ba5b84044ebe5e4382c7e50f9, type: 3}
+  - {fileID: 2800000, guid: 02117ac6934f370469590e66ff5dd18b, type: 3}
+  frameRate: 0.05
+  offset: {x: 12, y: 12}
