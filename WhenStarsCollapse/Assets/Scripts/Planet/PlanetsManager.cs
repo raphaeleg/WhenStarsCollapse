@@ -42,8 +42,7 @@ namespace Planets
 
         private void Start()
         {
-            if (polygonCollider == null) { GetComponent<PolygonCollider2D>(); }
-            if (polygonCollider == null) { Debug.Log("Please assign PolygonCollider2D component."); }
+            if (polygonCollider == null) { gameObject.GetComponent<PolygonCollider2D>(); }
 
             StartCoroutine("InfiniteSpawn");
         }
