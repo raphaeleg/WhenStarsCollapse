@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] ScoreManager score;
     [SerializeField] const int BLACKHOLE_END_CONDITION = 1;
+    #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
             EventManager.StopListening(pair.Key, pair.Value);
         }
     }
+    #endregion
 
     public void Start() { score.Restart(); }
 

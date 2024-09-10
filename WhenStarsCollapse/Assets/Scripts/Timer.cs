@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public int Seconds { get; private set; } = 0;
-
-    public void Restart()
-    { 
-        Seconds = 0; 
-    }
+    public int Seconds { get; private set; } = -1;
+    private bool Pause = false;
 
     private void Start()
     {
         Restart();
-        StartCoroutine(UpdateTimer());
+        StartCount();
     }
+    public void Restart() { Seconds = -1; }
+    public void SetPause(bool paused) {  Pause = paused; }
+    public void StartCount() { StartCoroutine(UpdateTimer()); }
     private IEnumerator UpdateTimer()
     {
-        while (this.enabled == true)
+        while (!Pause)
         {
-            yield return new WaitForSeconds(1);
             Seconds++;
             EventManager.TriggerEvent("TimerText", Seconds);
+            yield return new WaitForSeconds(1);
         }
     }
 }
