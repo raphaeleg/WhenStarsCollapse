@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] ScoreManager score;
+    [SerializeField] Score score;
     [SerializeField] const int BLACKHOLE_END_CONDITION = 1;
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
             { "isSuccessfulSpawn", Event_AddCount_Star },
             { "blackHoleSpawn", Event_AddCount_BlackHole },
             { "whiteDwarfSpawn", Event_AddCount_WhiteDwarf },
+            { "TimerText", Event_AddCount_Timer },
         };
     }
     private void OnEnable()
@@ -46,10 +47,7 @@ public class GameManager : MonoBehaviour
     {
         score.blackHoles++;
         EventManager.TriggerEvent("BlackHoleText", score.blackHoles);
-        if (score.blackHoles is BLACKHOLE_END_CONDITION) { Lose(); }
+        if (score.blackHoles >= BLACKHOLE_END_CONDITION) { EventManager.TriggerEvent("Lose", 1); }
     }
-    private void Lose()
-    {
-        SceneLoader.LoadLoseScreen();
-    }
+    public void Event_AddCount_Timer(int val) { score.time = val; }
 }

@@ -8,9 +8,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class End_Text : MonoBehaviour
+public class Scoreboard : MonoBehaviour
 {
-    [SerializeField] ScoreManager highScore;
+    [SerializeField] Score highScore;
     private const int MULTIPLIER_TIME = 100;
     private const int MULTIPLIER_STARS = 200;
     private const int MULTIPLIER_WHITEDWARFS = 250;

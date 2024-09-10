@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,31 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     private static SceneLoader sceneLoader;
+    #region EventManager
+    private Dictionary<string, Action<int>> SubscribedEvents;
 
+    private void Awake()
+    {
+        SubscribedEvents = new() {
+            { "Lose", LoadLoseScreen },
+        };
+    }
+    private void OnEnable()
+    {
+        foreach (var pair in SubscribedEvents)
+        {
+            EventManager.StartListening(pair.Key, pair.Value);
+        }
+    }
+
+    private void OnDisable()
+    {
+        foreach (var pair in SubscribedEvents)
+        {
+            EventManager.StopListening(pair.Key, pair.Value);
+        }
+    }
+    #endregion
     public static SceneLoader instance
     {
         get
@@ -30,22 +55,22 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public static void LoadTutorial()
+    public static void LoadTutorial(int val)
     {
         LoadScene("Tutorial");
     }
 
-    public static void LoadMainMenu()
+    public static void LoadMainMenu(int val)
     {
         LoadScene("MainMenu");
     }
 
-    public static void LoadGameplay()
+    public static void LoadGameplay(int val)
     {
         LoadScene("Gameplay");
     }
 
-    public static void LoadLoseScreen()
+    public static void LoadLoseScreen(int val)
     {
         LoadScene("Highscore");
     }

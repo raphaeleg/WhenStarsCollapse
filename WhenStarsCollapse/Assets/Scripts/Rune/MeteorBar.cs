@@ -70,6 +70,7 @@ namespace Runes
 
         private void SetVisual()
         {
+            if (_transform == null) { return; }
             _transform.sizeDelta = collectedMeteors switch
             {
                 1 => new Vector2(BAR_WIDTH_1, BAR_HEIGHT),

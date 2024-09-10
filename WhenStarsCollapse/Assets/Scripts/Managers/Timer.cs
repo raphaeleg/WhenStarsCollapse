@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,14 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         Restart();
+    }
+    public void Restart() {
+        Seconds = -1; 
+        SetPause(false);
         StartCount();
     }
-    public void Restart() { Seconds = -1; }
     public void SetPause(bool paused) {  Pause = paused; }
+    public void ActivatePause() { SetPause(true); }
     public void StartCount() { StartCoroutine(UpdateTimer()); }
     private IEnumerator UpdateTimer()
     {

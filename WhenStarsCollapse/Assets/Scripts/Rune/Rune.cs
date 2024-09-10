@@ -29,6 +29,7 @@ namespace Runes
 
         private void OnEnable()
         {
+            image = gameObject.GetComponent<Image>();
             foreach (var pair in SubscribedEvents)
             {
                 EventManager.StartListening(pair.Key, pair.Value);
@@ -43,10 +44,6 @@ namespace Runes
             }
         }
         #endregion
-        private void Start()
-        {
-            image = gameObject.GetComponent<Image>();
-        }
         public void Event_UpdateRune(int val)
         {
             isActive = val > 0;

@@ -8,8 +8,8 @@ namespace Planets
     // Manages planet spawning
     public class PlanetsManager : MonoBehaviour
     {
-        [SerializeField] PolygonCollider2D polygonCollider;
         [SerializeField] GameObject PlanetPrefab;
+        private PolygonCollider2D polygonCollider;
         private const int SPAWN_INTERVALS = 2;
 
         #region Event Listeners
@@ -24,6 +24,7 @@ namespace Planets
 
         private void OnEnable()
         {
+            polygonCollider = gameObject.GetComponent<PolygonCollider2D>();
             foreach (var pair in SubscribedEvents)
             {
                 EventManager.StartListening(pair.Key, pair.Value);
