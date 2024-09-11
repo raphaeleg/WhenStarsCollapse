@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class CursorManager : MonoBehaviour
 {
@@ -12,13 +13,35 @@ public class CursorManager : MonoBehaviour
     private int currentFrame;
     private float frameTimer;
     private int frameCount;
-
-    public enum CursorType { Arrow, Grab, Click }
+    #region EventManager
+    private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
         Instance = this;
+        SubscribedEvents = new() {
+            { "Rune_SetDragging", SetGrab },
+        };
     }
+    private void OnEnable()
+    {
+        foreach (var pair in SubscribedEvents)
+        {
+            EventManager.StartListening(pair.Key, pair.Value);
+        }
+    }
+
+    private void OnDisable()
+    {
+        foreach (var pair in SubscribedEvents)
+        {
+            EventManager.StopListening(pair.Key, pair.Value);
+        }
+    }
+    #endregion
+
+    public enum CursorType { Arrow, Grab, Click }
+
     private void Start()
     {
         SetActiveCursorType(CursorType.Arrow);
@@ -58,6 +81,12 @@ public class CursorManager : MonoBehaviour
     private CursorAnimation GetCursorAnimation(CursorType cursorType)
     {
         return cursorAnimationList.First(item => item.cursorType == cursorType);
+    }
+
+    public void SetGrab(int val)
+    {
+        CursorType toSwitch = val != 0 ? CursorType.Grab : CursorType.Arrow;
+        SetActiveCursorType(toSwitch);
     }
 
     [CreateAssetMenu]

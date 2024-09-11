@@ -57,7 +57,7 @@ namespace Runes
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (!isActive) { return; }
-            CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Grab);
+            EventManager.TriggerEvent("Rune_SetDragging", 1);
             image.raycastTarget = false;
             isDrag = true;
         }
@@ -90,7 +90,7 @@ namespace Runes
         public void EndDrag()
         {
             isDrag = false;
-            CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Arrow);
+            EventManager.TriggerEvent("Rune_SetDragging", 0);
             transform.SetLocalPositionAndRotation(OG_POSITION, Quaternion.identity);
             image.raycastTarget = true;
         }
