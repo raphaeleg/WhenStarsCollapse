@@ -21,4 +21,4 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 0766f05ba5b84044ebe5e4382c7e50f9, type: 3}
   - {fileID: 2800000, guid: 02117ac6934f370469590e66ff5dd18b, type: 3}
   frameRate: 0.05
-  offset: {x: 12, y: 12}
+  offset: {x: 26, y: 24}
