@@ -8,7 +8,6 @@ namespace Tutorial
     public class Tutorial_Text : MonoBehaviour
     {
         public List<string> TutorialText = new List<string>();
-        private int currentScreen = 0;
         private TypeWriterEffect typewriter;
         #region EventManager
         private Dictionary<string, Action<int>> SubscribedEvents;
@@ -17,8 +16,8 @@ namespace Tutorial
         {
             typewriter = GetComponent<TypeWriterEffect>();
             SubscribedEvents = new() {
-            { "Tutorial_Next", Event_ChangeText }
-        };
+                { "Tutorial_SetCurrentDialogue", Event_ChangeText }
+            };
         }
         private void OnEnable()
         {
@@ -36,16 +35,14 @@ namespace Tutorial
             }
         }
         #endregion
-
-        private void Start()
+        public void Start()
         {
-            typewriter.Restart(TutorialText[currentScreen]);
+            EventManager.TriggerEvent("Tutorial_DialogueCount", TutorialText.Count);
+            typewriter.Restart(TutorialText[0]);
         }
         public void Event_ChangeText(int val)
         {
-            if (currentScreen + val > TutorialText.Count) { return; }
-            currentScreen += val;
-            typewriter.Restart(TutorialText[currentScreen]);
+            typewriter.Restart(TutorialText[val]);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Tutorial
         {
             _animator = GetComponent<Animator>();
             SubscribedEvents = new() {
-            { "Tutorial_Next", Event_ChangeAnimation }
+            { "Tutorial_SetCurrentDialogue", Event_ChangeAnimation }
         };
         }
         private void OnEnable()
@@ -34,10 +34,9 @@ namespace Tutorial
             }
         }
         #endregion
-        public void Event_ChangeAnimation(int step)
+        public void Event_ChangeAnimation(int val)
         {
-            int newScreen = _animator.GetInteger("CurrentScreen") + step;
-            _animator.SetInteger("CurrentScreen", newScreen);
+            _animator.SetInteger("CurrentScreen", val);
             _animator.SetTrigger("ChangeScreen");
         }
     }

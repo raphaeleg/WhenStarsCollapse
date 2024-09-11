@@ -13,7 +13,7 @@ namespace Tutorial
 
         const float START_DELAY = 0f;
         [SerializeField] const float TIME_BTW_CHAR = 0.03f;
-        [SerializeField] string leadingChar = "";
+        private string leadingChar = "";
         const bool isLeadingCharBeforeDelay = false;
 
         public void Restart(string _text)

@@ -14,6 +14,7 @@ public class SceneLoader : MonoBehaviour
     {
         SubscribedEvents = new() {
             { "Lose", LoadLoseScreen },
+            { "LoadGameplay", LoadGameplay },
         };
     }
     private void OnEnable()
@@ -65,7 +66,7 @@ public class SceneLoader : MonoBehaviour
         LoadScene("MainMenu");
     }
 
-    public static void LoadGameplay()
+    public static void LoadGameplay(int val)
     {
         LoadScene("Gameplay");
     }
