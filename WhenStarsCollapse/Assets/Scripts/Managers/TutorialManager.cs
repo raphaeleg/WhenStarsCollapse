@@ -51,6 +51,8 @@ namespace Tutorial {
 
             if (nextDialogue == 0) { EventManager.TriggerEvent("Tutorial_HideBackBtn", 0); }
             else if (nextDialogue == 1) { EventManager.TriggerEvent("Tutorial_HideBackBtn", 1); }
+            else if (nextDialogue == dialogueCount - 1) { EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 0); }
+            else if (nextDialogue == dialogueCount - 2) { EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 1); }
 
             currentDialogue = nextDialogue;
             EventManager.TriggerEvent("Tutorial_SetCurrentDialogue", currentDialogue);

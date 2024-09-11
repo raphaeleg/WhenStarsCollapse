@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +16,7 @@ namespace Tutorial
         [SerializeField] const float TIME_BTW_CHAR = 0.03f;
         private string leadingChar = "";
         const bool isLeadingCharBeforeDelay = false;
+        string coroutine = "";
 
         public void Restart(string _text)
         {
@@ -23,7 +25,9 @@ namespace Tutorial
                 writer = _text;
                 _tmpProText.text = "";
 
-                StartCoroutine("TypeWriterTMP");
+                if (coroutine != "") { StopCoroutine(coroutine); }
+                coroutine = "TypeWriterTMP";
+                StartCoroutine(coroutine);
             }
         }
 
@@ -49,6 +53,8 @@ namespace Tutorial
             {
                 _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
             }
+
+            coroutine = "";
         }
     }
 }

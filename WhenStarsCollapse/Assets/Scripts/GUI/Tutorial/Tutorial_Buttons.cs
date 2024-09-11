@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Tutorial
 {
@@ -9,6 +11,7 @@ namespace Tutorial
         public enum Type { BACK, NEXT };
         public Type button;
         private GameObject child;
+        private Color YELLOW = new Color(0.945098f, 0.8901961f, 0.5333334f, 1);
         #region EventManager
         private Dictionary<string, Action<int>> SubscribedEvents;
 
@@ -16,7 +19,8 @@ namespace Tutorial
         {
             child = transform.GetChild(0).gameObject;
             SubscribedEvents = new() {
-                { "Tutorial_HideBackBtn", Event_HideBtn }
+                { "Tutorial_HideBackBtn", Event_HideBtn },
+                { "Tutorial_ReadyNextBtn", Event_ReadyBtn },
             };
         }
         private void OnEnable()
@@ -44,6 +48,13 @@ namespace Tutorial
         {
             if (button != Type.BACK) { return; }
             child.SetActive(val != 0);
+        }
+        public void Event_ReadyBtn(int val)
+        {
+            if (button != Type.NEXT) { return; }
+            TMP_Text label = child.transform.GetComponentsInChildren<TMP_Text>()[0];
+            label.text = val == 1 ? "Next" : "Start";
+            label.color = val == 1 ? Color.white : YELLOW;
         }
     }
 }
