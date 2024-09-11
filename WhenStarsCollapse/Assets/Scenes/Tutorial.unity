@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 1319305204}
   - component: {fileID: 1319305207}
   - component: {fileID: 1319305206}
+  - component: {fileID: 1319305208}
   - component: {fileID: 1319305205}
   m_Layer: 5
   m_Name: Text
@@ -525,9 +526,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1319305203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74d08a0a57c91d47bb9c4aee3ac31a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 778c98f8d1fe94a4fa271938def9c5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TutorialText: []
+  leadingChar: 
 --- !u!114 &1319305206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +628,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319305203}
   m_CullTransparentMesh: 1
+--- !u!114 &1319305208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319305203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df3ae7af3f89a142bc882b970af625c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialText:
+  - You are the Sun God.
+  - This is your universe of stars.
+  - Over time, your stars will shrink and become specks of particles.
+  - This then create new stars, expanding your universe with even further.
+  - Yet, your stars can also get sick at times.
+  - As your star get sick, they get bigger until it becomes a supergiant.
+  - When they get too big, they turn into black holes.
+  - They consume all nearby stars, creating a barren and lifeless universe.
+  - To avoid this, you can collect the meteors to create a spell that will heal your
+    sick stars.
+  - Grow your universe. Make it last. Keep your stars safe from turning into black
+    holes.
 --- !u!1 &1370852251
 GameObject:
   m_ObjectHideFlags: 0
