@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346288058984076822}
   - component: {fileID: 5349215075024963490}
-  - component: {fileID: -4073148506108001970}
+  - component: {fileID: 6059566440324788671}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: EventManager
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5349215075024963490
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46b6c2d943911e46bb762fdbebd2eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4073148506108001970
+--- !u!114 &6059566440324788671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,4 +57,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d18aa3906f183949acb405c205a6e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: 

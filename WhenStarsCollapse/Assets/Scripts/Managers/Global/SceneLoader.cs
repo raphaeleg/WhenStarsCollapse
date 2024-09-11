@@ -55,17 +55,17 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public static void LoadTutorial(int val)
+    public static void LoadTutorial()
     {
         LoadScene("Tutorial");
     }
 
-    public static void LoadMainMenu(int val)
+    public static void LoadMainMenu()
     {
         LoadScene("MainMenu");
     }
 
-    public static void LoadGameplay(int val)
+    public static void LoadGameplay()
     {
         LoadScene("Gameplay");
     }
