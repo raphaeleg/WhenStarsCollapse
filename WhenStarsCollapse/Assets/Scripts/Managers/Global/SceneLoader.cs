@@ -6,12 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private static SceneLoader sceneLoader;
+    private static SceneLoader instance;
+    private const int DURATION = 5; 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         SubscribedEvents = new() {
             { "Lose", LoadLoseScreen },
             { "LoadGameplay", LoadGameplay },
@@ -33,29 +43,18 @@ public class SceneLoader : MonoBehaviour
         }
     }
     #endregion
-    public static SceneLoader instance
-    {
-        get
-        {
-            if (!sceneLoader)
-            {
-                sceneLoader = FindObjectOfType(typeof(SceneLoader)) as SceneLoader;
-
-                if (!sceneLoader)
-                {
-                    Debug.LogError("There needs to be one active SceneLoader script on a GameObject in your scene.");
-                }
-            }
-
-            return sceneLoader;
-        }
-    }
 
     public static void LoadScene(string name)
     {
+        Time.timeScale = 1f; // Always load scene with timescale 1
+        EventManager.TriggerEvent("AnimateLoadScene", DURATION);
+        instance.StartCoroutine(Transition(name));
+    }
+    public static IEnumerator Transition(string name)
+    {
+        yield return new WaitForSeconds(DURATION*0.1f);
         SceneManager.LoadScene(name);
     }
-
     public static void LoadTutorial()
     {
         LoadScene("Tutorial");
