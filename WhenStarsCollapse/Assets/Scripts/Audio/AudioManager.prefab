@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6554547297785692773}
   - component: {fileID: 287327482675982133}
   - component: {fileID: -5463840240705515532}
+  - component: {fileID: 2600892755614063136}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: AudioManager
@@ -67,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea4958d2617f8148b62ffa154f2ba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolume: 1
+  sfxVolume: 1
 --- !u!114 &-5463840240705515532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +82,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d18aa3906f183949acb405c205a6e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &2600892755614063136
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423322523822118136}
+  m_BodyType: 2
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3988343256946508943
 PrefabInstance:
   m_ObjectHideFlags: 0

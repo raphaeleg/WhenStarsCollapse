@@ -131,9 +131,10 @@ public class Scoreboard : MonoBehaviour
         int toCalc = 0;
         while (duration > 0)
         {
-            EventManager.TriggerEvent("SFX_Typewriter", 0);
             duration -= SECONDS;
-            toCalc += realScore / ((int)(DELAY/SECONDS)+1);
+            int step = realScore / ((int)(DELAY / SECONDS) + 1);
+            if (step != 0) { EventManager.TriggerEvent("SFX_Typewriter", 0); }
+            toCalc += step;
             if (toCalc > realScore) { break; }
             text.text = "" + toCalc;
             yield return new WaitForSeconds(SECONDS);

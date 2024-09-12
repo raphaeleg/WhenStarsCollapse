@@ -7,12 +7,13 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance { get; private set; }
+
     [Header("Volume")][Range(0, 1)] public float musicVolume = 1;
-    [Header("Volume")][Range(0, 1)] public float sfxVolume = 1;
+    [Range(0, 1)] public float sfxVolume = 1;
     public Bus musicBus;
     public Bus sfxBus;
 
-    public static AudioManager instance { get; private set; }
     // public enum MusicArea { CALM_AREA = 0, CHAOTIC_AREA = 1, LOST_AREA = 2 }
     private List<EventInstance> eventInstances = new List<EventInstance>();
     private List<EventInstance> eventInstances_Game = new List<EventInstance>();
@@ -22,7 +23,6 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
-            //Debug.LogError("Found more than one Audio Manager in scene");
             Destroy(gameObject);
         }
         instance = this;
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         if (isGameEvent) { eventInstances_Game.Add(eventInstance); }
         else { eventInstances.Add(eventInstance); }
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(eventInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         return eventInstance;
     }
     public void CleanGameInstances()

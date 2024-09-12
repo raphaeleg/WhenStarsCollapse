@@ -8,9 +8,17 @@ public class VolumeSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     [Header("Type")]
     [SerializeField] private VolumeType type;
     private Slider volumeSlider;
-    private void Start()
+    private void Awake()
     {
         volumeSlider = this.GetComponent<Slider>();
+        SetVolumeOnStart();
+    }
+    private void Start()
+    {
+        SetVolumeOnStart();
+    }
+    private void SetVolumeOnStart()
+    {
         switch (type)
         {
             case VolumeType.MUSIC:
@@ -22,6 +30,10 @@ public class VolumeSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
             default:
                 break;
         }
+    }
+    private void Update()
+    {
+        SetVolumeOnStart();
     }
     public void OnSliderValueChange()
     {

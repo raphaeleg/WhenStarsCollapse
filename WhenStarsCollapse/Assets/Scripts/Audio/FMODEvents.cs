@@ -92,7 +92,8 @@ public class FMODEvents : MonoBehaviour
     }
     public void SFX_RuneMade(int val)
     {
-        AudioManager.instance.PlayOneShot(Rune_Made);
+        if (val == -1) { Correct(val); }
+        else { AudioManager.instance.PlayOneShot(Rune_Made); }
     }
     public void SFX_Planet(int val)
     {

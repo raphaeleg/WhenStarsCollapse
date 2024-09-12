@@ -16,7 +16,7 @@ namespace Planets
         {
             Planet.visuals.Anim_Sick();
             yield return new WaitForSeconds(INTERVAL);
-            while (stage < 4 && stage > 0)
+            while (stage < 3 && stage > 0)
             {
                 stage++;
 
@@ -24,7 +24,7 @@ namespace Planets
                 Planet.visuals.SickParticle(stage is 3);
                 yield return new WaitForSeconds(INTERVAL);
             }
-            if (stage == 4) { Planet.SetState(new BlackHole(Planet)); }
+            if (stage < 3) { Planet.SetState(new BlackHole(Planet)); }
         }
         private bool cureValidChecking(Rune rune)
         {
