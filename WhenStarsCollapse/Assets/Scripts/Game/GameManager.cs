@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Score score;
-    [SerializeField] const int BLACKHOLE_END_CONDITION = 1;
+    [SerializeField] const int BLACKHOLE_END_CONDITION = 2;
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
     {
         score.blackHoles++;
         EventManager.TriggerEvent("BlackHoleText", score.blackHoles);
-        if (score.blackHoles >= BLACKHOLE_END_CONDITION) { EventManager.TriggerEvent("Lose", 1); }
+        if (score.blackHoles >= BLACKHOLE_END_CONDITION) { EventManager.TriggerEvent("Lose", 2); }
+        else if (score.blackHoles == (int)BLACKHOLE_END_CONDITION/2) { EventManager.TriggerEvent("ChangeMusicArea", 1); }
     }
     public void Event_AddCount_Timer(int val) { score.time = val; }
 }

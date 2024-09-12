@@ -44,62 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d4f94361ed55d42b627003d257ccd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ButtonClick_Default>k__BackingField:
+  <BG>k__BackingField:
     Guid:
-      Data1: -377094489
-      Data2: 1314328476
-      Data3: 530278061
-      Data4: -305387271
-    Path: event:/ButtonClick_Default
-  <ButtonClick_Negative>k__BackingField:
-    Guid:
-      Data1: -1411396559
-      Data2: 1317382116
-      Data3: 899549104
-      Data4: -710061553
-    Path: event:/ButtonClick_Negative
-  <Planet>k__BackingField:
-    Guid:
-      Data1: 584263019
-      Data2: 1147315848
-      Data3: 1275540364
-      Data4: 702283825
-    Path: event:/Planet
-  <MeteorCollected>k__BackingField:
-    Guid:
-      Data1: 1878501049
-      Data2: 1280902220
-      Data3: 133564562
-      Data4: -1931669838
-    Path: event:/MeteorCollected
-  <MeteorCollected_Max>k__BackingField:
-    Guid:
-      Data1: 1071289520
-      Data2: 1178340362
-      Data3: 42127010
-      Data4: -679686357
-    Path: event:/MeteorCollected_Max
-  <Rune_Click>k__BackingField:
-    Guid:
-      Data1: -377094489
-      Data2: 1314328476
-      Data3: 530278061
-      Data4: -305387271
-    Path: event:/ButtonClick_Default
-  <Rune_Made>k__BackingField:
-    Guid:
-      Data1: -8785216
-      Data2: 1183440472
-      Data3: -723058538
-      Data4: -729158837
-    Path: event:/Rune_Made
-  <SFX_Correct>k__BackingField:
-    Guid:
-      Data1: -1278659014
-      Data2: 1163082305
-      Data3: -1156334659
-      Data4: 1213993056
-    Path: event:/SFX_Correct
+      Data1: -1898295684
+      Data2: 1201371456
+      Data3: -1707333187
+      Data4: 554712965
+    Path: event:/Music/Gameplay
   <Ambience_BlackHole>k__BackingField:
     Guid:
       Data1: -952263632
@@ -107,10 +58,66 @@ MonoBehaviour:
       Data3: 1795144100
       Data4: -276888731
     Path: event:/BlackHole_Ambience
+  <ButtonClick_Default>k__BackingField:
+    Guid:
+      Data1: -377094489
+      Data2: 1314328476
+      Data3: 530278061
+      Data4: -305387271
+    Path: event:/SFX/ButtonClick_Default
+  <ButtonClick_Negative>k__BackingField:
+    Guid:
+      Data1: -1411396559
+      Data2: 1317382116
+      Data3: 899549104
+      Data4: -710061553
+    Path: event:/SFX/ButtonClick_Negative
+  <MeteorCollected>k__BackingField:
+    Guid:
+      Data1: 1878501049
+      Data2: 1280902220
+      Data3: 133564562
+      Data4: -1931669838
+    Path: event:/SFX/MeteorCollected
+  <Planet>k__BackingField:
+    Guid:
+      Data1: 584263019
+      Data2: 1147315848
+      Data3: 1275540364
+      Data4: 702283825
+    Path: event:/SFX/Planet
+  <MeteorCollected_Max>k__BackingField:
+    Guid:
+      Data1: 1071289520
+      Data2: 1178340362
+      Data3: 42127010
+      Data4: -679686357
+    Path: event:/SFX/MeteorCollected_Max
+  <Rune_Click>k__BackingField:
+    Guid:
+      Data1: -377094489
+      Data2: 1314328476
+      Data3: 530278061
+      Data4: -305387271
+    Path: event:/SFX/ButtonClick_Default
+  <Rune_Made>k__BackingField:
+    Guid:
+      Data1: -8785216
+      Data2: 1183440472
+      Data3: -723058538
+      Data4: -729158837
+    Path: event:/SFX/Rune_Made
+  <SFX_Correct>k__BackingField:
+    Guid:
+      Data1: -1278659014
+      Data2: 1163082305
+      Data3: -1156334659
+      Data4: 1213993056
+    Path: event:/SFX/SFX_Correct
   <Explode>k__BackingField:
     Guid:
       Data1: 338807206
       Data2: 1162091278
       Data3: 2030978487
       Data4: -1947158058
-    Path: event:/Explode
+    Path: event:/SFX/Explode

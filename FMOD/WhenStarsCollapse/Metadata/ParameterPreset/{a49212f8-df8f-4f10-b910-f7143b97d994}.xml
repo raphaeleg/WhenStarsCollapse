@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a49212f8-df8f-4f10-b910-f7143b97d994}">
+		<property name="name">
+			<value>blackhole_intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{930e94f3-160b-4803-bf4c-939f2345c898}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{da1f20c1-5c23-4226-abe3-8a3722d98041}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{da1f20c1-5c23-4226-abe3-8a3722d98041}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>4.9000000953674316</value>
+		</property>
+	</object>
+</objects>

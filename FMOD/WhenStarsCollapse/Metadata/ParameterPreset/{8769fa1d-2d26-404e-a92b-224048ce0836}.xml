@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8769fa1d-2d26-404e-a92b-224048ce0836}">
+		<property name="name">
+			<value>area</value>
+		</property>
+		<relationship name="folder">
+			<destination>{930e94f3-160b-4803-bf4c-939f2345c898}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5948bfce-dfad-4ada-b4a3-1dded473a720}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5948bfce-dfad-4ada-b4a3-1dded473a720}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>CalmArea</value>
+			<value>ChaoticArea</value>
+			<value>LostArea</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2</value>
+		</property>
+	</object>
+</objects>

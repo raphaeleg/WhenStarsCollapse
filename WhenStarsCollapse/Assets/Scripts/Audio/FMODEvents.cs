@@ -1,4 +1,5 @@
 using FMODUnity;
+using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,17 +8,23 @@ using UnityEngine;
 public class FMODEvents : MonoBehaviour
 {
     public static FMODEvents instance { get; private set; }
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference BG { get; private set; }
 
-    [field: Header("Button Click")]
+    [field: Header("Ambience")]
+    [field: SerializeField] public EventReference Ambience_BlackHole { get; private set; }
+
+    [field: Header("SFX")]
     [field: SerializeField] public EventReference ButtonClick_Default { get; private set; }
     [field: SerializeField] public EventReference ButtonClick_Negative { get; private set; }
-    [field: SerializeField] public EventReference Planet { get; private set; }
     [field: SerializeField] public EventReference MeteorCollected { get; private set; }
+
+    [field: Header("Gameplay")]
+    [field: SerializeField] public EventReference Planet { get; private set; }
     [field: SerializeField] public EventReference MeteorCollected_Max { get; private set; }
     [field: SerializeField] public EventReference Rune_Click { get; private set; }
     [field: SerializeField] public EventReference Rune_Made { get; private set; }
     [field: SerializeField] public EventReference SFX_Correct { get; private set; }
-    [field: SerializeField] public EventReference Ambience_BlackHole { get; private set; }
     [field: SerializeField] public EventReference Explode { get; private set; }
 
     #region Event Listeners
@@ -28,6 +35,7 @@ public class FMODEvents : MonoBehaviour
         {
             //Debug.LogError("Found more than one FMOD Events in scene");
             Destroy(gameObject);
+            return;
         }
         instance = this;
         SubscribedEvents = new() {
@@ -38,7 +46,9 @@ public class FMODEvents : MonoBehaviour
                 { "Rune_SetDragging", SFX_Rune },
                 { "AddCure", SFX_RuneMade },
                 { "CollectMeteor", SFX_MeteorCollected },
-                { "blackHoleSpawn", Loop_BlackHole },
+                { "BlackHoleText", Loop_BlackHole },
+                { "Lose", ChangeArea },
+                { "ChangeMusicArea", ChangeArea },
             };
     }
 
@@ -102,6 +112,12 @@ public class FMODEvents : MonoBehaviour
     public void Loop_BlackHole(int val)
     {
         AudioManager.instance.PlayOneShot(Explode);
-        AudioManager.instance.PlayOneShot(Ambience_BlackHole);
+        if (val == 0) { AudioManager.instance.InitializeAmbience(Ambience_BlackHole); }
+        else { AudioManager.instance.SetAmbienceParameter("blackhole_intensity", val); }
+    }
+    public void ChangeArea(int area)
+    {
+        if (area == 2) { AudioManager.instance.CleanGameInstances(); }
+        AudioManager.instance.SetMusicArea((float)area);
     }
 }

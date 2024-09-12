@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static SceneLoader instance { get; private set; }
+    private static SceneLoader instance;
     private const int DURATION = 5; 
     #region EventManager
-    private static Dictionary<string, Action<int>> SubscribedEvents;
+    private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
