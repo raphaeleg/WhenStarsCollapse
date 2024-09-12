@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{42e51db7-7135-4163-9a2c-61105c65ead5}">
+		<property name="assetPath">
+			<value>Sound Effects/SFX_Meteor_Collect_Max.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.28700680272108842</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0a1d6115-32fc-4c0d-8202-5bef16802c73}</destination>
+		</relationship>
+	</object>
+</objects>

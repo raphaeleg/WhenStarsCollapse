@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6614023688318359145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3044899650012622263}
+  - component: {fileID: 4038038785053700738}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3044899650012622263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614023688318359145}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4038038785053700738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614023688318359145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d4f94361ed55d42b627003d257ccd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonClick_Default>k__BackingField:
+    Guid:
+      Data1: -377094489
+      Data2: 1314328476
+      Data3: 530278061
+      Data4: -305387271
+    Path: event:/ButtonClick_Default
+  <ButtonClick_Negative>k__BackingField:
+    Guid:
+      Data1: -1411396559
+      Data2: 1317382116
+      Data3: 899549104
+      Data4: -710061553
+    Path: event:/ButtonClick_Negative
+  <Planet>k__BackingField:
+    Guid:
+      Data1: 584263019
+      Data2: 1147315848
+      Data3: 1275540364
+      Data4: 702283825
+    Path: event:/Planet
+  <MeteorCollected>k__BackingField:
+    Guid:
+      Data1: 1878501049
+      Data2: 1280902220
+      Data3: 133564562
+      Data4: -1931669838
+    Path: event:/MeteorCollected
+  <MeteorCollected_Max>k__BackingField:
+    Guid:
+      Data1: 1071289520
+      Data2: 1178340362
+      Data3: 42127010
+      Data4: -679686357
+    Path: event:/MeteorCollected_Max
+  <Rune_Click>k__BackingField:
+    Guid:
+      Data1: -377094489
+      Data2: 1314328476
+      Data3: 530278061
+      Data4: -305387271
+    Path: event:/ButtonClick_Default
+  <Rune_Made>k__BackingField:
+    Guid:
+      Data1: -8785216
+      Data2: 1183440472
+      Data3: -723058538
+      Data4: -729158837
+    Path: event:/Rune_Made
+  <SFX_Correct>k__BackingField:
+    Guid:
+      Data1: -1278659014
+      Data2: 1163082305
+      Data3: -1156334659
+      Data4: 1213993056
+    Path: event:/SFX_Correct
+  <Ambience_BlackHole>k__BackingField:
+    Guid:
+      Data1: -952263632
+      Data2: 1319821351
+      Data3: 1795144100
+      Data4: -276888731
+    Path: event:/BlackHole_Ambience
+  <Explode>k__BackingField:
+    Guid:
+      Data1: 338807206
+      Data2: 1162091278
+      Data3: 2030978487
+      Data4: -1947158058
+    Path: event:/Explode

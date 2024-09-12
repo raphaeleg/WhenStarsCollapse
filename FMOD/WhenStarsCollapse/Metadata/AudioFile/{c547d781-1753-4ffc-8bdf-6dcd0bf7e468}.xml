@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c547d781-1753-4ffc-8bdf-6dcd0bf7e468}">
+		<property name="assetPath">
+			<value>Sound Effects/SFX_Dwarf_Destroy.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5959183673469388</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0a1d6115-32fc-4c0d-8202-5bef16802c73}</destination>
+		</relationship>
+	</object>
+</objects>

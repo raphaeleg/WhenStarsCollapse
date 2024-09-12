@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cb914823-01b3-4654-bb80-727d31842f0c}">
+		<property name="assetPath">
+			<value>Sound Effects/Meteor_Fly.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37.155714285714289</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0a1d6115-32fc-4c0d-8202-5bef16802c73}</destination>
+		</relationship>
+	</object>
+</objects>
