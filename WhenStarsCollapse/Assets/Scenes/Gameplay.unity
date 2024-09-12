@@ -5704,6 +5704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 610237342}
     m_Modifications:
+    - target: {fileID: 309643319456231179, guid: df19f1459d94cc540be23c58614ccb33, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 882663090011562281, guid: df19f1459d94cc540be23c58614ccb33, type: 3}
       propertyPath: m_text
       value: Sound Effects
@@ -5714,6 +5718,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3295249572504268017, guid: df19f1459d94cc540be23c58614ccb33, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675592576893075060, guid: df19f1459d94cc540be23c58614ccb33, type: 3}
+      propertyPath: type
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6327279181798971632, guid: df19f1459d94cc540be23c58614ccb33, type: 3}

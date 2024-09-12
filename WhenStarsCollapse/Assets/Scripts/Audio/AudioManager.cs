@@ -7,6 +7,11 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("Volume")][Range(0, 1)] public float musicVolume = 1;
+    [Header("Volume")][Range(0, 1)] public float sfxVolume = 1;
+    public Bus musicBus;
+    public Bus sfxBus;
+
     public static AudioManager instance { get; private set; }
     // public enum MusicArea { CALM_AREA = 0, CHAOTIC_AREA = 1, LOST_AREA = 2 }
     private List<EventInstance> eventInstances = new List<EventInstance>();
@@ -24,6 +29,8 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
+        musicBus = RuntimeManager.GetBus("bus:/Music");
+        sfxBus = RuntimeManager.GetBus("bus:/SFX");
         InitializeMusic(FMODEvents.instance.BG);
     }
 
