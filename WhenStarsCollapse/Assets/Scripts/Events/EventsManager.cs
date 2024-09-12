@@ -36,11 +36,11 @@ public class EventManager : MonoBehaviour
 
     public static void StopListening(string eventName, Action<int> listener)
     {
-        if (instance == null) { return; }
         Action<int> thisEvent;
         if (eventDictionary.TryGetValue(eventName, out thisEvent))
         {
             thisEvent -= listener;
+            eventDictionary[eventName] = thisEvent;
         }
     }
 
