@@ -14,6 +14,7 @@ namespace Runes
         private void Awake()
         {
             Faction faction = transform.parent.GetComponent<Faction>();
+            text = gameObject.GetComponent<TMP_Text>();
             SubscribedEvents = new() {
                 { faction.StringType("SetCure"), Event_UpdateText },
             };
@@ -35,10 +36,6 @@ namespace Runes
             }
         }
         #endregion
-        private void Start()
-        {
-            text = gameObject.GetComponent<TMP_Text>();
-        }
         public void Event_UpdateText(int val)
         {
             text.text = val.ToString();

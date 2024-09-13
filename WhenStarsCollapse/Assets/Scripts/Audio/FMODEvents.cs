@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class FMODEvents : MonoBehaviour
 {
-    public static FMODEvents instance { get; private set; }
+    public static FMODEvents Instance { get; private set; }
+
+    #region EventReference Variables
     [field: Header("Music")]
     [field: SerializeField] public EventReference BG { get; private set; }
 
@@ -26,27 +28,30 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Rune_Made { get; private set; }
     [field: SerializeField] public EventReference SFX_Correct { get; private set; }
     [field: SerializeField] public EventReference Explode { get; private set; }
+    #endregion
 
     #region Event Listeners
     private Dictionary<string, Action<int>> SubscribedEvents = new();
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
-            //Debug.LogError("Found more than one FMOD Events in scene");
             Destroy(gameObject);
             return;
         }
-        instance = this;
+        Instance = this;
         SubscribedEvents = new() {
                 { "SFX_ButtonClick", SFX_ButtonClick },
-                { "SFX_Typewriter", SFX_Typewriter },
-                { "SFX_ScoreAppear", SFX_Typewriter },
+                { "SFX_Typewriter", SFX_Click },
+                { "SFX_ScoreAppear", SFX_Click },
+
                 { "isSuccessfulSpawn", SFX_Planet },
+                { "whiteDwarfSpawn", SFX_Explode },
                 { "Rune_SetDragging", SFX_Rune },
-                { "AddCure", SFX_RuneMade },
                 { "CollectMeteor", SFX_MeteorCollected },
+                { "AddCure", SFX_RuneMade },
                 { "BlackHoleText", Loop_BlackHole },
+
                 { "Lose", ChangeArea },
                 { "ChangeMusicArea", ChangeArea },
             };
@@ -73,52 +78,40 @@ public class FMODEvents : MonoBehaviour
         }
     }
     #endregion
-    // drag change, typewriter change, highscore add
     
-    public void SFX_ButtonClick(int val)
+    private void Play(EventReference eventRef) { AudioManager.Instance.PlayOneShot(eventRef); }
+    private void SFX_Click(int val = 0) { Play(MeteorCollected); }
+    private void SFX_ButtonClick(int val = 0)
     {
-        // 0 = default, 1 = negative (quit, pause, scene transitions, typewriter)
-        if (val == 0 ) { AudioManager.instance.PlayOneShot(ButtonClick_Default); }
-        else { AudioManager.instance.PlayOneShot(ButtonClick_Negative); }
+        if (val == 0 ) { Play(ButtonClick_Default); }   // default
+        else { Play(ButtonClick_Negative); }            // negative / special (quit, pause, scene transitions, typewriter)
     }
-    public void SFX_Typewriter(int val)
+    private void Correct(int val = 0) { Play(SFX_Correct); }
+    private void SFX_Planet(int val = 0) { Play(Planet); }   // spawn, sick, get big
+    private void SFX_Explode(int val = 0) { Play(Explode); }
+    private void SFX_Rune(int val = 0)
     {
-        AudioManager.instance.PlayOneShot(MeteorCollected);
+        if (val != 0) { Play(MeteorCollected_Max); }    // 0 = end drag
     }
-    public void SFX_Rune(int val)
+    private void SFX_RuneMade(int val = 0)
     {
-        // 0 = end drag
-        if (val != 0) { AudioManager.instance.PlayOneShot(MeteorCollected_Max); }
+        if (val == -1) { Correct(); }    // Used Rune
+        else { Play(Rune_Made); }           // Made Rune
     }
-    public void SFX_RuneMade(int val)
+    private void SFX_MeteorCollected(int val = 0)
     {
-        if (val == -1) { Correct(val); }
-        else { AudioManager.instance.PlayOneShot(Rune_Made); }
+        if (val == 2) { Play(MeteorCollected_Max); }    
+        else { SFX_Click(); }
     }
-    public void SFX_Planet(int val)
+    private void Loop_BlackHole(int val = 0)
     {
-        // spawn, sick, get big
-        AudioManager.instance.PlayOneShot(Planet);
+        SFX_Explode();
+        if (val == 0) { AudioManager.Instance.InitializeAmbience(Ambience_BlackHole); }
+        else { AudioManager.Instance.SetAmbienceParameter("blackhole_intensity", val); }
     }
-    public void Correct(int val)
+    private void ChangeArea(int area)
     {
-        AudioManager.instance.PlayOneShot(SFX_Correct);
-    }
-    public void SFX_MeteorCollected(int val)
-    {
-        // 0 = default, 1 = special
-        if (val == 0) { AudioManager.instance.PlayOneShot(MeteorCollected); }
-        else { AudioManager.instance.PlayOneShot(MeteorCollected_Max); }
-    }
-    public void Loop_BlackHole(int val)
-    {
-        AudioManager.instance.PlayOneShot(Explode);
-        if (val == 0) { AudioManager.instance.InitializeAmbience(Ambience_BlackHole); }
-        else { AudioManager.instance.SetAmbienceParameter("blackhole_intensity", val); }
-    }
-    public void ChangeArea(int area)
-    {
-        if (area == 2) { AudioManager.instance.CleanGameInstances(); }
-        AudioManager.instance.SetMusicArea((float)area);
+        if (area == 2) { AudioManager.Instance.CleanGameInstances(); }
+        AudioManager.Instance.SetMusicArea((Audio_MusicArea)area);
     }
 }

@@ -6,20 +6,20 @@ using UnityEngine;
 
 public class SceneTransition : MonoBehaviour
 {
-    public static SceneTransition instance { get; private set; }
+    public static SceneTransition Instance { get; private set; }
     private Animator animator;
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        instance = this;
-        instance.animator = GetComponent<Animator>();
+        Instance = this;
+        Instance.animator = GetComponent<Animator>();
         SubscribedEvents = new() {
             { "AnimateLoadScene", Load },
         };
@@ -52,8 +52,8 @@ public class SceneTransition : MonoBehaviour
     }
     private IEnumerator Fading(float time)
     {
-        instance.animator.SetTrigger("ExitScene");
+        Instance.animator.SetTrigger("ExitScene");
         yield return new WaitForSeconds(time);
-        instance.animator.SetTrigger("EnterScene");
+        Instance.animator.SetTrigger("EnterScene");
     }
 }

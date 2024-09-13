@@ -3,71 +3,100 @@ using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using System;
+using static UnityEditor.Progress;
+
+public enum Audio_MusicArea { CALM = 0, CHAOTIC = 1, LOST = 2 }
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance { get; private set; }
+    public static AudioManager Instance { get; private set; }
 
-    [Header("Volume")][Range(0, 1)] public float musicVolume = 1;
-    [Range(0, 1)] public float sfxVolume = 1;
-    public Bus musicBus;
-    public Bus sfxBus;
+    [Header("Event Instances")]
+    private EventInstance eventInstance_Music;
+    private EventInstance eventInstance_Ambience;
+    private List<EventInstance> eventInstances = new();
+    private List<EventInstance> eventInstances_Gameplay = new();
 
-    // public enum MusicArea { CALM_AREA = 0, CHAOTIC_AREA = 1, LOST_AREA = 2 }
-    private List<EventInstance> eventInstances = new List<EventInstance>();
-    private List<EventInstance> eventInstances_Game = new List<EventInstance>();
-    private EventInstance ambienceEventInstance;
-    private EventInstance musicEventInstance;
+    [Header("Volume Control")]
+    private List<VolumeController> VC = new();
+    private VolumeController VC_SFX;
+    public struct VolumeController
+    {
+        public VolumeType type;
+        public float volume;
+        public Bus bus;
+
+        public VolumeController(VolumeType _type, float _value, Bus _bus)
+        {
+            type = _type;
+            volume = _value;
+            bus = _bus;
+        }
+    };
+
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
-        instance = this;
+        Instance = this;
     }
+
     private void Start()
     {
-        musicBus = RuntimeManager.GetBus("bus:/Music");
-        sfxBus = RuntimeManager.GetBus("bus:/SFX");
-        InitializeMusic(FMODEvents.instance.BG);
+        VC.Add(new(VolumeType.MUSIC, 1, RuntimeManager.GetBus("bus:/Music")));
+        VC.Add(new(VolumeType.SFX, 1, RuntimeManager.GetBus("bus:/SFX")));
+
+        InitializeMusic();
     }
 
-    public void PlayOneShot(EventReference sound)
+    public void SetVolume(VolumeType type, float value)
     {
-        RuntimeManager.PlayOneShot(sound, Vector3.zero);
+        int index = VC.FindIndex(item => item.type == type);
+        if (index >= VC.Count) { return; }
+
+        VolumeController vc = VC[index];
+        vc.volume = value;
+        vc.bus.setVolume(value);
+        VC[index] = vc;
+    }
+    public float GetVolume(VolumeType type)
+    {
+        VolumeController vc = VC.First((item) => {  return item.type == type; });
+        return vc.volume;
     }
 
-    public void InitializeAmbience(EventReference ambienceEventReference)
+    public void PlayOneShot(EventReference sound) { RuntimeManager.PlayOneShot(sound, Vector3.zero); }
+
+    private void InitializeMusic()
     {
-        ambienceEventInstance = CreateEventInstance(ambienceEventReference, true);
-        ambienceEventInstance.start();
+        eventInstance_Music = CreateEventInstance(FMODEvents.Instance.BG);
+        eventInstance_Music.start();
     }
-    public void SetAmbienceParameter(string paremeterName, float value)
+    public void SetMusicArea(Audio_MusicArea area) { eventInstance_Music.setParameterByName("area", (float)area); }
+
+    public void InitializeAmbience(EventReference eventRef)
     {
-        ambienceEventInstance.setParameterByName(paremeterName, value);
+        eventInstance_Ambience = CreateEventInstance(eventRef, true);
+        eventInstance_Ambience.start();
     }
-    public void InitializeMusic(EventReference musicEventReference)
+    public void SetAmbienceParameter(string param, float value) { eventInstance_Ambience.setParameterByName(param, value); }
+   
+    public EventInstance CreateEventInstance(EventReference eventRef, bool isGameEvent = false)
     {
-        musicEventInstance = CreateEventInstance(musicEventReference);
-        musicEventInstance.start();
-    }
-    public void SetMusicArea(float area)
-    {
-        musicEventInstance.setParameterByName("area", area);
-    }
-    public EventInstance CreateEventInstance(EventReference eventReference, bool isGameEvent = false)
-    {
-        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
-        if (isGameEvent) { eventInstances_Game.Add(eventInstance); }
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventRef);
+        if (isGameEvent) { eventInstances_Gameplay.Add(eventInstance); }
         else { eventInstances.Add(eventInstance); }
         RuntimeManager.AttachInstanceToGameObject(eventInstance, GetComponent<Transform>(), GetComponent<Rigidbody>());
         return eventInstance;
     }
     public void CleanGameInstances()
     {
-        foreach (EventInstance ei in eventInstances_Game)
+        foreach (EventInstance ei in eventInstances_Gameplay)
         {
             ei.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             ei.release();

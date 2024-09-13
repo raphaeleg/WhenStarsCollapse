@@ -9,6 +9,7 @@ namespace Tutorial {
     {
         private int currentDialogue = 0;
         private int dialogueCount = 0;
+        private bool startGame = false;
         #region EventManager
         private Dictionary<string, Action<int>> SubscribedEvents;
 
@@ -21,6 +22,7 @@ namespace Tutorial {
         }
         private void OnEnable()
         {
+            currentDialogue = 0;
             foreach (var pair in SubscribedEvents)
             {
                 EventManager.StartListening(pair.Key, pair.Value);
@@ -44,7 +46,8 @@ namespace Tutorial {
             int nextDialogue = currentDialogue + val;
 
             if (nextDialogue < 0) { return; }
-            if (nextDialogue >= dialogueCount) {
+            if (nextDialogue >= dialogueCount && !startGame) {
+                startGame = true;
                 EventManager.TriggerEvent("LoadGameplay", 0);
                 return;
             }

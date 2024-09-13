@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private static SceneLoader instance;
+    private static SceneLoader Instance;
     private const int DURATION = 5; 
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        instance = this;
+        Instance = this;
         SubscribedEvents = new() {
             { "Lose", LoadLoseScreen },
             { "LoadGameplay", LoadGameplay },
@@ -50,7 +50,8 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1f; // Always load scene with timescale 1
         EventManager.TriggerEvent("AnimateLoadScene", DURATION);
-        instance.StartCoroutine(Transition(name));
+        Debug.Log("LOADING " + name); // there are MULTIPLE InstanceS OF GAMEPLAY AND OTHERS. 
+        Instance.StartCoroutine(Transition(name));
     }
     public static IEnumerator Transition(string name)
     {

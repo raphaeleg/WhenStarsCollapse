@@ -29,6 +29,7 @@ namespace Planets
             {
                 EventManager.StartListening(pair.Key, pair.Value);
             }
+            StartCoroutine("InfiniteSpawn");
         }
 
         private void OnDisable()
@@ -37,15 +38,9 @@ namespace Planets
             {
                 EventManager.StopListening(pair.Key, pair.Value);
             }
+            StopCoroutine("InfiniteSpawn");
         }
         #endregion
-
-        private void Start()
-        {
-            if (polygonCollider == null) { gameObject.GetComponent<PolygonCollider2D>(); }
-
-            StartCoroutine("InfiniteSpawn");
-        }
 
         private IEnumerator InfiniteSpawn(){
             while(true) {

@@ -4,17 +4,17 @@ using System;
 
 public class EventManager : MonoBehaviour
 {
-    public static EventManager instance = null;
+    public static EventManager Instance = null;
     public static Dictionary<string, Action<int>> eventDictionary;
 
     void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        instance = this;
+        Instance = this;
         eventDictionary = new Dictionary<string, Action<int>>();
     }
 

@@ -24,7 +24,8 @@ namespace Planets
                 Planet.visuals.SickParticle(stage is 3);
                 yield return new WaitForSeconds(INTERVAL);
             }
-            if (stage < 3) { Planet.SetState(new BlackHole(Planet)); }
+            Planet.visuals.SickParticle(false);
+            if (stage >= 3) { Planet.SetState(new BlackHole(Planet)); }
         }
         private bool cureValidChecking(Rune rune)
         {
@@ -35,6 +36,7 @@ namespace Planets
             Rune rune = other.GetComponent<Rune>();
             if (!cureValidChecking(rune)) { yield break; }
             EventManager.TriggerEvent(Planet.faction.StringType("AddCure"), -1);
+            EventManager.TriggerEvent("AddCure", -1);
             stage = 0;
 
             isCuring = true;
