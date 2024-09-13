@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager Instance { get; private set; }
@@ -44,8 +43,6 @@ public class CursorManager : MonoBehaviour
         }
     }
     #endregion
-
-    public enum CursorType { Arrow, Grab, Click }
 
     private void Start()
     {
@@ -92,15 +89,5 @@ public class CursorManager : MonoBehaviour
     {
         CursorType toSwitch = val != 0 ? CursorType.Grab : CursorType.Arrow;
         SetActiveCursorType(toSwitch);
-    }
-
-    [CreateAssetMenu]
-    public class CursorAnimation : ScriptableObject
-    {
-        public CursorType cursorType;
-        public bool playOnce = false;
-        public Texture2D[] textureArray;
-        public float frameRate = 0.1f;
-        public Vector2 offset;
     }
 }

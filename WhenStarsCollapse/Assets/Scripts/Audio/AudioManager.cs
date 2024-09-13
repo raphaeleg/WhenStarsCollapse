@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-using static UnityEditor.Progress;
 
 public enum Audio_MusicArea { CALM = 0, CHAOTIC = 1, LOST = 2 }
 
@@ -20,7 +19,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Volume Control")]
     private List<VolumeController> VC = new();
-    private VolumeController VC_SFX;
     public struct VolumeController
     {
         public VolumeType type;

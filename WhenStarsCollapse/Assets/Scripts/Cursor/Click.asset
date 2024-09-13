@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 3b193089e6f90404aba576e9c2237848, type: 3}
   m_Name: Click
-  m_EditorClassIdentifier: Assembly-CSharp::CursorManager/CursorAnimation
+  m_EditorClassIdentifier: 
   cursorType: 2
   playOnce: 1
   textureArray:
@@ -20,5 +20,5 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 34dac74f91d0a1940bede05c820c750d, type: 3}
   - {fileID: 2800000, guid: 0766f05ba5b84044ebe5e4382c7e50f9, type: 3}
   - {fileID: 2800000, guid: 02117ac6934f370469590e66ff5dd18b, type: 3}
-  frameRate: 0.05
-  offset: {x: 26, y: 24}
+  frameRate: 0.1
+  offset: {x: 26, y: 26}

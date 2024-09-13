@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorAnimationList:
-  - {fileID: 11400000, guid: 3e365fe0d8a9dff488278893d11c374c, type: 2}
-  - {fileID: 11400000, guid: 6a4d7dce3917ae749ba5f8291e697479, type: 2}
-  - {fileID: 11400000, guid: bb4a826e6d78e6340a65095eed3e5f90, type: 2}
+  - {fileID: 11400000, guid: 397daecd3bd33a048b194c9d4a0eaa6f, type: 2}
+  - {fileID: 11400000, guid: 9fe2ab46516a1794e98baa92fc670b6b, type: 2}
+  - {fileID: 11400000, guid: 9e2924c4a8e87854096392f9561e5243, type: 2}
 --- !u!114 &5446279031085240586
 MonoBehaviour:
   m_ObjectHideFlags: 0
