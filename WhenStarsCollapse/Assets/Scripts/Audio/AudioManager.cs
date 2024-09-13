@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
     }
     public float GetVolume(VolumeType type)
     {
-        VolumeController vc = VC.First((item) => {  return item.type == type; });
+        VolumeController vc = VC.First((item) => { return item.type == type; });
         return vc.volume;
     }
 
@@ -74,8 +74,9 @@ public class AudioManager : MonoBehaviour
         eventInstance_Music = CreateEventInstance(FMODEvents.Instance.BG);
         eventInstance_Music.start();
     }
-    public void SetMusicArea(Audio_MusicArea area) { 
-        switch(area)
+    public void SetMusicArea(Audio_MusicArea area)
+    {
+        switch (area)
         {
             case (Audio_MusicArea.CALM):
                 eventInstance_Music.setParameterByName("area", 0f);
@@ -99,7 +100,7 @@ public class AudioManager : MonoBehaviour
         eventInstance_Ambience.start();
     }
     public void SetAmbienceParameter(string param, float value) { eventInstance_Ambience.setParameterByName(param, value); }
-   
+
     public EventInstance CreateEventInstance(EventReference eventRef, bool isGameEvent = false)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventRef);

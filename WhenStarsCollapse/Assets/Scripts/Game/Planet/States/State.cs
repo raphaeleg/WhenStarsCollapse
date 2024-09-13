@@ -17,10 +17,6 @@ namespace Planets
         {
             yield break;
         }
-        public virtual IEnumerator Update()
-        {
-            yield break;
-        }
         public virtual IEnumerator Collided(Collider2D other)
         {
             yield break;

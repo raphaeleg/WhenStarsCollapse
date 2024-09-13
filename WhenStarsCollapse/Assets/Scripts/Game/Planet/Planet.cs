@@ -16,10 +16,6 @@ namespace Planets
             faction.SetRandom();
             SetState(new Begin(this));
         }
-        public void Update()
-        {
-            StartCoroutine(State.Update());
-        }
 
         public void ShrinkUntilDestroy(GameObject other)
         {
