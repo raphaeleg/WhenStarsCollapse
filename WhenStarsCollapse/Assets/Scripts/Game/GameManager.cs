@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Score score;
-    [SerializeField] const int BLACKHOLE_END_CONDITION = 2;
+    [SerializeField] const int BLACKHOLE_END_CONDITION = 5;
     #region EventManager
     private Dictionary<string, Action<int>> SubscribedEvents;
 

@@ -14,8 +14,8 @@ namespace Planets
 
         public override IEnumerator Start()
         {
-            Planet.visuals.Anim_Sick();
             yield return new WaitForSeconds(INTERVAL);
+            Planet.visuals.Anim_Sick();
             while (stage < 3 && stage > 0)
             {
                 stage++;

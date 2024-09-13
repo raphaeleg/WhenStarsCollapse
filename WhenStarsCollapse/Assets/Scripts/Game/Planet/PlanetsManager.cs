@@ -10,7 +10,7 @@ namespace Planets
     {
         [SerializeField] GameObject PlanetPrefab;
         private PolygonCollider2D polygonCollider;
-        private const int SPAWN_INTERVALS = 2;
+        private const int SPAWN_INTERVALS = 5;
 
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;

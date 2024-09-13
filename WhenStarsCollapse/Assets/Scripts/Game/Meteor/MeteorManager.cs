@@ -8,7 +8,7 @@ namespace Meteors
     {
         [SerializeField] GameObject MeteorPrefab;
         private BoxCollider2D BoxCollider;
-        private const int SPAWN_INTERVALS = 2;
+        private const int SPAWN_INTERVALS = 1;
 
         private void OnEnable()
         {
