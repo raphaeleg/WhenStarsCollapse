@@ -109,7 +109,7 @@ public class FMODEvents : MonoBehaviour
         if (val == 0) { AudioManager.Instance.InitializeAmbience(Ambience_BlackHole); }
         else { AudioManager.Instance.SetAmbienceParameter("blackhole_intensity", val); }
     }
-    private void ChangeArea(int area)
+    public void ChangeArea(int area)
     {
         if (area == 2) { AudioManager.Instance.CleanGameInstances(); }
         AudioManager.Instance.SetMusicArea((Audio_MusicArea)area);

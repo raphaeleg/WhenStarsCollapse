@@ -1,6 +1,5 @@
 using FMODUnity;
 using FMOD.Studio;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -77,7 +76,24 @@ public class AudioManager : MonoBehaviour
         eventInstance_Music = CreateEventInstance(FMODEvents.Instance.BG);
         eventInstance_Music.start();
     }
-    public void SetMusicArea(Audio_MusicArea area) { eventInstance_Music.setParameterByName("area", (float)area); }
+    public void SetMusicArea(Audio_MusicArea area) { 
+        switch(area)
+        {
+            case (Audio_MusicArea.CALM):
+                eventInstance_Music.setParameterByName("area", 0f);
+                eventInstance_Music.setParameterByName("chaotic_intensity", 0f);
+                break;
+            case (Audio_MusicArea.CHAOTIC):
+                eventInstance_Music.setParameterByName("area", 0f);
+                eventInstance_Music.setParameterByName("chaotic_intensity", 1f);
+                break;
+            case (Audio_MusicArea.LOST):
+                eventInstance_Music.setParameterByName("area", 1f);
+                break;
+            default:
+                break;
+        }
+    }
 
     public void InitializeAmbience(EventReference eventRef)
     {

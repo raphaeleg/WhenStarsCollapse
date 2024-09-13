@@ -16,18 +16,17 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>3</value>
+			<value>2</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>CalmArea</value>
-			<value>ChaoticArea</value>
+			<value>DefaultArea</value>
 			<value>LostArea</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
-			<value>2</value>
+			<value>8</value>
 		</property>
 	</object>
 </objects>

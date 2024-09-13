@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d117f8d2-8323-426b-8549-644d1e492017}">
+		<property name="name">
+			<value>chaotic_intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{930e94f3-160b-4803-bf4c-939f2345c898}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{750e3a27-1842-4aa3-9550-37868792fb18}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{750e3a27-1842-4aa3-9550-37868792fb18}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.2000000476837158</value>
+		</property>
+	</object>
+</objects>
