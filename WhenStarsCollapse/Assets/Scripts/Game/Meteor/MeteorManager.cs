@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +9,38 @@ namespace Meteors
     {
         [SerializeField] GameObject MeteorPrefab;
         private BoxCollider2D BoxCollider;
-        private const int SPAWN_INTERVALS = 1;
+        private float SPAWN_INTERVALS = 1f;
+        #region Event Listeners
+        private Dictionary<string, Action<int>> SubscribedEvents;
+
+        private void Awake()
+        {
+            SubscribedEvents = new() {
+                { "DifficultyIncrease", IncreaseFrequency },
+            };
+        }
 
         private void OnEnable()
         {
             BoxCollider = gameObject.GetComponent<BoxCollider2D>();
-        }
-
-        private void Start() {
+            foreach (var pair in SubscribedEvents)
+            {
+                EventManager.StartListening(pair.Key, pair.Value);
+            }
             StartCoroutine("InfiniteSpawn");
         }
+
+        private void OnDisable()
+        {
+            foreach (var pair in SubscribedEvents)
+            {
+                EventManager.StopListening(pair.Key, pair.Value);
+            }
+            StopCoroutine("InfiniteSpawn");
+        }
+        #endregion
+
+        private void IncreaseFrequency(int val) { SPAWN_INTERVALS -=0.01f; }
 
         private IEnumerator InfiniteSpawn(){
             while(true) {
@@ -30,12 +53,12 @@ namespace Meteors
         }
 
         private void SetPosition(Meteor meteor) {
-            bool isSpawnY = Random.value > 0.5f;
-            bool isSpawnPositive = Random.value > 0.5f;
+            bool isSpawnY = UnityEngine.Random.value > 0.5f;
+            bool isSpawnPositive = UnityEngine.Random.value > 0.5f;
 
             Bounds bound = BoxCollider.bounds;
-            var rndX = Random.Range(bound.min.x,bound.max.x);
-            var rndY = Random.Range(bound.min.y,bound.max.y);
+            var rndX = UnityEngine.Random.Range(bound.min.x,bound.max.x);
+            var rndY = UnityEngine.Random.Range(bound.min.y,bound.max.y);
             
             Vector2 generalSpawnLoc = Vector2.zero;
 

@@ -50,5 +50,11 @@ public class GameManager : MonoBehaviour
         if (score.blackHoles >= BLACKHOLE_END_CONDITION) { EventManager.TriggerEvent("Lose", 2); }
         else if (score.blackHoles == (int)BLACKHOLE_END_CONDITION/2) { EventManager.TriggerEvent("ChangeMusicArea", 1); }
     }
-    public void Event_AddCount_Timer(int val) { score.time = val; }
+    public void Event_AddCount_Timer(int val) {
+        if (val % 10 == 0 && val != 0) { 
+            if (val / 10 == 3) { EventManager.TriggerEvent("ChangeMusicArea", 1); }
+            EventManager.TriggerEvent("DifficultyIncrease",val/10); 
+        }
+        score.time = val; 
+    }
 }

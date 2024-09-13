@@ -18,11 +18,10 @@ namespace Planets
             Planet.visuals.Anim_Sick();
             while (stage < 3 && stage > 0)
             {
-                stage++;
-
                 if (stage is 2) { Planet.visuals.Anim_GetBig(); }
                 Planet.visuals.SickParticle(stage is 3);
                 yield return new WaitForSeconds(INTERVAL);
+                stage++;
             }
             Planet.visuals.SickParticle(false);
             if (stage >= 3) { Planet.SetState(new BlackHole(Planet)); }

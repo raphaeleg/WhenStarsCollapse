@@ -10,7 +10,7 @@ namespace Planets
     {
         [SerializeField] GameObject PlanetPrefab;
         private PolygonCollider2D polygonCollider;
-        private const int SPAWN_INTERVALS = 5;
+        private float SPAWN_INTERVALS = 5f;
 
         #region Event Listeners
         private Dictionary<string, Action<int>> SubscribedEvents;
@@ -18,7 +18,8 @@ namespace Planets
         private void Awake()
         {
             SubscribedEvents = new() {
-                { "isUnsuccessfulSpawn", SpawnOnce }
+                { "isUnsuccessfulSpawn", SpawnOnce },
+                { "DifficultyIncrease", IncreaseFrequency },
             };
         }
 
@@ -41,6 +42,7 @@ namespace Planets
             StopCoroutine("InfiniteSpawn");
         }
         #endregion
+        private void IncreaseFrequency(int val) { SPAWN_INTERVALS-=0.5f; }
 
         private IEnumerator InfiniteSpawn(){
             while(true) {
