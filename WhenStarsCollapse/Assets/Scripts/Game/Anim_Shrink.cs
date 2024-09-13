@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Anim_Shrink : MonoBehaviour
 {
-    [SerializeField] float speed = 4f;
+    [SerializeField] float speed = 1f;
     public bool triggeredShrink = true;
 
     public bool isShrinking() { return triggeredShrink; }
@@ -31,7 +31,7 @@ public class Anim_Shrink : MonoBehaviour
         while (transform.localScale.x > INTERVAL)
         {
             ShrinkBy(scaleStep);
-            MoveTowards(collider.transform.localPosition,RATE);
+            MoveTowards(collider.transform.position,RATE);
             yield return new WaitForSeconds(INTERVAL);
         }
         Destroy(gameObject);
@@ -42,8 +42,7 @@ public class Anim_Shrink : MonoBehaviour
     }
 
     public void MoveTowards(Vector3 target, float step) {
-        var direction = transform.localPosition - target;
-        var posStep = direction*step;
-        transform.localPosition -= posStep;
+        var direction = (transform.position - target)*step;
+        transform.position -= direction;
     }
 }
