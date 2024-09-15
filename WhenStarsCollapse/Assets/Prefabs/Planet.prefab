@@ -19639,7 +19639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  triggeredShrink: 1
 --- !u!1 &7301629373859047567
 GameObject:
   m_ObjectHideFlags: 0
