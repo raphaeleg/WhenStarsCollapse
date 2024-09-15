@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Attached to an object, defines which faction it belongs to, for inner-faction interactions and events.
+/// </summary>
 public class Faction : MonoBehaviour
 {
     public enum Type { BLUE, GREEN, RED };

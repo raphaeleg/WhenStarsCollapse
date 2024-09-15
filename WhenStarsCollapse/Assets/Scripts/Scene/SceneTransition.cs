@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// An animation that Fades in and out of scenes.
+/// </summary>
 public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition Instance { get; private set; }

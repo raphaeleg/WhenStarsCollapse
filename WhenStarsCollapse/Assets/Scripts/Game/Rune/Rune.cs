@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 namespace Runes
 {
+    /// <summary>
+    /// Handles a Rune object interaction.
+    /// </summary>
     public class Rune : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public Faction faction { get; private set; }
         private Image image;
         private bool isActive = false;
         private bool isDrag = false;
+
         private static Vector3 OG_POSITION = new Vector3(-135, 0, 0);
         private static Vector3 SCALE = new Vector3(1.2f, 1.2f, 1.2f);
+
         [SerializeField] Sprite active;
         [SerializeField] Sprite inactive;
         #region Event Listeners
@@ -51,12 +56,19 @@ namespace Runes
         }
         public void Event_CureUsed(int val)
         {
-            if (val > 0) { return; }
+            bool lessCuresObserved = val < 0;
+            if (!lessCuresObserved) 
+            { 
+                return; 
+            }
             EndDrag();
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!isActive) { return; }
+            if (!isActive) 
+            { 
+                return; 
+            }
             EventManager.TriggerEvent("Rune_SetDragging", 1);
             image.raycastTarget = false;
             isDrag = true;
@@ -64,7 +76,10 @@ namespace Runes
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!isDrag || !isActive) { return; }
+            if (!isDrag || !isActive) 
+            { 
+                return; 
+            }
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10;
             transform.position = Camera.main.ScreenToWorldPoint(mousePos);
@@ -72,13 +87,19 @@ namespace Runes
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (!isActive) { return; }
+            if (!isActive) 
+            { 
+                return; 
+            }
             EndDrag();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!isActive) { return; }
+            if (!isActive) 
+            { 
+                return; 
+            }
             transform.localScale = SCALE;
         }
 

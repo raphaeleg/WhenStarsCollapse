@@ -2,6 +2,9 @@ using UnityEngine;
 
 public enum CursorType { Arrow, Grab, Click }
 
+/// <summary>
+/// A Scriptable Object that maps a cursor animation to a CursorType.
+/// </summary>
 [CreateAssetMenu]
     public class CursorAnimation : ScriptableObject
 {

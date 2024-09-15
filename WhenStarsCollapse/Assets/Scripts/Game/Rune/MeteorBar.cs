@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Runes
 {
+    /// <summary>
+    /// Handles the MeteorBar of a Rune Object.
+    /// Holds the number of meteors collected in a faction, and the needed meteors needed for a rune.
+    /// </summary>
     public class MeteorBar : MonoBehaviour
     {
         private Faction faction;

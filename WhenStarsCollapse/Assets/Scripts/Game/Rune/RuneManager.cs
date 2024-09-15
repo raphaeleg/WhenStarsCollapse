@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace Runes
 {
-
+    /// <summary>
+    /// Holds the number of Runes the player currently holds, and shares that number to all related Rune objects.
+    /// </summary>
     public class RuneManager : StateMachine
     {
         private Faction faction;

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Meteors
 {
+    /// <summary>
+    /// Handles the meteor object: Instantiation, Movement, Interaction.
+    /// </summary>
     public class Meteor : MonoBehaviour
     {
         private Animator animator;
@@ -22,6 +25,8 @@ namespace Meteors
             transform.position = pos;
             RandomDirection(spawnLoc);
             RotateMeteor();
+
+            GetComponent<Anim_Shrink>().EnableShrink();
         }
         private void SetType()
         {

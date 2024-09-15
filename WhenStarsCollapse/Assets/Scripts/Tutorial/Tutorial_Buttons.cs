@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 namespace Tutorial
 {
+    /// <summary>
+    /// Button behaviours given the current Tutorial Dialogue shown.
+    /// </summary>
     public class TutorialButtons : MonoBehaviour
     {
         public enum Type { BACK, NEXT };
@@ -41,17 +43,29 @@ namespace Tutorial
         #endregion
         public void Next()
         {
-            if (button == Type.BACK) { EventManager.TriggerEvent("Tutorial_Next", -1); }
-            else { EventManager.TriggerEvent("Tutorial_Next", 1); }
+            if (button == Type.BACK) 
+            { 
+                EventManager.TriggerEvent("Tutorial_Next", -1); 
+            }
+            else 
+            { 
+                EventManager.TriggerEvent("Tutorial_Next", 1); 
+            }
         }
         public void Event_HideBtn(int val)
         {
-            if (button != Type.BACK) { return; }
+            if (button != Type.BACK) 
+            { 
+                return; 
+            }
             child.SetActive(val != 0);
         }
         public void Event_ReadyBtn(int val)
         {
-            if (button != Type.NEXT) { return; }
+            if (button != Type.NEXT) 
+            { 
+                return; 
+            }
             TMP_Text label = child.transform.GetComponentsInChildren<TMP_Text>()[0];
             label.text = val == 1 ? "Next" : "Start";
             label.color = val == 1 ? Color.white : YELLOW;

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Planets
 {
+    /// <summary>
+    /// Handles the visuals of a Planet (Particles & Animations)
+    /// </summary>
     public class PlanetVisuals : MonoBehaviour
     {
         private const int RATE_OF_BLACKHOLE_ROTATION = 10;
@@ -34,7 +37,10 @@ namespace Planets
 
         private void Update()
         {
-            if (isRotating) { transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION); }
+            if (isRotating) 
+            { 
+                transform.Rotate(0, 0, Time.deltaTime * RATE_OF_BLACKHOLE_ROTATION); 
+            }
         }
 
         public void Anim_Spawn()

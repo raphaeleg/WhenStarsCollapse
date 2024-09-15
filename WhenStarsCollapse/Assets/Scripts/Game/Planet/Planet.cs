@@ -5,6 +5,10 @@ using UnityEngine.EventSystems;
 
 namespace Planets
 {
+    /// <summary>
+    /// A StateMachine that manages the current Planet State.
+    /// Also holds a planet's visuals and faction.
+    /// </summary>
     public class Planet : StateMachine
     {
         public Faction faction { get; private set; }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+
+/// <summary>
+/// Handles Cursor visuals by switching between it's CursorAnimation list.
+/// </summary>
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager Instance { get; private set; }
@@ -53,15 +57,20 @@ public class CursorManager : MonoBehaviour
     {
         frameTimer -= Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0)) 
+        {
             SetActiveCursorType(CursorType.Click);
         }
 
-        if (frameTimer > 0f) { return; }
+        if (frameTimer > 0f) 
+        { 
+            return; 
+        }
 
         frameTimer = cursorAnimation.frameRate;
         currentFrame = (currentFrame + 1) % frameCount;
-        if (currentFrame == 0 && cursorAnimation.playOnce) { 
+        if (currentFrame == 0 && cursorAnimation.playOnce) 
+        { 
             SetActiveCursorType(CursorType.Arrow); 
         }
         Cursor.SetCursor(cursorAnimation.textureArray[currentFrame], cursorAnimation.offset, CursorMode.ForceSoftware);

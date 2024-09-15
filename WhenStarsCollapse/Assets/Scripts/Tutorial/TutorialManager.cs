@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using Tutorial;
 using UnityEngine;
 
-namespace Tutorial { 
+namespace Tutorial {
+    /// <summary>
+    /// Holds the current Tutorial Dialogue the player are currently reading, and shares that number to all related Tutorial objects.
+    /// </summary>
     public class TutorialManager : MonoBehaviour
     {
         private int currentDialogue = 0;
@@ -44,18 +47,32 @@ namespace Tutorial {
         public void Event_SetTutorialDialogue(int val)
         {
             int nextDialogue = currentDialogue + val;
-
-            if (nextDialogue < 0) { return; }
-            if (nextDialogue >= dialogueCount && !startGame) {
+            // Valid Checking
+            if (nextDialogue < 0) 
+            { 
+                return; 
+            }
+            if (nextDialogue >= dialogueCount && !startGame) 
+            {
                 startGame = true;
                 EventManager.TriggerEvent("LoadGameplay", 0);
                 return;
             }
 
-            if (nextDialogue == 0) { EventManager.TriggerEvent("Tutorial_HideBackBtn", 0); }
-            else if (nextDialogue == 1) { EventManager.TriggerEvent("Tutorial_HideBackBtn", 1); }
-            else if (nextDialogue == dialogueCount - 1) { EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 0); }
-            else if (nextDialogue == dialogueCount - 2) { EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 1); }
+            // Handle Button behaviour.
+            // Since dialogueCount is not a constant value, switch case is impossible.
+            if (nextDialogue == 0 || nextDialogue == 1) 
+            { 
+                EventManager.TriggerEvent("Tutorial_HideBackBtn", nextDialogue); 
+            }
+            else if (nextDialogue == dialogueCount - 1) 
+            { 
+                EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 0); 
+            }
+            else if (nextDialogue == dialogueCount - 2) 
+            { 
+                EventManager.TriggerEvent("Tutorial_ReadyNextBtn", 1); 
+            }
 
             currentDialogue = nextDialogue;
             EventManager.TriggerEvent("Tutorial_SetCurrentDialogue", currentDialogue);

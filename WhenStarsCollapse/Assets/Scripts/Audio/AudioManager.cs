@@ -3,10 +3,14 @@ using FMOD.Studio;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using System;
 
 public enum Audio_MusicArea { CALM = 0, CHAOTIC = 1, LOST = 2 }
 
+/// <summary>
+/// A signleton class that directly manages the audio.
+/// 1. Creates and holds all running event instances
+/// 2. Volume Control
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }

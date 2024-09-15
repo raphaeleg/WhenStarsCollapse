@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gives a Raw Image a constant Scroll effect.
+/// </summary>
 public class ScrollEffect : MonoBehaviour
 {
     private RawImage img;

@@ -1,9 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
 
+/// <summary>
+/// Updates the text at the top-left detailing the statistics of the game.
+/// </summary>
 public class Gameplay_StatsUI : MonoBehaviour
 {
     [SerializeField] TMP_Text timerText;
@@ -40,34 +42,36 @@ public class Gameplay_StatsUI : MonoBehaviour
     }
     #endregion
 
-    public void Event_UpdateTimerText(int val) 
+    private void Event_UpdateTimerText(int val) 
     {
-        int minute = val / 60;
-        string minuteStr = minute.ToString();
-        if (minuteStr.Length == 1) { minuteStr = "0" + minuteStr; }
+        string minuteStr = FormatNumber(val / 60);
+        string secondStr = FormatNumber(val % 60);
 
-        int second = val % 60;
-        string secondStr = second.ToString();
-        if (secondStr.Length == 1) { secondStr = "0" + secondStr; }
-            
         timerText.text = minuteStr + ":" + secondStr; 
     }
-    public void Event_UpdateStarsText(int val) 
+    private void Event_UpdateStarsText(int val) 
     {
-        string formattedString = val.ToString();
-        if (formattedString.Length == 1) { formattedString = "0" + formattedString; }
+        string formattedString = FormatNumber(val);
         starsText.text = formattedString; 
     }
-    public void Event_UpdateBlackHoleText(int val) 
+    private void Event_UpdateBlackHoleText(int val) 
     {
-        string formattedString = val.ToString();
-        if (formattedString.Length == 1) { formattedString = "0" + formattedString; }
+        string formattedString = FormatNumber(val);
         blackHolesText.text = formattedString;
     }
-    public void Event_SetToZero(int val)
+    private void Event_SetToZero(int val)
     {
         timerText.text = "00:00";
         starsText.text = "00";
         blackHolesText.text = "00";
+    }
+    private string FormatNumber(int val)
+    {
+        string formattedString = val.ToString();
+        if (formattedString.Length == 1)
+        {
+            formattedString = "0" + formattedString;
+        }
+        return formattedString;
     }
 }

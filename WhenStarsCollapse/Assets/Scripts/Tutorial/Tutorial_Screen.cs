@@ -1,10 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Tutorial
 {
+    /// <summary>
+    /// Plays a certain Tutorial Screen Animation based on the current Tutorial Dialogue shown.
+    /// </summary>
     public class Tutorial_Screen : MonoBehaviour
     {
         private Animator _animator;
@@ -15,8 +17,8 @@ namespace Tutorial
         {
             _animator = GetComponent<Animator>();
             SubscribedEvents = new() {
-            { "Tutorial_SetCurrentDialogue", Event_ChangeAnimation }
-        };
+                { "Tutorial_SetCurrentDialogue", Event_ChangeAnimation }
+            };
         }
         private void OnEnable()
         {

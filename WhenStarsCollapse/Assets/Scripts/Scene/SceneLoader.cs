@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// A Signleton class that directly calls SceneManager given a scene name.
+/// Also triggers SceneTransition.
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
     private static SceneLoader Instance;
@@ -50,7 +54,6 @@ public class SceneLoader : MonoBehaviour
     {
         Time.timeScale = 1f; // Always load scene with timescale 1
         EventManager.TriggerEvent("AnimateLoadScene", DURATION);
-        Debug.Log("LOADING " + name); // there are MULTIPLE InstanceS OF GAMEPLAY AND OTHERS. 
         Instance.StartCoroutine(Transition(name));
     }
     public static IEnumerator Transition(string name)

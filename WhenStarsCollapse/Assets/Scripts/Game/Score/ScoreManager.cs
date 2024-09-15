@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A Scriptable Object that simply holds the score values throughout scenes.
+/// </summary>
 [CreateAssetMenu]
 public class Score : ScriptableObject
 {

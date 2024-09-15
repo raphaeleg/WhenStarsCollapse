@@ -1,10 +1,12 @@
 using FMODUnity;
-using FMOD.Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A signleton class that passes data to AudioManager based on a triggered Event.
+/// </summary>
 public class FMODEvents : MonoBehaviour
 {
     public static FMODEvents Instance { get; private set; }
@@ -78,40 +80,87 @@ public class FMODEvents : MonoBehaviour
         }
     }
     #endregion
-    
-    private void Play(EventReference eventRef) { AudioManager.Instance.PlayOneShot(eventRef); }
-    private void SFX_Click(int val = 0) { Play(MeteorCollected); }
+
+    private void Play(EventReference eventRef)
+    {
+        AudioManager.Instance.PlayOneShot(eventRef);
+    }
+    private void SFX_Click(int val = 0)
+    {
+        Play(MeteorCollected);
+    }
     private void SFX_ButtonClick(int val = 0)
     {
-        if (val == 0 ) { Play(ButtonClick_Default); }   // default
-        else { Play(ButtonClick_Negative); }            // negative / special (quit, pause, scene transitions, typewriter)
+        if (val == 0)
+        {
+            Play(ButtonClick_Default);
+        }
+        else 
+        {
+            // negative / special (quit, pause, scene transitions, typewriter)
+            Play(ButtonClick_Negative);
+        }            
     }
-    private void Correct(int val = 0) { Play(SFX_Correct); }
-    private void SFX_Planet(int val = 0) { Play(Planet); }   // spawn, sick, get big
-    private void SFX_Explode(int val = 0) { Play(Explode); }
+    private void Correct(int val = 0)
+    {
+        Play(SFX_Correct);
+    }
+    private void SFX_Planet(int val = 0)
+    {
+        Play(Planet);   // spawn, sick, get big
+    }   
+    private void SFX_Explode(int val = 0)
+    {
+        Play(Explode);
+    }
     private void SFX_Rune(int val = 0)
     {
-        if (val != 0) { Play(MeteorCollected_Max); }    // 0 = end drag
+        // 0 = end drag
+        if (val != 0) 
+        { 
+            Play(MeteorCollected_Max);
+        }
     }
     private void SFX_RuneMade(int val = 0)
     {
-        if (val == -1) { Correct(); }    // Used Rune
-        else { Play(Rune_Made); }           // Made Rune
+        if (val == -1)  // Used Rune
+        { 
+            Correct(); 
+        }
+        else            // Made Rune
+        { 
+            Play(Rune_Made); 
+        }           
     }
     private void SFX_MeteorCollected(int val = 0)
     {
-        if (val == 2) { Play(MeteorCollected_Max); }    
-        else { SFX_Click(); }
+        if (val == 2) 
+        { 
+            Play(MeteorCollected_Max); 
+        }    
+        else 
+        { 
+            SFX_Click(); 
+        }
     }
     private void Loop_BlackHole(int val = 0)
     {
         SFX_Explode();
-        if (val == 0) { AudioManager.Instance.InitializeAmbience(Ambience_BlackHole); }
-        else { AudioManager.Instance.SetAmbienceParameter("blackhole_intensity", val); }
+        if (val == 0) 
+        { 
+            AudioManager.Instance.InitializeAmbience(Ambience_BlackHole); 
+        }
+        else 
+        { 
+            AudioManager.Instance.SetAmbienceParameter("blackhole_intensity", val); 
+        }
     }
     public void ChangeArea(int area)
     {
-        if (area == 2) { AudioManager.Instance.CleanGameInstances(); }
+        if (area == 2) 
+        { 
+            AudioManager.Instance.CleanGameInstances(); 
+        }
         AudioManager.Instance.SetMusicArea((Audio_MusicArea)area);
     }
 }

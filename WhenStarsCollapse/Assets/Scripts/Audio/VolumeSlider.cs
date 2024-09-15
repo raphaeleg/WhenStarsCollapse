@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public enum VolumeType { MUSIC, SFX };
 
+/// <summary>
+/// A class attached to the UI sliders in the Audio section. 
+/// </summary>
 public class VolumeSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [Header("Type")]
@@ -18,13 +21,13 @@ public class VolumeSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     {
         SetVolumeOnStart();
     }
-    private void SetVolumeOnStart()
-    {
-        volumeSlider.value = AudioManager.Instance.GetVolume(type);
-    }
     private void Update()
     {
         SetVolumeOnStart();
+    }
+    private void SetVolumeOnStart()
+    {
+        volumeSlider.value = AudioManager.Instance.GetVolume(type);
     }
     public void OnSliderValueChange()
     {

@@ -1,8 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles counting time.
+/// </summary>
 public class Timer : MonoBehaviour
 {
     public int Seconds { get; private set; } = -1;
@@ -12,14 +13,24 @@ public class Timer : MonoBehaviour
     {
         Restart();
     }
-    public void Restart() {
+    public void Restart() 
+    {
         Seconds = -1; 
         SetPause(false);
         StartCount();
     }
-    public void SetPause(bool paused) {  Pause = paused; }
-    public void ActivatePause() { SetPause(true); }
-    public void StartCount() { StartCoroutine(UpdateTimer()); }
+    public void SetPause(bool paused) 
+    {  
+        Pause = paused; 
+    }
+    public void ActivatePause() 
+    { 
+        SetPause(true); 
+    }
+    public void StartCount() 
+    { 
+        StartCoroutine(UpdateTimer()); 
+    }
     private IEnumerator UpdateTimer()
     {
         while (!Pause)

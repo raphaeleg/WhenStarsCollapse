@@ -5,7 +5,9 @@ using UnityEngine;
 
 namespace Planets
 {
-    // Manages planet spawning
+    /// <summary>
+    /// Handles the position and frequency of Planet Instantiation.
+    /// </summary>
     public class PlanetsManager : MonoBehaviour
     {
         [SerializeField] GameObject PlanetPrefab;
@@ -42,25 +44,31 @@ namespace Planets
             StopCoroutine("InfiniteSpawn");
         }
         #endregion
-        private void IncreaseFrequency(int val) { SPAWN_INTERVALS-=0.5f; }
 
-        private IEnumerator InfiniteSpawn(){
-            while(true) {
+        private IEnumerator InfiniteSpawn()
+        {
+            while(true) 
+            {
                 StartCoroutine("SpawnOnce",0);
 
                 yield return new WaitForSeconds(SPAWN_INTERVALS);
             }
         }
 
-        private void SpawnOnce(int val){
-            bool validPoint = false;
+        private void SpawnOnce(int val)
+        {
             Vector2 rndPoint2D = Vector2.zero;
-            while(!validPoint) {
+
+            // Find a valid random position
+            bool validPoint = false;
+            while(!validPoint)
+            {
                 rndPoint2D = RandomPointInBounds(polygonCollider.bounds, 1f);
                 Vector2 rndPointInside = polygonCollider.ClosestPoint(rndPoint2D);
                 
                 validPoint = (rndPointInside.x == rndPoint2D.x && rndPointInside.y == rndPoint2D.y);
             }
+
             GameObject planet = Instantiate(PlanetPrefab);
             planet.transform.SetParent(gameObject.transform);
             planet.transform.position = rndPoint2D;
@@ -72,6 +80,11 @@ namespace Planets
                 UnityEngine.Random.Range(bounds.min.x * scale, bounds.max.x * scale),
                 UnityEngine.Random.Range(bounds.min.y * scale, bounds.max.y * scale)
             );
+        }
+
+        private void IncreaseFrequency(int val)
+        {
+            SPAWN_INTERVALS -= 0.5f;
         }
     }
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 
 namespace Runes
 {
-
+    /// <summary>
+    /// Handles the timer to create a new rune.
+    /// </summary>
     public class RuneProcess : MonoBehaviour
     {
         private Faction faction;

@@ -1,20 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Attached to an object, plays an animation when it collides with a BlackHole.
+/// </summary>
 public class Anim_Shrink : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
-    public bool triggeredShrink = true;
+    private bool triggeredShrink = true;
 
-    public bool isShrinking() { return triggeredShrink; }
-    public void disableShrink() { triggeredShrink = true; }
-    public void enableShrink() { triggeredShrink = false; }
+    public bool IsShrinking() 
+    { 
+        return triggeredShrink; 
+    }
+    public void DisableShrink() 
+    { 
+        triggeredShrink = true; 
+    }
+    public void EnableShrink() 
+    { 
+        triggeredShrink = false; 
+    }
 
     public void ShrinkUntilDestroy(GameObject collider)
     {
-        if (triggeredShrink) { return; }
-        disableShrink();
+        if (triggeredShrink) 
+        { 
+            return; 
+        }
+        DisableShrink();
 
         StartCoroutine(Shrink(collider));
     }
@@ -31,17 +45,22 @@ public class Anim_Shrink : MonoBehaviour
         while (transform.localScale.x > INTERVAL)
         {
             ShrinkBy(scaleStep);
-            MoveTowards(collider.transform.position,RATE);
+            if (collider is not null)
+            {
+                MoveTowards(collider.transform.position,RATE);
+            }
             yield return new WaitForSeconds(INTERVAL);
         }
         Destroy(gameObject);
     }
 
-    public void ShrinkBy(Vector3 step) {
+    public void ShrinkBy(Vector3 step) 
+    {
         transform.localScale -= step;
     }
 
-    public void MoveTowards(Vector3 target, float step) {
+    public void MoveTowards(Vector3 target, float step) 
+    {
         var direction = (transform.position - target)*step;
         transform.position -= direction;
     }

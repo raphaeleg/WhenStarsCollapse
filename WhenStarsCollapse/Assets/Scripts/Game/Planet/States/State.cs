@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 namespace Planets
 {
+    /// <summary>
+    /// All the possible behaviours a Planet State can have.
+    /// </summary>
     public abstract class State
     {
         protected Planet Planet;

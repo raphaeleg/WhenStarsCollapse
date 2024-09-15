@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
+/// <summary>
+/// Holds all existing event listeners and event triggers through the eventDictionary.
+/// </summary>
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance = null;
@@ -44,12 +47,12 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void TriggerEvent(string eventName, int h)
+    public static void TriggerEvent(string eventName, int i)
     {
         Action<int> thisEvent = null;
         if (eventDictionary.TryGetValue(eventName, out thisEvent))
         {
-            thisEvent?.Invoke(h);
+            thisEvent?.Invoke(i);
         }
     }
 }

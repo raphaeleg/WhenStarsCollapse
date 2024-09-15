@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Sets an object to DontDestroyOnLoad
+/// </summary>
 public class DontDestroy : MonoBehaviour
 {
     void Awake()

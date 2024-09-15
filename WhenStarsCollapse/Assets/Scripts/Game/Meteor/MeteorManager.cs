@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Meteors 
 {
+    /// <summary>
+    /// Handles the position and frequency of Meteor Instantiation.
+    /// </summary>
     public class MeteorManager : MonoBehaviour
     {
         [SerializeField] GameObject MeteorPrefab;
@@ -43,7 +46,8 @@ namespace Meteors
         private void IncreaseFrequency(int val) { SPAWN_INTERVALS -=0.01f; }
 
         private IEnumerator InfiniteSpawn(){
-            while(true) {
+            while(true) 
+            {
                 GameObject meteor = Instantiate(MeteorPrefab);
                 meteor.transform.SetParent(gameObject.transform);
                 SetPosition(meteor.GetComponent<Meteor>());
@@ -52,7 +56,8 @@ namespace Meteors
             }
         }
 
-        private void SetPosition(Meteor meteor) {
+        private void SetPosition(Meteor meteor) 
+        {
             bool isSpawnY = UnityEngine.Random.value > 0.5f;
             bool isSpawnPositive = UnityEngine.Random.value > 0.5f;
 
@@ -62,7 +67,8 @@ namespace Meteors
             
             Vector2 generalSpawnLoc = Vector2.zero;
 
-            switch(isSpawnY){
+            switch(isSpawnY)
+            {
                 case false:     // instantiate at left/right
                     // isSpawnPositive == false -> at left
                     float extremeX = isSpawnPositive ? bound.max.x : bound.min.x;

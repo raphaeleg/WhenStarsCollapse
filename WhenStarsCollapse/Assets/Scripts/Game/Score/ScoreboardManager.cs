@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// Used in the Highscore scene, holds the necessary GUI, and plays the animation to show the scores correctly.
+/// </summary>
 public class Scoreboard : MonoBehaviour
 {
     [SerializeField] Score highScore;

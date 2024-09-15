@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Tutorial
 {
+    /// <summary>
+    /// Manages the tutorial text by listening to the needed trigger to start the TypeWriter effect.
+    /// </summary>
     public class Tutorial_Text : MonoBehaviour
     {
         public List<string> TutorialText = new List<string>();

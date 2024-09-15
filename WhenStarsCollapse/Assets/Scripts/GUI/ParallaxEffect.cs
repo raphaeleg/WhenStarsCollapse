@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Gives an object a Parallax Effect based on mouse movement.
+/// </summary>
 public class ParallaxEffect : MonoBehaviour
 {
     private Vector2 startPosition;

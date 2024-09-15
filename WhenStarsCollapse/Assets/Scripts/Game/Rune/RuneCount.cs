@@ -5,6 +5,9 @@ using TMPro;
 
 namespace Runes
 {
+    /// <summary>
+    /// Sets the text of the number of Runes currently in the inventory.
+    /// </summary>
     public class RuneCount : MonoBehaviour
     {
         private TMP_Text text;

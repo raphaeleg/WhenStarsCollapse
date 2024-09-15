@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 namespace Planets
 {
+    /// <summary>
+    /// Handles a White Dwarf object behaviour.
+    /// </summary>
     public class WhiteDwarf : State
     {
         public WhiteDwarf(Planet planet) : base(planet) { }

@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ensures that the Guide in the Gameplay Scene plays when the game is paused.
+/// </summary>
 public class Gameplay_Guide : MonoBehaviour
 {
     private Animator _animator;

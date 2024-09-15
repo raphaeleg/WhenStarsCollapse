@@ -1,12 +1,12 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Tutorial
 {
+    /// <summary>
+    /// Shows the text in a typewriter effect.
+    /// </summary>
     public class TypeWriterEffect : MonoBehaviour
     {
         private TMP_Text _tmpProText;
@@ -22,13 +22,24 @@ namespace Tutorial
         public void Restart(string _text)
         {
             _tmpProText = GetComponent<TMP_Text>()!;
-            if (_tmpProText != null) {
+            if (_tmpProText is not null) 
+            {
                 writer = _text;
                 _tmpProText.text = "";
 
-                if (coroutine != "") { StopCoroutine(coroutine); }
+                if (coroutine is not "") 
+                { 
+                    StopCoroutine(coroutine); 
+                }
                 coroutine = "TypeWriterTMP";
                 StartCoroutine(coroutine);
+            }
+        }
+        private void PlaySFX(int len, char c)
+        {
+            if (len % SFX_FREQ is 0 && c is not ' ')
+            {
+                EventManager.TriggerEvent("SFX_Typewriter", 1);
             }
         }
 
@@ -38,21 +49,22 @@ namespace Tutorial
 
             yield return new WaitForSeconds(START_DELAY);
             
+            int len = _tmpProText.text.Length;
             foreach (char c in writer)
             {
-                if (_tmpProText.text.Length > 0)
+                if (len > 0)
                 {
-                    _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+                    _tmpProText.text = _tmpProText.text.Substring(0, len - leadingChar.Length);
                 }
-                if (_tmpProText.text.Length % SFX_FREQ == 0 && c != ' ') { EventManager.TriggerEvent("SFX_Typewriter", 1); }
+                PlaySFX(len, c);
                 _tmpProText.text += c;
                 _tmpProText.text += leadingChar;
                 yield return new WaitForSeconds(TIME_BTW_CHAR);
             }
 
-            if (leadingChar != "")
+            if (leadingChar is not "")
             {
-                _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+                _tmpProText.text = _tmpProText.text.Substring(0, len - leadingChar.Length);
             }
 
             coroutine = "";
